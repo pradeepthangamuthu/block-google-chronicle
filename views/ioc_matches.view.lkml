@@ -12,16 +12,6 @@ view: ioc_matches {
 
   dimension: asset_hostname {
     sql: COALESCE(${asset}.hostname, ${asset}.asset_ip_address) ;;
-    # link: {
-    #   label: "Asset Lookup on {{value}}"
-    #   url: "@{ASSET_LOOKUP}"
-    #   icon_url: "@{DASHBOARD_ICON_URL}"
-    # }
-    link: {
-      label: "Investigate in Chronicle"
-      url: "@{CHRONICLE_URL}/assetResults?assetIdentifier={{value}}"
-      icon_url: "@{CHRONICLE_ICON_URL}"
-    }
   }
 
   dimension: category {
@@ -71,16 +61,6 @@ view: ioc_matches {
     CASE
       WHEN ${TABLE}.ioc_type= 'IOC_TYPE_DOMAIN' THEN ${TABLE}.ioc_value
     END;;
-    # link: {
-    #   label: "Domain Lookup on {{value}}"
-    #   url: "@{DOMAIN_LOOKUP}"
-    #   icon_url: "@{DASHBOARD_ICON_URL}"
-    # }
-      link: {
-        label: "Investigate in Chronicle"
-        url: "@{CHRONICLE_URL}/domainResults?domain={{value}}"
-        icon_url: "@{CHRONICLE_ICON_URL}"
-      }
     }
 
     dimension: is_global {
@@ -158,4 +138,3 @@ view: ioc_matches {
       sql: ${TABLE}.seconds ;;
     }
   }
-

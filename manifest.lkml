@@ -44,6 +44,10 @@ constant: UDM_EVENTS{
   value: "udm_events"
 }
 
+constant: UDM_EVENTS_AGGREGRATES{
+  value: "udm_events_aggregates"
+}
+
 constant: DATA_INGESTION_AND_HEALTH_DASHBOARD{
   value: "/dashboards-next/@{MODEL_NAME}::data_ingestion_and_health"
 }

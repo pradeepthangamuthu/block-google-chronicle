@@ -29,11 +29,6 @@ view: ingestion_stats {
   dimension: log_type_for_drill {
     type: string
     sql: ${log_type} ;;
-    link: {
-      label: "Data Ingestion and Health Dashboard"
-      url: "@{DATA_INGESTION_AND_HEALTH_DASHBOARD}"
-      icon_url: "@{DASHBOARD_ICON_URL}"
-    }
   }
 
   dimension: normalization_ratio {
@@ -153,11 +148,6 @@ view: ingestion_stats {
   measure: total_entry_number_in_million_for_drill {
     type: sum
     sql: round(${entry_number}/1000000, 0) ;;
-    link: {
-      label: "Data Ingestion and Health Dashboard"
-      url: "@{DATA_INGESTION_AND_HEALTH_DASHBOARD}"
-      icon_url: "@{DASHBOARD_ICON_URL}"
-    }
   }
 
   measure: total_error_count_in_million {
@@ -178,11 +168,6 @@ view: ingestion_stats {
   measure: total_size_bytes_GB_for_drill {
     type: sum
     sql: round(${size_bytes}/1000/1000/1000, 2) ;;
-    link: {
-      label: "Data Ingestion and Health Dashboard"
-      url: "@{DATA_INGESTION_AND_HEALTH_DASHBOARD}"
-      icon_url: "@{DASHBOARD_ICON_URL}"
-    }
   }
 
   measure: total_size_bytes_GiB {

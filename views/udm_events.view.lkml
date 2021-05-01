@@ -1,11 +1,5 @@
 #include: "//@{CONFIG_PROJECT_NAME}/views/udm_events.view.lkml"
 
-
-# view: udm_events {
-#   extends: [udm_events_core]
-# }
-
-###################################################
 view: udm_events {
   sql_table_name: @{DATASET_NAME}.@{UDM_EVENTS}
     ;;
@@ -774,16 +768,6 @@ view: udm_events__principal__user {
   dimension: userid_for_drill {
     type: string
     sql: ${TABLE}.userid ;;
-    # link: {
-    #   label: "User Lookup on {{value}}"
-    #   url: "@{USER_LOOKUP}"
-    #   icon_url: "@{DASHBOARD_ICON_URL}"
-    # }
-    link: {
-      label: "Investigate in Chronicle"
-      url: "@{CHRONICLE_URL}/userResults?userName={{value}}"
-      icon_url: "@{CHRONICLE_ICON_URL}"
-    }
   }
 
   dimension: windows_sid {
