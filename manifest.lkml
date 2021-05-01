@@ -1,4 +1,4 @@
-project_name: "base3"
+project_name: "looker-dashboards"
 
 constant: CONFIG_PROJECT_NAME {
   value: "block-google-chronicle-config"
