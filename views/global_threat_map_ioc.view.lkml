@@ -1,6 +1,3 @@
-
-###################################################
-
 view: global_threat_map_ioc {
   derived_table: {
     sql: SELECT
