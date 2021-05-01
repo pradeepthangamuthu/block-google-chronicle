@@ -1,5 +1,8 @@
+include: "/views/udm_events.view.lkml"
+include: "/views/udm_events_aggregates.view.lkml"
+include: "/views/udm_enum_value_to_name_mapping.view.lkml"
+
 explore: udm_events {
-  extension: required
   join: udm_events__principal {
     view_label: "Udm Events: Principal"
     sql: LEFT JOIN UNNEST([${udm_events.principal}]) as udm_events__principal ;;
@@ -1279,6 +1282,11 @@ explore: udm_events {
   }
 }
 
-explore: udm_enum_value_to_name_mapping_core {
-  extension: required
+explore: udm_enum_value_to_name_mapping {
+  hidden: yes
+}
+
+
+explore: udm_events_aggregates {
+  hidden: yes
 }
