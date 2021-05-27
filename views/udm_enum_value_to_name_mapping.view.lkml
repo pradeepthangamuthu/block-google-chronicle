@@ -8,7 +8,7 @@
 ###################################################
 
 view: udm_enum_value_to_name_mapping {
-  sql_table_name: @{DATASET_NAME}.@{UDM_MAPPINGS}
+  sql_table_name: @{UDM_MAPPINGS}
     ;;
 
   dimension: enum_name {

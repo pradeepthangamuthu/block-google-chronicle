@@ -2,7 +2,7 @@
 
 ###################################################
 view: ioc_matches {
-  sql_table_name: `@{DATASET_NAME}.@{IOC_MATCHES}`
+  sql_table_name: `@{IOC_MATCHES}`
     ;;
 
   dimension: asset {

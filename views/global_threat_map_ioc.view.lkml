@@ -21,7 +21,7 @@ view: global_threat_map_ioc {
             ioc_value as ioc_matches_test_ioc_value,
             ioc_type
           FROM
-            `@{DATASET_NAME}.@{IOC_MATCHES}`
+            `@{IOC_MATCHES}`
         ) as x
         WHERE
         (
