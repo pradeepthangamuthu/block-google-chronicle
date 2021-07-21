@@ -1280,6 +1280,17 @@ explore: udm_events {
     sql: LEFT JOIN UNNEST([${udm_events__target__file.file_metadata}]) as udm_events__target__file__file_metadata ;;
     relationship: one_to_one
   }
+
+  conditionally_filter: {
+    filters: {
+      field: udm_events.time_filter
+      value: "last 24 hours"
+    }
+  }
+
+  fields: [ALL_FIELDS*,]
+  sql_always_where: {% condition udm_events.time_filter %} udm_events._PARTITIONTIME {% endcondition %}
+    AND {% condition udm_events.time_filter %} TIMESTAMP_SECONDS(${event_timestamp_raw}) {% endcondition %};;
 }
 
 explore: udm_enum_value_to_name_mapping {
