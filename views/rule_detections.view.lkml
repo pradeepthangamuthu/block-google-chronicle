@@ -24,6 +24,11 @@ view: rule_detections {
   dimension: rule_name {
     type: string
     sql: ${TABLE}.rule_name ;;
+    link: {
+      label: "Investigate in Chronicle"
+      url: "@{CHRONICLE_URL}/ruleDetections?ruleId={{rule_detections.rule_id._value}}"
+      icon_url: "@{CHRONICLE_ICON_URL}"
+    }
   }
 
   dimension: rule_text {
