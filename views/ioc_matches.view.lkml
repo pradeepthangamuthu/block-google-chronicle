@@ -12,6 +12,11 @@ view: ioc_matches {
 
   dimension: asset_hostname {
     sql: COALESCE(${asset}.hostname, ${asset}.asset_ip_address) ;;
+    link: {
+      label: "Investigate in Chronicle"
+      url: "@{CHRONICLE_URL}/assetResults?assetIdentifier={{value}}"
+      icon_url: "@{CHRONICLE_ICON_URL}"
+    }
   }
 
   dimension: category {
@@ -61,22 +66,28 @@ view: ioc_matches {
     CASE
       WHEN ${TABLE}.ioc_type= 'IOC_TYPE_DOMAIN' THEN ${TABLE}.ioc_value
     END;;
-    }
 
-    dimension: is_global {
-      type: yesno
-      sql: ${TABLE}.is_global ;;
-    }
-
-    dimension: severity {
-      type: string
-      sql: ${TABLE}.severity ;;
-    }
-
-    measure: count {
-      type: count
+    link: {
+      label: "Investigate in Chronicle"
+      url: "@{CHRONICLE_URL}/domainResults?domain={{value}}"
+      icon_url: "@{CHRONICLE_ICON_URL}"
     }
   }
+
+  dimension: is_global {
+    type: yesno
+    sql: ${TABLE}.is_global ;;
+  }
+
+  dimension: severity {
+    type: string
+    sql: ${TABLE}.severity ;;
+  }
+
+  measure: count {
+    type: count
+  }
+}
 
   view: ioc_matches__asset {
     extends: [ioc_matches__asset_core]
