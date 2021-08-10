@@ -681,11 +681,11 @@ view: udm_events__principal__user {
     #   url: "@{USER_LOOKUP}"
     #   icon_url: "@{DASHBOARD_ICON_URL}"
     # }
-    #link: {
-    #  label: "Investigate in Chronicle"
-    #  url: "@{CHRONICLE_URL}/userResults?userName={{value}}"
-    #  icon_url: "@{CHRONICLE_ICON_URL}"
-    #}
+    link: {
+      label: "Investigate in Chronicle"
+      url: "@{CHRONICLE_URL}/userResults?userName={{value}}"
+      icon_url: "@{CHRONICLE_ICON_URL}"
+    }
   }
 
   dimension: windows_sid {
