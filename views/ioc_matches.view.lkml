@@ -12,11 +12,12 @@ view: ioc_matches {
 
   dimension: asset_hostname {
     sql: COALESCE(${asset}.hostname, ${asset}.asset_ip_address) ;;
-    link: {
-      label: "Investigate in Chronicle"
-      url: "@{CHRONICLE_URL}/assetResults?assetIdentifier={{value}}"
-      icon_url: "@{CHRONICLE_ICON_URL}"
-    }
+    # TODO(b/197337351) Re-enable this once assetType is included in the URL.
+    # link: {
+    #   label: "Investigate in Chronicle"
+    #   url: "@{CHRONICLE_URL}/assetResults?assetIdentifier={{value}}"
+    #   icon_url: "@{CHRONICLE_ICON_URL}"
+    # }
   }
 
   dimension: category {
