@@ -589,7 +589,7 @@
   - name: Time
     title: Time
     type: field_filter
-    default_value: 1 week
+    default_value: 7 days
     allow_multiple_values: true
     required: true
     ui_config:
