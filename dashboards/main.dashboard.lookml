@@ -1,5 +1,5 @@
 - dashboard: main
-  title: Main
+  title: Spratt Main
   layout: newspaper
   preferred_viewer: dashboards-next
   elements:
