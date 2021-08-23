@@ -1,23 +1,54 @@
-#include: "//@{CONFIG_PROJECT_NAME}/views/ioc_matches.view.lkml"
-
-###################################################
 view: ioc_matches {
-  sql_table_name: `@{IOC_MATCHES}`
+  sql_table_name: `datalake.ioc_matches`
     ;;
 
-  dimension: asset {
-    hidden: yes
-    sql: ${TABLE}.asset ;;
+  dimension: asset__asset_ip_address {
+    type: string
+    sql: ${TABLE}.asset.asset_ip_address ;;
+    group_label: "Asset"
+    group_item_label: "Asset IP Address"
   }
 
-  dimension: asset_hostname {
-    sql: COALESCE(${asset}.hostname, ${asset}.asset_ip_address) ;;
-    # TODO(b/197337351) Re-enable this once assetType is included in the URL.
-    # link: {
-    #   label: "Investigate in Chronicle"
-    #   url: "@{CHRONICLE_URL}/assetResults?assetIdentifier={{value}}"
-    #   icon_url: "@{CHRONICLE_ICON_URL}"
-    # }
+  dimension: asset__hostname {
+    type: string
+    sql: ${TABLE}.asset.hostname ;;
+    group_label: "Asset"
+    group_item_label: "Hostname"
+  }
+
+  dimension: asset__is_any_namespace {
+    type: yesno
+    sql: ${TABLE}.asset.is_any_namespace ;;
+    group_label: "Asset"
+    group_item_label: "Is Any Namespace"
+  }
+
+  dimension: asset__is_namespace_ignored {
+    type: yesno
+    sql: ${TABLE}.asset.is_namespace_ignored ;;
+    group_label: "Asset"
+    group_item_label: "Is Namespace Ignored"
+  }
+
+  dimension: asset__mac {
+    type: string
+    sql: ${TABLE}.asset.mac ;;
+    group_label: "Asset"
+    group_item_label: "Mac"
+  }
+
+  dimension: asset__namespace {
+    type: string
+    sql: ${TABLE}.asset.namespace ;;
+    group_label: "Asset"
+    group_item_label: "Namespace"
+  }
+
+  dimension: asset__product_id {
+    type: string
+    sql: ${TABLE}.asset.product_id ;;
+    group_label: "Asset"
+    group_item_label: "Product ID"
   }
 
   dimension: category {
@@ -45,9 +76,18 @@ view: ioc_matches {
     sql: ${TABLE}.feed_name ;;
   }
 
-  dimension: ioc_ingest_time {
-    hidden: yes
-    sql: ${TABLE}.ioc_ingest_time ;;
+  dimension: ioc_ingest_time__nanos {
+    type: number
+    sql: ${TABLE}.ioc_ingest_time.nanos ;;
+    group_label: "Ioc Ingest Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: ioc_ingest_time__seconds {
+    type: number
+    sql: ${TABLE}.ioc_ingest_time.seconds ;;
+    group_label: "Ioc Ingest Time"
+    group_item_label: "Seconds"
   }
 
   dimension: ioc_type {
@@ -58,21 +98,6 @@ view: ioc_matches {
   dimension: ioc_value {
     type: string
     sql: ${TABLE}.ioc_value ;;
-  }
-
-
-  dimension : ioc_value_domain {
-    type: string
-    sql:
-    CASE
-      WHEN ${TABLE}.ioc_type= 'IOC_TYPE_DOMAIN' THEN ${TABLE}.ioc_value
-    END;;
-
-    link: {
-      label: "Investigate in Chronicle"
-      url: "@{CHRONICLE_URL}/domainResults?domain={{value}}"
-      icon_url: "@{CHRONICLE_ICON_URL}"
-    }
   }
 
   dimension: is_global {
@@ -87,66 +112,6 @@ view: ioc_matches {
 
   measure: count {
     type: count
+    drill_fields: [feed_name, asset__hostname]
   }
 }
-
-  view: ioc_matches__asset {
-    extends: [ioc_matches__asset_core]
-  }
-
-###################################################
-  view: ioc_matches__asset_core {
-    dimension: asset_ip_address {
-      type: string
-      sql: ${TABLE}.asset_ip_address ;;
-    }
-
-    dimension: hostname {
-      type: string
-      sql: ${TABLE}.hostname ;;
-    }
-
-    dimension: mac {
-      type: string
-      sql: ${TABLE}.mac ;;
-    }
-
-    dimension: product_id {
-      type: string
-      sql: ${TABLE}.product_id ;;
-    }
-    measure: count {
-      type: count
-    }
-  }
-
-  view: ioc_matches__ioc_ingest_time {
-    extends: [ioc_matches__ioc_ingest_time_core]
-  }
-
-###################################################
-  view: ioc_matches__ioc_ingest_time_core {
-    dimension: nanos {
-      type: number
-      sql: ${TABLE}.nanos ;;
-    }
-
-    dimension: seconds {
-      type: number
-      sql: ${TABLE}.seconds ;;
-    }
-
-    dimension_group: event_timestamp {
-      type: time
-      timeframes: [
-        raw,
-        time,
-        date,
-        week,
-        month,
-        year
-      ]
-      datatype: epoch
-      sql: ${TABLE}.seconds ;;
-    }
-  }

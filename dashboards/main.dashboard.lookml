@@ -1,5 +1,5 @@
 - dashboard: main
-  title: Spratt Main
+  title: Main
   layout: newspaper
   preferred_viewer: dashboards-next
   elements:
@@ -82,7 +82,7 @@
     note_display: hover
     note_text: Delta compared to previous time period
     listen:
-      Time: rule_detections__detection__detection_timestamp.period_filter
+      Time: rule_detections.period_filter
     row: 3
     col: 16
     width: 8

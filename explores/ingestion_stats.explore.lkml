@@ -1,4 +1,4 @@
-include: "/views/ingestion_stats.view.lkml"
+include: "/views/refinements/ingestion_stats.view.lkml"
 
 ###################################################
 

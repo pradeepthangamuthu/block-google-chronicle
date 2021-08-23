@@ -1,14 +1,5 @@
-#include: "//@{CONFIG_PROJECT_NAME}/views/udm_enum_value_to_name_mapping.view.lkml"
-
-
-# view: udm_enum_value_to_name_mapping {
-#   extends: [udm_enum_value_to_name_mapping_core]
-# }
-
-###################################################
-
 view: udm_enum_value_to_name_mapping {
-  sql_table_name: @{UDM_MAPPINGS}
+  sql_table_name: `datalake.udm_enum_value_to_name_mapping`
     ;;
 
   dimension: enum_name {
@@ -28,6 +19,6 @@ view: udm_enum_value_to_name_mapping {
 
   measure: count {
     type: count
+    drill_fields: [enum_name]
   }
-
 }

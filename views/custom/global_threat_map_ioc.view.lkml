@@ -1,44 +1,46 @@
+include: "/views/ioc_matches.view"
+
 view: global_threat_map_ioc {
   derived_table: {
     sql: SELECT
-        a.ts,
-        a.ioc_matches_test_ioc_value,
-        IFNULL(city, 'Other') AS city,
-        IFNULL(countryLabel, 'Other') AS country,
-        latitude,
-        longitude
+      a.ts,
+      a.ioc_matches_test_ioc_value,
+      IFNULL(city, 'Other') AS city,
+      IFNULL(countryLabel, 'Other') AS country,
+      latitude,
+      longitude
+    FROM
+    (
+      SELECT
+        ts,
+        ioc_matches_test_ioc_value,
+        NET.IPV4_TO_INT64(NET.IP_FROM_STRING(ioc_matches_test_ioc_value)) AS clientIpNum,
+        TRUNC(NET.IPV4_TO_INT64(NET.IP_FROM_STRING(ioc_matches_test_ioc_value))/(256*256)) AS classB
       FROM
       (
         SELECT
-          ts,
-          ioc_matches_test_ioc_value,
-          NET.IPV4_TO_INT64(NET.IP_FROM_STRING(ioc_matches_test_ioc_value)) AS clientIpNum,
-          TRUNC(NET.IPV4_TO_INT64(NET.IP_FROM_STRING(ioc_matches_test_ioc_value))/(256*256)) AS classB
+          ioc_ingest_time.seconds as ts,
+          ioc_value as ioc_matches_test_ioc_value,
+          ioc_type
         FROM
-        (
-          SELECT
-            ioc_ingest_time.seconds as ts,
-            ioc_value as ioc_matches_test_ioc_value,
-            ioc_type
-          FROM
-            `@{IOC_MATCHES}`
-        ) as x
-        WHERE
-        (
-          REGEXP_CONTAINS(ioc_matches_test_ioc_value, "\\d+\\.\\d+\\.\\d+\\.\\d+")
-          AND ioc_type = 'IOC_TYPE_IP'
-          AND {% condition period_filter %} TIMESTAMP_SECONDS(ts) {% endcondition %}
-        )
-      ) AS A
+          `@{IOC_MATCHES}`
+      ) as x
+      WHERE
+      (
+        REGEXP_CONTAINS(ioc_matches_test_ioc_value, "\\d+\\.\\d+\\.\\d+\\.\\d+")
+        AND ioc_type = 'IOC_TYPE_IP'
+        AND {% condition period_filter %} TIMESTAMP_SECONDS(ts) {% endcondition %}
+      )
+    ) AS A
 
-      LEFT OUTER JOIN
-        `fh-bigquery.geocode.geolite_city_bq_b2b` AS b
-        ON
-        a.classB = b.classB
-        AND a.clientIpNum BETWEEN b.startIpNum AND b.endIpNum
-        WHERE
-          countryLabel != "Other"
- ;;
+    LEFT OUTER JOIN
+      `fh-bigquery.geocode.geolite_city_bq_b2b` AS b
+      ON
+      a.classB = b.classB
+      AND a.clientIpNum BETWEEN b.startIpNum AND b.endIpNum
+      WHERE
+        countryLabel != "Other"
+;;
   }
 
   measure: count {
@@ -106,5 +108,4 @@ view: global_threat_map_ioc {
     sql_latitude: ${TABLE}.latitude ;;
     sql_longitude: ${TABLE}.longitude ;;
   }
-
 }

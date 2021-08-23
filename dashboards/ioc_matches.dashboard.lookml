@@ -8,7 +8,7 @@
     #model: block_google_chronicle
     explore: ioc_matches
     type: looker_line
-    fields: [ioc_matches.count, ioc_matches__ioc_ingest_time.event_timestamp_time,
+    fields: [ioc_matches.count, ioc_matches.event_timestamp_time,
       ioc_matches.category]
     pivots: [ioc_matches.category]
     sorts: [ioc_matches.count desc 0, ioc_matches.category]
@@ -91,7 +91,7 @@
     totals_color: "#808080"
     defaults_version: 1
     listen:
-      Time: ioc_matches__ioc_ingest_time.event_timestamp_time
+      Time: ioc_matches.event_timestamp_time
     row: 0
     col: 0
     width: 24
@@ -160,7 +160,7 @@
     show_null_points: true
     interpolation: linear
     listen:
-      Time: ioc_matches__ioc_ingest_time.event_timestamp_time
+      Time: ioc_matches.event_timestamp_time
     row: 14
     col: 0
     width: 8
@@ -229,7 +229,7 @@
     show_null_points: true
     interpolation: linear
     listen:
-      Time: ioc_matches__ioc_ingest_time.event_timestamp_time
+      Time: ioc_matches.event_timestamp_time
     row: 14
     col: 8
     width: 8
@@ -298,7 +298,7 @@
     show_null_points: true
     interpolation: linear
     listen:
-      Time: ioc_matches__ioc_ingest_time.event_timestamp_time
+      Time: ioc_matches.event_timestamp_time
     row: 14
     col: 16
     width: 8
@@ -350,7 +350,7 @@
       ioc_matches.count: Count
     defaults_version: 1
     listen:
-      Time: ioc_matches__ioc_ingest_time.event_timestamp_time
+      Time: ioc_matches.event_timestamp_time
     row: 8
     col: 0
     width: 8
@@ -402,7 +402,7 @@
       ioc_matches.count: Count
     defaults_version: 1
     listen:
-      Time: ioc_matches__ioc_ingest_time.event_timestamp_time
+      Time: ioc_matches.event_timestamp_time
     row: 8
     col: 8
     width: 8
@@ -452,7 +452,7 @@
       ioc_matches.count: Count
     defaults_version: 1
     listen:
-      Time: ioc_matches__ioc_ingest_time.event_timestamp_time
+      Time: ioc_matches.event_timestamp_time
     row: 8
     col: 16
     width: 8
@@ -471,4 +471,4 @@
     #model: block_google_chronicle
     explore: ioc_matches
     listens_to_filters: []
-    field: ioc_matches__ioc_ingest_time.event_timestamp_time
+    field: ioc_matches.event_timestamp_time
