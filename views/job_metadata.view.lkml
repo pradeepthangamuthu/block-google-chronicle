@@ -1,5 +1,5 @@
 view: job_metadata {
-  sql_table_name: `datalake.job_metadata`
+  sql_table_name: `job_metadata`
     ;;
 
   dimension: customer_id {

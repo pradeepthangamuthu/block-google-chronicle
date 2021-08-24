@@ -1,5 +1,5 @@
 view: rule_detections {
-  sql_table_name: `datalake.rule_detections`
+  sql_table_name: `rule_detections`
     ;;
 
   dimension: detection__assets {

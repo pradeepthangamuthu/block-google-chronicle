@@ -1,5 +1,5 @@
 view: ioc_matches {
-  sql_table_name: `datalake.ioc_matches`
+  sql_table_name: `ioc_matches`
     ;;
 
   dimension: asset__asset_ip_address {

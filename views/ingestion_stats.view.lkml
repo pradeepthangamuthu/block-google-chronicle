@@ -1,5 +1,5 @@
 view: ingestion_stats {
-  sql_table_name: `datalake.ingestion_stats`
+  sql_table_name: `ingestion_stats`
     ;;
 
   dimension_group: _partitiondate {

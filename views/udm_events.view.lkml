@@ -1,5 +1,5 @@
 view: udm_events {
-  sql_table_name: `datalake.udm_events`
+  sql_table_name: `udm_events`
     ;;
 
   dimension_group: _partitiondate {
