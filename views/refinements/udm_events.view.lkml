@@ -1,6 +1,13 @@
 include: "/views/udm_events.view.lkml"
 
 view: +udm_events {
+
+  dimension: primary_key {
+    primary_key: yes
+    hidden: yes
+    sql: CONCAT(${TABLE}.metadata.productg_log_id, ${TABLE}.metadata.event_timestamp.seconds, ${TABLE}.metadata.event_timestamp.nanos, ${TABLE}.metadata.event_type, ${TABLE}.metadata.vendor_name, ${TABLE}.metadata.product_name);;
+  }
+
   dimension_group: event_timestamp {
     type: time
     timeframes: [
