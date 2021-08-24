@@ -1,4 +1,4 @@
-include: "/views/udm_events.view.lkml"
+include: "/views/refinements/udm_events.view.lkml"
 
 explore: udm_events {
   # join: udm_events__principal {
