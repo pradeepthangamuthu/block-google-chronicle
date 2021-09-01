@@ -882,6 +882,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: observer__asset__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.observer.asset.attribute.cloud.project.product_object_id ;;
+    group_label: "Observer Asset Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: observer__asset__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.observer.asset.attribute.cloud.project.resource_subtype ;;
@@ -924,6 +931,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: observer__asset__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.observer.asset.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Observer Asset Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: observer__asset__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.observer.asset.attribute.cloud.vpc.resource_subtype ;;
@@ -945,11 +959,39 @@ view: udm_events {
     group_item_label: "Type"
   }
 
+  dimension: observer__asset__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.observer.asset.attribute.creation_time.nanos ;;
+    group_label: "Observer Asset Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: observer__asset__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.observer.asset.attribute.creation_time.seconds ;;
+    group_label: "Observer Asset Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: observer__asset__attribute__labels {
     hidden: yes
     sql: ${TABLE}.observer.asset.attribute.labels ;;
     group_label: "Observer Asset Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: observer__asset__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.observer.asset.attribute.last_update_time.nanos ;;
+    group_label: "Observer Asset Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: observer__asset__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.observer.asset.attribute.last_update_time.seconds ;;
+    group_label: "Observer Asset Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: observer__asset__attribute__permissions {
@@ -1197,11 +1239,39 @@ view: udm_events {
     group_item_label: "Environment"
   }
 
+  dimension: observer__cloud__project__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.observer.cloud.project.attribute.creation_time.nanos ;;
+    group_label: "Observer Cloud Project Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: observer__cloud__project__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.observer.cloud.project.attribute.creation_time.seconds ;;
+    group_label: "Observer Cloud Project Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: observer__cloud__project__attribute__labels {
     hidden: yes
     sql: ${TABLE}.observer.cloud.project.attribute.labels ;;
     group_label: "Observer Cloud Project Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: observer__cloud__project__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.observer.cloud.project.attribute.last_update_time.nanos ;;
+    group_label: "Observer Cloud Project Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: observer__cloud__project__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.observer.cloud.project.attribute.last_update_time.seconds ;;
+    group_label: "Observer Cloud Project Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: observer__cloud__project__attribute__permissions {
@@ -1239,6 +1309,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: observer__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.observer.cloud.project.product_object_id ;;
+    group_label: "Observer Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: observer__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.observer.cloud.project.resource_subtype ;;
@@ -1260,11 +1337,39 @@ view: udm_events {
     group_item_label: "Type"
   }
 
+  dimension: observer__cloud__vpc__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.observer.cloud.vpc.attribute.creation_time.nanos ;;
+    group_label: "Observer Cloud Vpc Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: observer__cloud__vpc__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.observer.cloud.vpc.attribute.creation_time.seconds ;;
+    group_label: "Observer Cloud Vpc Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: observer__cloud__vpc__attribute__labels {
     hidden: yes
     sql: ${TABLE}.observer.cloud.vpc.attribute.labels ;;
     group_label: "Observer Cloud Vpc Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: observer__cloud__vpc__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.observer.cloud.vpc.attribute.last_update_time.nanos ;;
+    group_label: "Observer Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: observer__cloud__vpc__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.observer.cloud.vpc.attribute.last_update_time.seconds ;;
+    group_label: "Observer Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: observer__cloud__vpc__attribute__permissions {
@@ -1300,6 +1405,13 @@ view: udm_events {
     sql: ${TABLE}.observer.cloud.vpc.parent ;;
     group_label: "Observer Cloud Vpc"
     group_item_label: "Parent"
+  }
+
+  dimension: observer__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.observer.cloud.vpc.product_object_id ;;
+    group_label: "Observer Cloud Vpc"
+    group_item_label: "Product Object ID"
   }
 
   dimension: observer__cloud__vpc__resource_subtype {
@@ -1393,7 +1505,7 @@ view: udm_events {
     group_item_label: "Environment"
   }
 
-  dimension: observer__group__attribute__cloud__project__id {
+  dimension: observer__group__attribute__cloud__pripoject__id {
     type: string
     sql: ${TABLE}.observer.`group`.attribute.cloud.project.id ;;
     group_label: "Observer Group Attribute Cloud Project"
@@ -1412,6 +1524,13 @@ view: udm_events {
     sql: ${TABLE}.observer.`group`.attribute.cloud.project.parent ;;
     group_label: "Observer Group Attribute Cloud Project"
     group_item_label: "Parent"
+  }
+
+  dimension: observer__group__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.observer.`group`.attribute.cloud.project.product_object_id ;;
+    group_label: "Observer Group Attribute Cloud Project"
+    group_item_label: "Product Object ID"
   }
 
   dimension: observer__group__attribute__cloud__project__resource_subtype {
@@ -1456,6 +1575,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: observer__group__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.observer.`group`.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Observer Group Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: observer__group__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.observer.`group`.attribute.cloud.vpc.resource_subtype ;;
@@ -1477,11 +1603,39 @@ view: udm_events {
     group_item_label: "Type"
   }
 
+  dimension: observer__group__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.observer.`group`.attribute.creation_time.nanos ;;
+    group_label: "Observer Group Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: observer__group__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.observer.`group`.attribute.creation_time.seconds ;;
+    group_label: "Observer Group Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: observer__group__attribute__labels {
     hidden: yes
     sql: ${TABLE}.observer.group.attribute.labels ;;
     group_label: "Observer Group Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: observer__group__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.observer.`group`.attribute.last_update_time.nanos ;;
+    group_label: "Observer Group Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: observer__group__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.observer.`group`.attribute.last_update_time.seconds ;;
+    group_label: "Observer Group Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: observer__group__attribute__permissions {
@@ -1834,11 +1988,39 @@ view: udm_events {
     group_item_label: "Environment"
   }
 
+  dimension: observer__resource__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.observer.resource.attribute.creation_time.nanos ;;
+    group_label: "Observer Resource Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: observer__resource__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.observer.resource.attribute.creation_time.seconds ;;
+    group_label: "Observer Resource Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: observer__resource__attribute__labels {
     hidden: yes
     sql: ${TABLE}.observer.resource.attribute.labels ;;
     group_label: "Observer Resource Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: observer__resource__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.observer.resource.attribute.last_update_time.nanos ;;
+    group_label: "Observer Resource Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: observer__resource__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.observer.resource.attribute.last_update_time.seconds ;;
+    group_label: "Observer Resource Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: observer__resource__attribute__permissions {
@@ -1874,6 +2056,13 @@ view: udm_events {
     sql: ${TABLE}.observer.resource.parent ;;
     group_label: "Observer Resource"
     group_item_label: "Parent"
+  }
+
+  dimension: observer__resource__product_object_id {
+    type: string
+    sql: ${TABLE}.observer.resource.product_object_id ;;
+    group_label: "Observer Resource"
+    group_item_label: "Product Object ID"
   }
 
   dimension: observer__resource__resource_subtype {
@@ -1939,6 +2128,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: observer__user__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.observer.user.attribute.cloud.project.product_object_id ;;
+    group_label: "Observer User Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: observer__user__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.observer.user.attribute.cloud.project.resource_subtype ;;
@@ -1981,6 +2177,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: observer__user__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.observer.user.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Observer User Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: observer__user__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.observer.user.attribute.cloud.vpc.resource_subtype ;;
@@ -2002,11 +2205,39 @@ view: udm_events {
     group_item_label: "Type"
   }
 
+  dimension: observer__user__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.observer.user.attribute.creation_time.nanos ;;
+    group_label: "Observer User Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: observer__user__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.observer.user.attribute.creation_time.seconds ;;
+    group_label: "Observer User Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: observer__user__attribute__labels {
     hidden: yes
     sql: ${TABLE}.observer.user.attribute.labels ;;
     group_label: "Observer User Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: observer__user__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.observer.user.attribute.last_update_time.nanos ;;
+    group_label: "Observer User Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: observer__user__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.observer.user.attribute.last_update_time.seconds ;;
+    group_label: "Observer User Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: observer__user__attribute__permissions {
@@ -2310,6 +2541,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: principal__asset__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.principal.asset.attribute.cloud.project.product_object_id ;;
+    group_label: "Principal Asset Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: principal__asset__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.principal.asset.attribute.cloud.project.resource_subtype ;;
@@ -2352,6 +2590,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: principal__asset__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.principal.asset.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Principal Asset Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: principal__asset__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.principal.asset.attribute.cloud.vpc.resource_subtype ;;
@@ -2373,11 +2618,39 @@ view: udm_events {
     group_item_label: "Type"
   }
 
+  dimension: principal__asset__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.principal.asset.attribute.creation_time.nanos ;;
+    group_label: "Principal Asset Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: principal__asset__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.principal.asset.attribute.creation_time.seconds ;;
+    group_label: "Principal Asset Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: principal__asset__attribute__labels {
     hidden: yes
     sql: ${TABLE}.principal.asset.attribute.labels ;;
     group_label: "Principal Asset Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: principal__asset__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.principal.asset.attribute.last_update_time.nanos ;;
+    group_label: "Principal Asset Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: principal__asset__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.principal.asset.attribute.last_update_time.seconds ;;
+    group_label: "Principal Asset Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: principal__asset__attribute__permissions {
@@ -2625,11 +2898,39 @@ view: udm_events {
     group_item_label: "Environment"
   }
 
+  dimension: principal__cloud__project__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.principal.cloud.project.attribute.creation_time.nanos ;;
+    group_label: "Principal Cloud Project Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: principal__cloud__project__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.principal.cloud.project.attribute.creation_time.seconds ;;
+    group_label: "Principal Cloud Project Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: principal__cloud__project__attribute__labels {
     hidden: yes
     sql: ${TABLE}.principal.cloud.project.attribute.labels ;;
     group_label: "Principal Cloud Project Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: principal__cloud__project__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.principal.cloud.project.attribute.last_update_time.nanos ;;
+    group_label: "Principal Cloud Project Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: principal__cloud__project__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.principal.cloud.project.attribute.last_update_time.seconds ;;
+    group_label: "Principal Cloud Project Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: principal__cloud__project__attribute__permissions {
@@ -2667,6 +2968,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: principal__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.principal.cloud.project.product_object_id ;;
+    group_label: "Principal Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: principal__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.principal.cloud.project.resource_subtype ;;
@@ -2688,11 +2996,39 @@ view: udm_events {
     group_item_label: "Type"
   }
 
+  dimension: principal__cloud__vpc__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.principal.cloud.vpc.attribute.creation_time.nanos ;;
+    group_label: "Principal Cloud Vpc Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: principal__cloud__vpc__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.principal.cloud.vpc.attribute.creation_time.seconds ;;
+    group_label: "Principal Cloud Vpc Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: principal__cloud__vpc__attribute__labels {
     hidden: yes
     sql: ${TABLE}.principal.cloud.vpc.attribute.labels ;;
     group_label: "Principal Cloud Vpc Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: principal__cloud__vpc__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.principal.cloud.vpc.attribute.last_update_time.nanos ;;
+    group_label: "Principal Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: principal__cloud__vpc__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.principal.cloud.vpc.attribute.last_update_time.seconds ;;
+    group_label: "Principal Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: principal__cloud__vpc__attribute__permissions {
@@ -2728,6 +3064,13 @@ view: udm_events {
     sql: ${TABLE}.principal.cloud.vpc.parent ;;
     group_label: "Principal Cloud Vpc"
     group_item_label: "Parent"
+  }
+
+  dimension: principal__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.principal.cloud.vpc.product_object_id ;;
+    group_label: "Principal Cloud Vpc"
+    group_item_label: "Product Object ID"
   }
 
   dimension: principal__cloud__vpc__resource_subtype {
@@ -2842,6 +3185,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: principal__group__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.principal.`group`.attribute.cloud.project.product_object_id ;;
+    group_label: "Principal Group Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: principal__group__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.principal.`group`.attribute.cloud.project.resource_subtype ;;
@@ -2884,6 +3234,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: principal__group__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.principal.`group`.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Principal Group Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: principal__group__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.principal.`group`.attribute.cloud.vpc.resource_subtype ;;
@@ -2905,11 +3262,39 @@ view: udm_events {
     group_item_label: "Type"
   }
 
+  dimension: principal__group__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.principal.`group`.attribute.creation_time.nanos ;;
+    group_label: "Principal Group Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: principal__group__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.principal.`group`.attribute.creation_time.seconds ;;
+    group_label: "Principal Group Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: principal__group__attribute__labels {
     hidden: yes
     sql: ${TABLE}.principal.group.attribute.labels ;;
     group_label: "Principal Group Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: principal__group__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.principal.`group`.attribute.last_update_time.nanos ;;
+    group_label: "Principal Group Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: principal__group__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.principal.`group`.attribute.last_update_time.seconds ;;
+    group_label: "Principal Group Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: principal__group__attribute__permissions {
@@ -3262,11 +3647,39 @@ view: udm_events {
     group_item_label: "Environment"
   }
 
+  dimension: principal__resource__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.principal.resource.attribute.creation_time.nanos ;;
+    group_label: "Principal Resource Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: principal__resource__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.principal.resource.attribute.creation_time.seconds ;;
+    group_label: "Principal Resource Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: principal__resource__attribute__labels {
     hidden: yes
     sql: ${TABLE}.principal.resource.attribute.labels ;;
     group_label: "Principal Resource Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: principal__resource__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.principal.resource.attribute.last_update_time.nanos ;;
+    group_label: "Principal Resource Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: principal__resource__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.principal.resource.attribute.last_update_time.seconds ;;
+    group_label: "Principal Resource Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: principal__resource__attribute__permissions {
@@ -3302,6 +3715,13 @@ view: udm_events {
     sql: ${TABLE}.principal.resource.parent ;;
     group_label: "Principal Resource"
     group_item_label: "Parent"
+  }
+
+  dimension: principal__resource__product_object_id {
+    type: string
+    sql: ${TABLE}.principal.resource.product_object_id ;;
+    group_label: "Principal Resource"
+    group_item_label: "Product Object ID"
   }
 
   dimension: principal__resource__resource_subtype {
@@ -3367,6 +3787,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: principal__user__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.principal.user.attribute.cloud.project.product_object_id ;;
+    group_label: "Principal User Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: principal__user__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.principal.user.attribute.cloud.project.resource_subtype ;;
@@ -3409,6 +3836,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: principal__user__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.principal.user.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Principal User Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: principal__user__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.principal.user.attribute.cloud.vpc.resource_subtype ;;
@@ -3430,11 +3864,39 @@ view: udm_events {
     group_item_label: "Type"
   }
 
+  dimension: principal__user__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.principal.user.attribute.creation_time.nanos ;;
+    group_label: "Principal User Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: principal__user__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.principal.user.attribute.creation_time.seconds ;;
+    group_label: "Principal User Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: principal__user__attribute__labels {
     hidden: yes
     sql: ${TABLE}.principal.user.attribute.labels ;;
     group_label: "Principal User Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: principal__user__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.principal.user.attribute.last_update_time.nanos ;;
+    group_label: "Principal User Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: principal__user__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.principal.user.attribute.last_update_time.seconds ;;
+    group_label: "Principal User Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: principal__user__attribute__permissions {
@@ -3750,6 +4212,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: src__asset__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.src.asset.attribute.cloud.project.product_object_id ;;
+    group_label: "Src Asset Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: src__asset__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.src.asset.attribute.cloud.project.resource_subtype ;;
@@ -3792,6 +4261,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: src__asset__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.src.asset.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Src Asset Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: src__asset__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.src.asset.attribute.cloud.vpc.resource_subtype ;;
@@ -3813,11 +4289,39 @@ view: udm_events {
     group_item_label: "Type"
   }
 
+  dimension: src__asset__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.src.asset.attribute.creation_time.nanos ;;
+    group_label: "Src Asset Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: src__asset__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.src.asset.attribute.creation_time.seconds ;;
+    group_label: "Src Asset Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: src__asset__attribute__labels {
     hidden: yes
     sql: ${TABLE}.src.asset.attribute.labels ;;
     group_label: "Src Asset Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: src__asset__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.src.asset.attribute.last_update_time.nanos ;;
+    group_label: "Src Asset Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: src__asset__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.src.asset.attribute.last_update_time.seconds ;;
+    group_label: "Src Asset Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: src__asset__attribute__permissions {
@@ -4065,11 +4569,39 @@ view: udm_events {
     group_item_label: "Environment"
   }
 
+  dimension: src__cloud__project__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.src.cloud.project.attribute.creation_time.nanos ;;
+    group_label: "Src Cloud Project Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: src__cloud__project__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.src.cloud.project.attribute.creation_time.seconds ;;
+    group_label: "Src Cloud Project Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: src__cloud__project__attribute__labels {
     hidden: yes
     sql: ${TABLE}.src.cloud.project.attribute.labels ;;
     group_label: "Src Cloud Project Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: src__cloud__project__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.src.cloud.project.attribute.last_update_time.nanos ;;
+    group_label: "Src Cloud Project Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: src__cloud__project__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.src.cloud.project.attribute.last_update_time.seconds ;;
+    group_label: "Src Cloud Project Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: src__cloud__project__attribute__permissions {
@@ -4107,6 +4639,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: src__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.src.cloud.project.product_object_id ;;
+    group_label: "Src Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: src__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.src.cloud.project.resource_subtype ;;
@@ -4128,11 +4667,39 @@ view: udm_events {
     group_item_label: "Type"
   }
 
+  dimension: src__cloud__vpc__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.src.cloud.vpc.attribute.creation_time.nanos ;;
+    group_label: "Src Cloud Vpc Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: src__cloud__vpc__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.src.cloud.vpc.attribute.creation_time.seconds ;;
+    group_label: "Src Cloud Vpc Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: src__cloud__vpc__attribute__labels {
     hidden: yes
     sql: ${TABLE}.src.cloud.vpc.attribute.labels ;;
     group_label: "Src Cloud Vpc Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: src__cloud__vpc__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.src.cloud.vpc.attribute.last_update_time.nanos ;;
+    group_label: "Src Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: src__cloud__vpc__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.src.cloud.vpc.attribute.last_update_time.seconds ;;
+    group_label: "Src Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: src__cloud__vpc__attribute__permissions {
@@ -4168,6 +4735,13 @@ view: udm_events {
     sql: ${TABLE}.src.cloud.vpc.parent ;;
     group_label: "Src Cloud Vpc"
     group_item_label: "Parent"
+  }
+
+  dimension: src__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.src.cloud.vpc.product_object_id ;;
+    group_label: "Src Cloud Vpc"
+    group_item_label: "Product Object ID"
   }
 
   dimension: src__cloud__vpc__resource_subtype {
@@ -4282,6 +4856,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: src__group__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.src.`group`.attribute.cloud.project.product_object_id ;;
+    group_label: "Src Group Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: src__group__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.src.`group`.attribute.cloud.project.resource_subtype ;;
@@ -4324,6 +4905,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: src__group__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.src.`group`.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Src Group Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: src__group__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.src.`group`.attribute.cloud.vpc.resource_subtype ;;
@@ -4345,11 +4933,39 @@ view: udm_events {
     group_item_label: "Type"
   }
 
+  dimension: src__group__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.src.`group`.attribute.creation_time.nanos ;;
+    group_label: "Src Group Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: src__group__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.src.`group`.attribute.creation_time.seconds ;;
+    group_label: "Src Group Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: src__group__attribute__labels {
     hidden: yes
     sql: ${TABLE}.src.group.attribute.labels ;;
     group_label: "Src Group Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: src__group__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.src.`group`.attribute.last_update_time.nanos ;;
+    group_label: "Src Group Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: src__group__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.src.`group`.attribute.last_update_time.seconds ;;
+    group_label: "Src Group Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: src__group__attribute__permissions {
@@ -4702,11 +5318,39 @@ view: udm_events {
     group_item_label: "Environment"
   }
 
+  dimension: src__resource__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.src.resource.attribute.creation_time.nanos ;;
+    group_label: "Src Resource Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: src__resource__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.src.resource.attribute.creation_time.seconds ;;
+    group_label: "Src Resource Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: src__resource__attribute__labels {
     hidden: yes
     sql: ${TABLE}.src.resource.attribute.labels ;;
     group_label: "Src Resource Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: src__resource__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.src.resource.attribute.last_update_time.nanos ;;
+    group_label: "Src Resource Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: src__resource__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.src.resource.attribute.last_update_time.seconds ;;
+    group_label: "Src Resource Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: src__resource__attribute__permissions {
@@ -4742,6 +5386,13 @@ view: udm_events {
     sql: ${TABLE}.src.resource.parent ;;
     group_label: "Src Resource"
     group_item_label: "Parent"
+  }
+
+  dimension: src__resource__product_object_id {
+    type: string
+    sql: ${TABLE}.src.resource.product_object_id ;;
+    group_label: "Src Resource"
+    group_item_label: "Product Object ID"
   }
 
   dimension: src__resource__resource_subtype {
@@ -4807,6 +5458,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: src__user__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.src.user.attribute.cloud.project.product_object_id ;;
+    group_label: "Src User Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: src__user__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.src.user.attribute.cloud.project.resource_subtype ;;
@@ -4849,6 +5507,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: src__user__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.src.user.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Src User Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: src__user__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.src.user.attribute.cloud.vpc.resource_subtype ;;
@@ -4870,11 +5535,39 @@ view: udm_events {
     group_item_label: "Type"
   }
 
+  dimension: src__user__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.src.user.attribute.creation_time.nanos ;;
+    group_label: "Src User Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: src__user__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.src.user.attribute.creation_time.seconds ;;
+    group_label: "Src User Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: src__user__attribute__labels {
     hidden: yes
     sql: ${TABLE}.src.user.attribute.labels ;;
     group_label: "Src User Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: src__user__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.src.user.attribute.last_update_time.nanos ;;
+    group_label: "Src User Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: src__user__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.src.user.attribute.last_update_time.seconds ;;
+    group_label: "Src User Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: src__user__attribute__permissions {
@@ -5178,6 +5871,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: target__asset__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.target.asset.attribute.cloud.project.product_object_id ;;
+    group_label: "Target Asset Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: target__asset__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.target.asset.attribute.cloud.project.resource_subtype ;;
@@ -5220,6 +5920,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: target__asset__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.target.asset.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Target Asset Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: target__asset__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.target.asset.attribute.cloud.vpc.resource_subtype ;;
@@ -5241,11 +5948,39 @@ view: udm_events {
     group_item_label: "Type"
   }
 
+  dimension: target__asset__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.target.asset.attribute.creation_time.nanos ;;
+    group_label: "Target Asset Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: target__asset__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.target.asset.attribute.creation_time.seconds ;;
+    group_label: "Target Asset Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: target__asset__attribute__labels {
     hidden: yes
     sql: ${TABLE}.target.asset.attribute.labels ;;
     group_label: "Target Asset Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: target__asset__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.target.asset.attribute.last_update_time.nanos ;;
+    group_label: "Target Asset Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: target__asset__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.target.asset.attribute.last_update_time.seconds ;;
+    group_label: "Target Asset Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: target__asset__attribute__permissions {
@@ -5493,11 +6228,39 @@ view: udm_events {
     group_item_label: "Environment"
   }
 
+  dimension: target__cloud__project__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.target.cloud.project.attribute.creation_time.nanos ;;
+    group_label: "Target Cloud Project Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: target__cloud__project__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.target.cloud.project.attribute.creation_time.seconds ;;
+    group_label: "Target Cloud Project Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: target__cloud__project__attribute__labels {
     hidden: yes
     sql: ${TABLE}.target.cloud.project.attribute.labels ;;
     group_label: "Target Cloud Project Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: target__cloud__project__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.target.cloud.project.attribute.last_update_time.nanos ;;
+    group_label: "Target Cloud Project Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: target__cloud__project__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.target.cloud.project.attribute.last_update_time.seconds ;;
+    group_label: "Target Cloud Project Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: target__cloud__project__attribute__permissions {
@@ -5535,6 +6298,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: target__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.target.cloud.project.product_object_id ;;
+    group_label: "Target Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: target__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.target.cloud.project.resource_subtype ;;
@@ -5556,11 +6326,39 @@ view: udm_events {
     group_item_label: "Type"
   }
 
+  dimension: target__cloud__vpc__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.target.cloud.vpc.attribute.creation_time.nanos ;;
+    group_label: "Target Cloud Vpc Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: target__cloud__vpc__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.target.cloud.vpc.attribute.creation_time.seconds ;;
+    group_label: "Target Cloud Vpc Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: target__cloud__vpc__attribute__labels {
     hidden: yes
     sql: ${TABLE}.target.cloud.vpc.attribute.labels ;;
     group_label: "Target Cloud Vpc Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: target__cloud__vpc__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.target.cloud.vpc.attribute.last_update_time.nanos ;;
+    group_label: "Target Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: target__cloud__vpc__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.target.cloud.vpc.attribute.last_update_time.seconds ;;
+    group_label: "Target Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: target__cloud__vpc__attribute__permissions {
@@ -5596,6 +6394,13 @@ view: udm_events {
     sql: ${TABLE}.target.cloud.vpc.parent ;;
     group_label: "Target Cloud Vpc"
     group_item_label: "Parent"
+  }
+
+  dimension: target__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.target.cloud.vpc.product_object_id ;;
+    group_label: "Target Cloud Vpc"
+    group_item_label: "Product Object ID"
   }
 
   dimension: target__cloud__vpc__resource_subtype {
@@ -5710,6 +6515,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: target__group__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.target.`group`.attribute.cloud.project.product_object_id ;;
+    group_label: "Target Group Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: target__group__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.target.`group`.attribute.cloud.project.resource_subtype ;;
@@ -5752,6 +6564,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: target__group__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.target.`group`.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Target Group Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: target__group__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.target.`group`.attribute.cloud.vpc.resource_subtype ;;
@@ -5773,11 +6592,39 @@ view: udm_events {
     group_item_label: "Type"
   }
 
+  dimension: target__group__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.target.`group`.attribute.creation_time.nanos ;;
+    group_label: "Target Group Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: target__group__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.target.`group`.attribute.creation_time.seconds ;;
+    group_label: "Target Group Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: target__group__attribute__labels {
     hidden: yes
     sql: ${TABLE}.target.group.attribute.labels ;;
     group_label: "Target Group Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: target__group__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.target.`group`.attribute.last_update_time.nanos ;;
+    group_label: "Target Group Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: target__group__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.target.`group`.attribute.last_update_time.seconds ;;
+    group_label: "Target Group Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: target__group__attribute__permissions {
@@ -6130,11 +6977,39 @@ view: udm_events {
     group_item_label: "Environment"
   }
 
+  dimension: target__resource__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.target.resource.attribute.creation_time.nanos ;;
+    group_label: "Target Resource Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: target__resource__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.target.resource.attribute.creation_time.seconds ;;
+    group_label: "Target Resource Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: target__resource__attribute__labels {
     hidden: yes
     sql: ${TABLE}.target.resource.attribute.labels ;;
     group_label: "Target Resource Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: target__resource__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.target.resource.attribute.last_update_time.nanos ;;
+    group_label: "Target Resource Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: target__resource__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.target.resource.attribute.last_update_time.seconds ;;
+    group_label: "Target Resource Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: target__resource__attribute__permissions {
@@ -6170,6 +7045,13 @@ view: udm_events {
     sql: ${TABLE}.target.resource.parent ;;
     group_label: "Target Resource"
     group_item_label: "Parent"
+  }
+
+  dimension: target__resource__product_object_id {
+    type: string
+    sql: ${TABLE}.target.resource.product_object_id ;;
+    group_label: "Target Resource"
+    group_item_label: "Product Object ID"
   }
 
   dimension: target__resource__resource_subtype {
@@ -6235,6 +7117,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: target__user__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.target.user.attribute.cloud.project.product_object_id ;;
+    group_label: "Target User Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: target__user__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.target.user.attribute.cloud.project.resource_subtype ;;
@@ -6277,6 +7166,13 @@ view: udm_events {
     group_item_label: "Parent"
   }
 
+  dimension: target__user__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.target.user.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Target User Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: target__user__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.target.user.attribute.cloud.vpc.resource_subtype ;;
@@ -6298,11 +7194,39 @@ view: udm_events {
     group_item_label: "Type"
   }
 
+  dimension: target__user__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.target.user.attribute.creation_time.nanos ;;
+    group_label: "Target User Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: target__user__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.target.user.attribute.creation_time.seconds ;;
+    group_label: "Target User Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: target__user__attribute__labels {
     hidden: yes
     sql: ${TABLE}.target.user.attribute.labels ;;
     group_label: "Target User Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: target__user__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.target.user.attribute.last_update_time.nanos ;;
+    group_label: "Target User Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: target__user__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.target.user.attribute.last_update_time.seconds ;;
+    group_label: "Target User Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: target__user__attribute__permissions {
@@ -6740,6 +7664,13 @@ view: udm_events__about {
     group_item_label: "Parent"
   }
 
+  dimension: asset__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.asset.attribute.cloud.project.product_object_id ;;
+    group_label: "Asset Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: asset__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.asset.attribute.cloud.project.resource_subtype ;;
@@ -6782,6 +7713,13 @@ view: udm_events__about {
     group_item_label: "Parent"
   }
 
+  dimension: asset__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.asset.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Asset Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: asset__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.asset.attribute.cloud.vpc.resource_subtype ;;
@@ -6803,11 +7741,39 @@ view: udm_events__about {
     group_item_label: "Type"
   }
 
+  dimension: asset__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.asset.attribute.creation_time.nanos ;;
+    group_label: "Asset Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.asset.attribute.creation_time.seconds ;;
+    group_label: "Asset Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: asset__attribute__labels {
     hidden: yes
     sql: ${TABLE}.asset.attribute.labels ;;
     group_label: "Asset Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: asset__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.asset.attribute.last_update_time.nanos ;;
+    group_label: "Asset Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.asset.attribute.last_update_time.seconds ;;
+    group_label: "Asset Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: asset__attribute__permissions {
@@ -7053,11 +8019,39 @@ view: udm_events__about {
     group_item_label: "Environment"
   }
 
+  dimension: cloud__project__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.cloud.project.attribute.creation_time.nanos ;;
+    group_label: "Cloud Project Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: cloud__project__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.cloud.project.attribute.creation_time.seconds ;;
+    group_label: "Cloud Project Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: cloud__project__attribute__labels {
     hidden: yes
     sql: ${TABLE}.cloud.project.attribute.labels ;;
     group_label: "Cloud Project Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: cloud__project__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.cloud.project.attribute.last_update_time.nanos ;;
+    group_label: "Cloud Project Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: cloud__project__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.cloud.project.attribute.last_update_time.seconds ;;
+    group_label: "Cloud Project Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: cloud__project__attribute__permissions {
@@ -7095,6 +8089,13 @@ view: udm_events__about {
     group_item_label: "Parent"
   }
 
+  dimension: cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.cloud.project.product_object_id ;;
+    group_label: "Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.cloud.project.resource_subtype ;;
@@ -7116,11 +8117,39 @@ view: udm_events__about {
     group_item_label: "Type"
   }
 
+  dimension: cloud__vpc__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.cloud.vpc.attribute.creation_time.nanos ;;
+    group_label: "Cloud Vpc Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: cloud__vpc__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.cloud.vpc.attribute.creation_time.seconds ;;
+    group_label: "Cloud Vpc Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: cloud__vpc__attribute__labels {
     hidden: yes
     sql: ${TABLE}.cloud.vpc.attribute.labels ;;
     group_label: "Cloud Vpc Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: cloud__vpc__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.cloud.vpc.attribute.last_update_time.nanos ;;
+    group_label: "Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: cloud__vpc__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.cloud.vpc.attribute.last_update_time.seconds ;;
+    group_label: "Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: cloud__vpc__attribute__permissions {
@@ -7156,6 +8185,13 @@ view: udm_events__about {
     sql: ${TABLE}.cloud.vpc.parent ;;
     group_label: "Cloud Vpc"
     group_item_label: "Parent"
+  }
+
+  dimension: cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.cloud.vpc.product_object_id ;;
+    group_label: "Cloud Vpc"
+    group_item_label: "Product Object ID"
   }
 
   dimension: cloud__vpc__resource_subtype {
@@ -7268,6 +8304,13 @@ view: udm_events__about {
     group_item_label: "Parent"
   }
 
+  dimension: group__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.`group`.attribute.cloud.project.product_object_id ;;
+    group_label: "Group Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: group__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.`group`.attribute.cloud.project.resource_subtype ;;
@@ -7310,6 +8353,13 @@ view: udm_events__about {
     group_item_label: "Parent"
   }
 
+  dimension: group__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.`group`.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Group Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: group__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.`group`.attribute.cloud.vpc.resource_subtype ;;
@@ -7331,11 +8381,39 @@ view: udm_events__about {
     group_item_label: "Type"
   }
 
+  dimension: group__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.`group`.attribute.creation_time.nanos ;;
+    group_label: "Group Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: group__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.`group`.attribute.creation_time.seconds ;;
+    group_label: "Group Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: group__attribute__labels {
     hidden: yes
     sql: ${TABLE}.group.attribute.labels ;;
     group_label: "Group Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: group__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.`group`.attribute.last_update_time.nanos ;;
+    group_label: "Group Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: group__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.`group`.attribute.last_update_time.seconds ;;
+    group_label: "Group Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: group__attribute__permissions {
@@ -7654,11 +8732,39 @@ view: udm_events__about {
     group_item_label: "Environment"
   }
 
+  dimension: resource__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.resource.attribute.creation_time.nanos ;;
+    group_label: "Resource Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: resource__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.resource.attribute.creation_time.seconds ;;
+    group_label: "Resource Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: resource__attribute__labels {
     hidden: yes
     sql: ${TABLE}.resource.attribute.labels ;;
     group_label: "Resource Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: resource__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.resource.attribute.last_update_time.nanos ;;
+    group_label: "Resource Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: resource__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.resource.attribute.last_update_time.seconds ;;
+    group_label: "Resource Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: resource__attribute__permissions {
@@ -7694,6 +8800,13 @@ view: udm_events__about {
     sql: ${TABLE}.resource.parent ;;
     group_label: "Resource"
     group_item_label: "Parent"
+  }
+
+  dimension: resource__product_object_id {
+    type: string
+    sql: ${TABLE}.resource.product_object_id ;;
+    group_label: "Resource"
+    group_item_label: "Product Object ID"
   }
 
   dimension: resource__resource_subtype {
@@ -7757,6 +8870,13 @@ view: udm_events__about {
     group_item_label: "Parent"
   }
 
+  dimension: user__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.user.attribute.cloud.project.product_object_id ;;
+    group_label: "User Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: user__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.user.attribute.cloud.project.resource_subtype ;;
@@ -7799,6 +8919,13 @@ view: udm_events__about {
     group_item_label: "Parent"
   }
 
+  dimension: user__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.user.attribute.cloud.vpc.product_object_id ;;
+    group_label: "User Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: user__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.user.attribute.cloud.vpc.resource_subtype ;;
@@ -7820,11 +8947,39 @@ view: udm_events__about {
     group_item_label: "Type"
   }
 
+  dimension: user__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.user.attribute.creation_time.nanos ;;
+    group_label: "User Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: user__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.user.attribute.creation_time.seconds ;;
+    group_label: "User Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: user__attribute__labels {
     hidden: yes
     sql: ${TABLE}.user.attribute.labels ;;
     group_label: "User Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: user__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.user.attribute.last_update_time.nanos ;;
+    group_label: "User Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: user__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.user.attribute.last_update_time.seconds ;;
+    group_label: "User Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: user__attribute__permissions {
@@ -8274,6 +9429,13 @@ view: udm_events__intermediary {
     group_item_label: "Parent"
   }
 
+  dimension: asset__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.asset.attribute.cloud.project.product_object_id ;;
+    group_label: "Asset Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: asset__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.asset.attribute.cloud.project.resource_subtype ;;
@@ -8316,6 +9478,13 @@ view: udm_events__intermediary {
     group_item_label: "Parent"
   }
 
+  dimension: asset__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.asset.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Asset Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: asset__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.asset.attribute.cloud.vpc.resource_subtype ;;
@@ -8337,11 +9506,39 @@ view: udm_events__intermediary {
     group_item_label: "Type"
   }
 
+  dimension: asset__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.asset.attribute.creation_time.nanos ;;
+    group_label: "Asset Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.asset.attribute.creation_time.seconds ;;
+    group_label: "Asset Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: asset__attribute__labels {
     hidden: yes
     sql: ${TABLE}.asset.attribute.labels ;;
     group_label: "Asset Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: asset__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.asset.attribute.last_update_time.nanos ;;
+    group_label: "Asset Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: asset__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.asset.attribute.last_update_time.seconds ;;
+    group_label: "Asset Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: asset__attribute__permissions {
@@ -8587,11 +9784,39 @@ view: udm_events__intermediary {
     group_item_label: "Environment"
   }
 
+  dimension: cloud__project__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.cloud.project.attribute.creation_time.nanos ;;
+    group_label: "Cloud Project Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: cloud__project__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.cloud.project.attribute.creation_time.seconds ;;
+    group_label: "Cloud Project Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: cloud__project__attribute__labels {
     hidden: yes
     sql: ${TABLE}.cloud.project.attribute.labels ;;
     group_label: "Cloud Project Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: cloud__project__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.cloud.project.attribute.last_update_time.nanos ;;
+    group_label: "Cloud Project Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: cloud__project__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.cloud.project.attribute.last_update_time.seconds ;;
+    group_label: "Cloud Project Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: cloud__project__attribute__permissions {
@@ -8629,6 +9854,13 @@ view: udm_events__intermediary {
     group_item_label: "Parent"
   }
 
+  dimension: cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.cloud.project.product_object_id ;;
+    group_label: "Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.cloud.project.resource_subtype ;;
@@ -8650,11 +9882,39 @@ view: udm_events__intermediary {
     group_item_label: "Type"
   }
 
+  dimension: cloud__vpc__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.cloud.vpc.attribute.creation_time.nanos ;;
+    group_label: "Cloud Vpc Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: cloud__vpc__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.cloud.vpc.attribute.creation_time.seconds ;;
+    group_label: "Cloud Vpc Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: cloud__vpc__attribute__labels {
     hidden: yes
     sql: ${TABLE}.cloud.vpc.attribute.labels ;;
     group_label: "Cloud Vpc Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: cloud__vpc__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.cloud.vpc.attribute.last_update_time.nanos ;;
+    group_label: "Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: cloud__vpc__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.cloud.vpc.attribute.last_update_time.seconds ;;
+    group_label: "Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: cloud__vpc__attribute__permissions {
@@ -8690,6 +9950,13 @@ view: udm_events__intermediary {
     sql: ${TABLE}.cloud.vpc.parent ;;
     group_label: "Cloud Vpc"
     group_item_label: "Parent"
+  }
+
+  dimension: cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.cloud.vpc.product_object_id ;;
+    group_label: "Cloud Vpc"
+    group_item_label: "Product Object ID"
   }
 
   dimension: cloud__vpc__resource_subtype {
@@ -8802,6 +10069,13 @@ view: udm_events__intermediary {
     group_item_label: "Parent"
   }
 
+  dimension: group__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.`group`.attribute.cloud.project.product_object_id ;;
+    group_label: "Group Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: group__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.`group`.attribute.cloud.project.resource_subtype ;;
@@ -8844,6 +10118,13 @@ view: udm_events__intermediary {
     group_item_label: "Parent"
   }
 
+  dimension: group__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.`group`.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Group Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: group__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.`group`.attribute.cloud.vpc.resource_subtype ;;
@@ -8865,11 +10146,39 @@ view: udm_events__intermediary {
     group_item_label: "Type"
   }
 
+  dimension: group__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.`group`.attribute.creation_time.nanos ;;
+    group_label: "Group Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: group__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.`group`.attribute.creation_time.seconds ;;
+    group_label: "Group Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: group__attribute__labels {
     hidden: yes
     sql: ${TABLE}.group.attribute.labels ;;
     group_label: "Group Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: group__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.`group`.attribute.last_update_time.nanos ;;
+    group_label: "Group Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: group__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.`group`.attribute.last_update_time.seconds ;;
+    group_label: "Group Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: group__attribute__permissions {
@@ -9188,11 +10497,39 @@ view: udm_events__intermediary {
     group_item_label: "Environment"
   }
 
+  dimension: resource__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.resource.attribute.creation_time.nanos ;;
+    group_label: "Resource Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: resource__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.resource.attribute.creation_time.seconds ;;
+    group_label: "Resource Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: resource__attribute__labels {
     hidden: yes
     sql: ${TABLE}.resource.attribute.labels ;;
     group_label: "Resource Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: resource__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.resource.attribute.last_update_time.nanos ;;
+    group_label: "Resource Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: resource__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.resource.attribute.last_update_time.seconds ;;
+    group_label: "Resource Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: resource__attribute__permissions {
@@ -9228,6 +10565,13 @@ view: udm_events__intermediary {
     sql: ${TABLE}.resource.parent ;;
     group_label: "Resource"
     group_item_label: "Parent"
+  }
+
+  dimension: resource__product_object_id {
+    type: string
+    sql: ${TABLE}.resource.product_object_id ;;
+    group_label: "Resource"
+    group_item_label: "Product Object ID"
   }
 
   dimension: resource__resource_subtype {
@@ -9291,6 +10635,13 @@ view: udm_events__intermediary {
     group_item_label: "Parent"
   }
 
+  dimension: user__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.user.attribute.cloud.project.product_object_id ;;
+    group_label: "User Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: user__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.user.attribute.cloud.project.resource_subtype ;;
@@ -9333,6 +10684,13 @@ view: udm_events__intermediary {
     group_item_label: "Parent"
   }
 
+  dimension: user__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.user.attribute.cloud.vpc.product_object_id ;;
+    group_label: "User Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: user__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.user.attribute.cloud.vpc.resource_subtype ;;
@@ -9354,11 +10712,39 @@ view: udm_events__intermediary {
     group_item_label: "Type"
   }
 
+  dimension: user__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.user.attribute.creation_time.nanos ;;
+    group_label: "User Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: user__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.user.attribute.creation_time.seconds ;;
+    group_label: "User Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: user__attribute__labels {
     hidden: yes
     sql: ${TABLE}.user.attribute.labels ;;
     group_label: "User Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: user__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.user.attribute.last_update_time.nanos ;;
+    group_label: "User Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: user__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.user.attribute.last_update_time.seconds ;;
+    group_label: "User Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: user__attribute__permissions {
@@ -9989,6 +11375,13 @@ view: udm_events__security_result {
     group_item_label: "Parent"
   }
 
+  dimension: about__asset__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.about.asset.attribute.cloud.project.product_object_id ;;
+    group_label: "About Asset Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: about__asset__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.about.asset.attribute.cloud.project.resource_subtype ;;
@@ -10031,6 +11424,13 @@ view: udm_events__security_result {
     group_item_label: "Parent"
   }
 
+  dimension: about__asset__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.about.asset.attribute.cloud.vpc.product_object_id ;;
+    group_label: "About Asset Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: about__asset__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.about.asset.attribute.cloud.vpc.resource_subtype ;;
@@ -10052,11 +11452,39 @@ view: udm_events__security_result {
     group_item_label: "Type"
   }
 
+  dimension: about__asset__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.about.asset.attribute.creation_time.nanos ;;
+    group_label: "About Asset Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__asset__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.about.asset.attribute.creation_time.seconds ;;
+    group_label: "About Asset Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: about__asset__attribute__labels {
     hidden: yes
     sql: ${TABLE}.about.asset.attribute.labels ;;
     group_label: "About Asset Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: about__asset__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.about.asset.attribute.last_update_time.nanos ;;
+    group_label: "About Asset Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__asset__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.about.asset.attribute.last_update_time.seconds ;;
+    group_label: "About Asset Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: about__asset__attribute__permissions {
@@ -10304,11 +11732,39 @@ view: udm_events__security_result {
     group_item_label: "Environment"
   }
 
+  dimension: about__cloud__project__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.about.cloud.project.attribute.creation_time.nanos ;;
+    group_label: "About Cloud Project Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__cloud__project__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.about.cloud.project.attribute.creation_time.seconds ;;
+    group_label: "About Cloud Project Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: about__cloud__project__attribute__labels {
     hidden: yes
     sql: ${TABLE}.about.cloud.project.attribute.labels ;;
     group_label: "About Cloud Project Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: about__cloud__project__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.about.cloud.project.attribute.last_update_time.nanos ;;
+    group_label: "About Cloud Project Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__cloud__project__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.about.cloud.project.attribute.last_update_time.seconds ;;
+    group_label: "About Cloud Project Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: about__cloud__project__attribute__permissions {
@@ -10346,6 +11802,13 @@ view: udm_events__security_result {
     group_item_label: "Parent"
   }
 
+  dimension: about__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.about.cloud.project.product_object_id ;;
+    group_label: "About Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: about__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.about.cloud.project.resource_subtype ;;
@@ -10367,11 +11830,39 @@ view: udm_events__security_result {
     group_item_label: "Type"
   }
 
+  dimension: about__cloud__vpc__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.about.cloud.vpc.attribute.creation_time.nanos ;;
+    group_label: "About Cloud Vpc Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__cloud__vpc__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.about.cloud.vpc.attribute.creation_time.seconds ;;
+    group_label: "About Cloud Vpc Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: about__cloud__vpc__attribute__labels {
     hidden: yes
     sql: ${TABLE}.about.cloud.vpc.attribute.labels ;;
     group_label: "About Cloud Vpc Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: about__cloud__vpc__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.about.cloud.vpc.attribute.last_update_time.nanos ;;
+    group_label: "About Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__cloud__vpc__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.about.cloud.vpc.attribute.last_update_time.seconds ;;
+    group_label: "About Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: about__cloud__vpc__attribute__permissions {
@@ -10407,6 +11898,13 @@ view: udm_events__security_result {
     sql: ${TABLE}.about.cloud.vpc.parent ;;
     group_label: "About Cloud Vpc"
     group_item_label: "Parent"
+  }
+
+  dimension: about__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.about.cloud.vpc.product_object_id ;;
+    group_label: "About Cloud Vpc"
+    group_item_label: "Product Object ID"
   }
 
   dimension: about__cloud__vpc__resource_subtype {
@@ -10521,6 +12019,13 @@ view: udm_events__security_result {
     group_item_label: "Parent"
   }
 
+  dimension: about__group__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.about.`group`.attribute.cloud.project.product_object_id ;;
+    group_label: "About Group Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: about__group__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.about.`group`.attribute.cloud.project.resource_subtype ;;
@@ -10563,6 +12068,13 @@ view: udm_events__security_result {
     group_item_label: "Parent"
   }
 
+  dimension: about__group__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.about.`group`.attribute.cloud.vpc.product_object_id ;;
+    group_label: "About Group Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: about__group__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.about.`group`.attribute.cloud.vpc.resource_subtype ;;
@@ -10584,11 +12096,39 @@ view: udm_events__security_result {
     group_item_label: "Type"
   }
 
+  dimension: about__group__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.about.`group`.attribute.creation_time.nanos ;;
+    group_label: "About Group Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__group__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.about.`group`.attribute.creation_time.seconds ;;
+    group_label: "About Group Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: about__group__attribute__labels {
     hidden: yes
     sql: ${TABLE}.about.group.attribute.labels ;;
     group_label: "About Group Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: about__group__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.about.`group`.attribute.last_update_time.nanos ;;
+    group_label: "About Group Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__group__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.about.`group`.attribute.last_update_time.seconds ;;
+    group_label: "About Group Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: about__group__attribute__permissions {
@@ -10941,11 +12481,39 @@ view: udm_events__security_result {
     group_item_label: "Environment"
   }
 
+  dimension: about__resource__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.about.resource.attribute.creation_time.nanos ;;
+    group_label: "About Resource Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__resource__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.about.resource.attribute.creation_time.seconds ;;
+    group_label: "About Resource Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: about__resource__attribute__labels {
     hidden: yes
     sql: ${TABLE}.about.resource.attribute.labels ;;
     group_label: "About Resource Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: about__resource__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.about.resource.attribute.last_update_time.nanos ;;
+    group_label: "About Resource Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__resource__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.about.resource.attribute.last_update_time.seconds ;;
+    group_label: "About Resource Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: about__resource__attribute__permissions {
@@ -10981,6 +12549,13 @@ view: udm_events__security_result {
     sql: ${TABLE}.about.resource.parent ;;
     group_label: "About Resource"
     group_item_label: "Parent"
+  }
+
+  dimension: about__resource__product_object_id {
+    type: string
+    sql: ${TABLE}.about.resource.product_object_id ;;
+    group_label: "About Resource"
+    group_item_label: "Product Object ID"
   }
 
   dimension: about__resource__resource_subtype {
@@ -11046,6 +12621,13 @@ view: udm_events__security_result {
     group_item_label: "Parent"
   }
 
+  dimension: about__user__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.about.user.attribute.cloud.project.product_object_id ;;
+    group_label: "About User Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: about__user__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.about.user.attribute.cloud.project.resource_subtype ;;
@@ -11088,6 +12670,13 @@ view: udm_events__security_result {
     group_item_label: "Parent"
   }
 
+  dimension: about__user__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.about.user.attribute.cloud.vpc.product_object_id ;;
+    group_label: "About User Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: about__user__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.about.user.attribute.cloud.vpc.resource_subtype ;;
@@ -11109,11 +12698,39 @@ view: udm_events__security_result {
     group_item_label: "Type"
   }
 
+  dimension: about__user__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.about.user.attribute.creation_time.nanos ;;
+    group_label: "About User Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__user__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.about.user.attribute.creation_time.seconds ;;
+    group_label: "About User Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: about__user__attribute__labels {
     hidden: yes
     sql: ${TABLE}.about.user.attribute.labels ;;
     group_label: "About User Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: about__user__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.about.user.attribute.last_update_time.nanos ;;
+    group_label: "About User Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__user__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.about.user.attribute.last_update_time.seconds ;;
+    group_label: "About User Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: about__user__attribute__permissions {
@@ -11454,6 +13071,11 @@ view: udm_events__security_result {
   dimension: summary {
     type: string
     sql: ${TABLE}.summary ;;
+  }
+
+  dimension: threat_feed_name {
+    type: string
+    sql: ${TABLE}.threat_feed_name ;;
   }
 
   dimension: threat_id {
@@ -12691,6 +14313,13 @@ view: udm_events__src__user_management_chain {
     group_item_label: "Parent"
   }
 
+  dimension: attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.attribute.cloud.project.product_object_id ;;
+    group_label: "Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.attribute.cloud.project.resource_subtype ;;
@@ -12733,6 +14362,13 @@ view: udm_events__src__user_management_chain {
     group_item_label: "Parent"
   }
 
+  dimension: attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.attribute.cloud.vpc.resource_subtype ;;
@@ -12754,11 +14390,39 @@ view: udm_events__src__user_management_chain {
     group_item_label: "Type"
   }
 
+  dimension: attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.attribute.creation_time.nanos ;;
+    group_label: "Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.attribute.creation_time.seconds ;;
+    group_label: "Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: attribute__labels {
     hidden: yes
     sql: ${TABLE}.attribute.labels ;;
     group_label: "Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.attribute.last_update_time.nanos ;;
+    group_label: "Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.attribute.last_update_time.seconds ;;
+    group_label: "Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: attribute__permissions {
@@ -13561,6 +15225,13 @@ view: udm_events__about__user_management_chain {
     group_item_label: "Parent"
   }
 
+  dimension: attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.attribute.cloud.project.product_object_id ;;
+    group_label: "Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.attribute.cloud.project.resource_subtype ;;
@@ -13603,6 +15274,13 @@ view: udm_events__about__user_management_chain {
     group_item_label: "Parent"
   }
 
+  dimension: attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.attribute.cloud.vpc.resource_subtype ;;
@@ -13624,11 +15302,39 @@ view: udm_events__about__user_management_chain {
     group_item_label: "Type"
   }
 
+  dimension: attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.attribute.creation_time.nanos ;;
+    group_label: "Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.attribute.creation_time.seconds ;;
+    group_label: "Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: attribute__labels {
     hidden: yes
     sql: ${TABLE}.attribute.labels ;;
     group_label: "Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.attribute.last_update_time.nanos ;;
+    group_label: "Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.attribute.last_update_time.seconds ;;
+    group_label: "Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: attribute__permissions {
@@ -14185,6 +15891,13 @@ view: udm_events__target__user_management_chain {
     group_item_label: "Parent"
   }
 
+  dimension: attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.attribute.cloud.project.product_object_id ;;
+    group_label: "Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.attribute.cloud.project.resource_subtype ;;
@@ -14227,6 +15940,13 @@ view: udm_events__target__user_management_chain {
     group_item_label: "Parent"
   }
 
+  dimension: attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.attribute.cloud.vpc.resource_subtype ;;
@@ -14248,11 +15968,39 @@ view: udm_events__target__user_management_chain {
     group_item_label: "Type"
   }
 
+  dimension: attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.attribute.creation_time.nanos ;;
+    group_label: "Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.attribute.creation_time.seconds ;;
+    group_label: "Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: attribute__labels {
     hidden: yes
     sql: ${TABLE}.attribute.labels ;;
     group_label: "Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.attribute.last_update_time.nanos ;;
+    group_label: "Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.attribute.last_update_time.seconds ;;
+    group_label: "Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: attribute__permissions {
@@ -15116,6 +16864,13 @@ view: udm_events__observer__user_management_chain {
     group_item_label: "Parent"
   }
 
+  dimension: attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.attribute.cloud.project.product_object_id ;;
+    group_label: "Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.attribute.cloud.project.resource_subtype ;;
@@ -15158,6 +16913,13 @@ view: udm_events__observer__user_management_chain {
     group_item_label: "Parent"
   }
 
+  dimension: attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.attribute.cloud.vpc.resource_subtype ;;
@@ -15179,11 +16941,39 @@ view: udm_events__observer__user_management_chain {
     group_item_label: "Type"
   }
 
+  dimension: attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.attribute.creation_time.nanos ;;
+    group_label: "Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.attribute.creation_time.seconds ;;
+    group_label: "Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: attribute__labels {
     hidden: yes
     sql: ${TABLE}.attribute.labels ;;
     group_label: "Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.attribute.last_update_time.nanos ;;
+    group_label: "Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.attribute.last_update_time.seconds ;;
+    group_label: "Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: attribute__permissions {
@@ -15474,6 +17264,13 @@ view: udm_events__principal__user_management_chain {
     group_item_label: "Parent"
   }
 
+  dimension: attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.attribute.cloud.project.product_object_id ;;
+    group_label: "Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.attribute.cloud.project.resource_subtype ;;
@@ -15516,6 +17313,13 @@ view: udm_events__principal__user_management_chain {
     group_item_label: "Parent"
   }
 
+  dimension: attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.attribute.cloud.vpc.resource_subtype ;;
@@ -15537,11 +17341,39 @@ view: udm_events__principal__user_management_chain {
     group_item_label: "Type"
   }
 
+  dimension: attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.attribute.creation_time.nanos ;;
+    group_label: "Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.attribute.creation_time.seconds ;;
+    group_label: "Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: attribute__labels {
     hidden: yes
     sql: ${TABLE}.attribute.labels ;;
     group_label: "Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.attribute.last_update_time.nanos ;;
+    group_label: "Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.attribute.last_update_time.seconds ;;
+    group_label: "Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: attribute__permissions {
@@ -15836,6 +17668,13 @@ view: udm_events__extensions__vulns__vulnerabilities {
     group_item_label: "Parent"
   }
 
+  dimension: about__asset__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.about.asset.attribute.cloud.project.product_object_id ;;
+    group_label: "About Asset Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: about__asset__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.about.asset.attribute.cloud.project.resource_subtype ;;
@@ -15878,6 +17717,13 @@ view: udm_events__extensions__vulns__vulnerabilities {
     group_item_label: "Parent"
   }
 
+  dimension: about__asset__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.about.asset.attribute.cloud.vpc.product_object_id ;;
+    group_label: "About Asset Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: about__asset__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.about.asset.attribute.cloud.vpc.resource_subtype ;;
@@ -15899,11 +17745,39 @@ view: udm_events__extensions__vulns__vulnerabilities {
     group_item_label: "Type"
   }
 
+  dimension: about__asset__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.about.asset.attribute.creation_time.nanos ;;
+    group_label: "About Asset Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__asset__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.about.asset.attribute.creation_time.seconds ;;
+    group_label: "About Asset Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: about__asset__attribute__labels {
     hidden: yes
     sql: ${TABLE}.about.asset.attribute.labels ;;
     group_label: "About Asset Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: about__asset__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.about.asset.attribute.last_update_time.nanos ;;
+    group_label: "About Asset Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__asset__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.about.asset.attribute.last_update_time.seconds ;;
+    group_label: "About Asset Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: about__asset__attribute__permissions {
@@ -16144,11 +18018,39 @@ view: udm_events__extensions__vulns__vulnerabilities {
     group_item_label: "Environment"
   }
 
+  dimension: about__cloud__project__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.about.cloud.project.attribute.creation_time.nanos ;;
+    group_label: "About Cloud Project Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__cloud__project__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.about.cloud.project.attribute.creation_time.seconds ;;
+    group_label: "About Cloud Project Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: about__cloud__project__attribute__labels {
     hidden: yes
     sql: ${TABLE}.about.cloud.project.attribute.labels ;;
     group_label: "About Cloud Project Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: about__cloud__project__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.about.cloud.project.attribute.last_update_time.nanos ;;
+    group_label: "About Cloud Project Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__cloud__project__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.about.cloud.project.attribute.last_update_time.seconds ;;
+    group_label: "About Cloud Project Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: about__cloud__project__attribute__permissions {
@@ -16186,6 +18088,13 @@ view: udm_events__extensions__vulns__vulnerabilities {
     group_item_label: "Parent"
   }
 
+  dimension: about__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.about.cloud.project.product_object_id ;;
+    group_label: "About Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: about__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.about.cloud.project.resource_subtype ;;
@@ -16207,11 +18116,39 @@ view: udm_events__extensions__vulns__vulnerabilities {
     group_item_label: "Type"
   }
 
+  dimension: about__cloud__vpc__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.about.cloud.vpc.attribute.creation_time.nanos ;;
+    group_label: "About Cloud Vpc Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__cloud__vpc__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.about.cloud.vpc.attribute.creation_time.seconds ;;
+    group_label: "About Cloud Vpc Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: about__cloud__vpc__attribute__labels {
     hidden: yes
     sql: ${TABLE}.about.cloud.vpc.attribute.labels ;;
     group_label: "About Cloud Vpc Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: about__cloud__vpc__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.about.cloud.vpc.attribute.last_update_time.nanos ;;
+    group_label: "About Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__cloud__vpc__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.about.cloud.vpc.attribute.last_update_time.seconds ;;
+    group_label: "About Cloud Vpc Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: about__cloud__vpc__attribute__permissions {
@@ -16247,6 +18184,13 @@ view: udm_events__extensions__vulns__vulnerabilities {
     sql: ${TABLE}.about.cloud.vpc.parent ;;
     group_label: "About Cloud Vpc"
     group_item_label: "Parent"
+  }
+
+  dimension: about__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.about.cloud.vpc.product_object_id ;;
+    group_label: "About Cloud Vpc"
+    group_item_label: "Product Object ID"
   }
 
   dimension: about__cloud__vpc__resource_subtype {
@@ -16361,6 +18305,13 @@ view: udm_events__extensions__vulns__vulnerabilities {
     group_item_label: "Parent"
   }
 
+  dimension: about__group__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.about.`group`.attribute.cloud.project.product_object_id ;;
+    group_label: "About Group Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: about__group__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.about.`group`.attribute.cloud.project.resource_subtype ;;
@@ -16403,6 +18354,13 @@ view: udm_events__extensions__vulns__vulnerabilities {
     group_item_label: "Parent"
   }
 
+  dimension: about__group__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.about.`group`.attribute.cloud.vpc.product_object_id ;;
+    group_label: "About Group Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: about__group__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.about.`group`.attribute.cloud.vpc.resource_subtype ;;
@@ -16424,11 +18382,39 @@ view: udm_events__extensions__vulns__vulnerabilities {
     group_item_label: "Type"
   }
 
+  dimension: about__group__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.about.`group`.attribute.creation_time.nanos ;;
+    group_label: "About Group Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__group__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.about.`group`.attribute.creation_time.seconds ;;
+    group_label: "About Group Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: about__group__attribute__labels {
     hidden: yes
     sql: ${TABLE}.about.group.attribute.labels ;;
     group_label: "About Group Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: about__group__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.about.`group`.attribute.last_update_time.nanos ;;
+    group_label: "About Group Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__group__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.about.`group`.attribute.last_update_time.seconds ;;
+    group_label: "About Group Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: about__group__attribute__permissions {
@@ -16781,11 +18767,39 @@ view: udm_events__extensions__vulns__vulnerabilities {
     group_item_label: "Environment"
   }
 
+  dimension: about__resource__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.about.resource.attribute.creation_time.nanos ;;
+    group_label: "About Resource Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__resource__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.about.resource.attribute.creation_time.seconds ;;
+    group_label: "About Resource Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: about__resource__attribute__labels {
     hidden: yes
     sql: ${TABLE}.about.resource.attribute.labels ;;
     group_label: "About Resource Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: about__resource__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.about.resource.attribute.last_update_time.nanos ;;
+    group_label: "About Resource Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__resource__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.about.resource.attribute.last_update_time.seconds ;;
+    group_label: "About Resource Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: about__resource__attribute__permissions {
@@ -16821,6 +18835,13 @@ view: udm_events__extensions__vulns__vulnerabilities {
     sql: ${TABLE}.about.resource.parent ;;
     group_label: "About Resource"
     group_item_label: "Parent"
+  }
+
+  dimension: about__resource__product_object_id {
+    type: string
+    sql: ${TABLE}.about.resource.product_object_id ;;
+    group_label: "About Resource"
+    group_item_label: "Product Object ID"
   }
 
   dimension: about__resource__resource_subtype {
@@ -16886,6 +18907,13 @@ view: udm_events__extensions__vulns__vulnerabilities {
     group_item_label: "Parent"
   }
 
+  dimension: about__user__attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.about.user.attribute.cloud.project.product_object_id ;;
+    group_label: "About User Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: about__user__attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.about.user.attribute.cloud.project.resource_subtype ;;
@@ -16928,6 +18956,13 @@ view: udm_events__extensions__vulns__vulnerabilities {
     group_item_label: "Parent"
   }
 
+  dimension: about__user__attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.about.user.attribute.cloud.vpc.product_object_id ;;
+    group_label: "About User Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: about__user__attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.about.user.attribute.cloud.vpc.resource_subtype ;;
@@ -16949,11 +18984,39 @@ view: udm_events__extensions__vulns__vulnerabilities {
     group_item_label: "Type"
   }
 
+  dimension: about__user__attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.about.user.attribute.creation_time.nanos ;;
+    group_label: "About User Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__user__attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.about.user.attribute.creation_time.seconds ;;
+    group_label: "About User Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: about__user__attribute__labels {
     hidden: yes
     sql: ${TABLE}.about.user.attribute.labels ;;
     group_label: "About User Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: about__user__attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.about.user.attribute.last_update_time.nanos ;;
+    group_label: "About User Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: about__user__attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.about.user.attribute.last_update_time.seconds ;;
+    group_label: "About User Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: about__user__attribute__permissions {
@@ -17898,6 +19961,13 @@ view: udm_events__intermediary__user_management_chain {
     group_item_label: "Parent"
   }
 
+  dimension: attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.attribute.cloud.project.product_object_id ;;
+    group_label: "Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.attribute.cloud.project.resource_subtype ;;
@@ -17940,6 +20010,13 @@ view: udm_events__intermediary__user_management_chain {
     group_item_label: "Parent"
   }
 
+  dimension: attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.attribute.cloud.vpc.resource_subtype ;;
@@ -17961,11 +20038,39 @@ view: udm_events__intermediary__user_management_chain {
     group_item_label: "Type"
   }
 
+  dimension: attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.attribute.creation_time.nanos ;;
+    group_label: "Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.attribute.creation_time.seconds ;;
+    group_label: "Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: attribute__labels {
     hidden: yes
     sql: ${TABLE}.attribute.labels ;;
     group_label: "Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.attribute.last_update_time.nanos ;;
+    group_label: "Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.attribute.last_update_time.seconds ;;
+    group_label: "Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: attribute__permissions {
@@ -19541,6 +21646,13 @@ view: udm_events__security_result__about__user_management_chain {
     group_item_label: "Parent"
   }
 
+  dimension: attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.attribute.cloud.project.product_object_id ;;
+    group_label: "Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.attribute.cloud.project.resource_subtype ;;
@@ -19583,6 +21695,13 @@ view: udm_events__security_result__about__user_management_chain {
     group_item_label: "Parent"
   }
 
+  dimension: attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.attribute.cloud.vpc.resource_subtype ;;
@@ -19604,11 +21723,39 @@ view: udm_events__security_result__about__user_management_chain {
     group_item_label: "Type"
   }
 
+  dimension: attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.attribute.creation_time.nanos ;;
+    group_label: "Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.attribute.creation_time.seconds ;;
+    group_label: "Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: attribute__labels {
     hidden: yes
     sql: ${TABLE}.attribute.labels ;;
     group_label: "Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.attribute.last_update_time.nanos ;;
+    group_label: "Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.attribute.last_update_time.seconds ;;
+    group_label: "Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: attribute__permissions {
@@ -20918,6 +23065,13 @@ view: udm_events__extensions__vulns__vulnerabilities__about__user_management_cha
     group_item_label: "Parent"
   }
 
+  dimension: attribute__cloud__project__product_object_id {
+    type: string
+    sql: ${TABLE}.attribute.cloud.project.product_object_id ;;
+    group_label: "Attribute Cloud Project"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: attribute__cloud__project__resource_subtype {
     type: string
     sql: ${TABLE}.attribute.cloud.project.resource_subtype ;;
@@ -20960,6 +23114,13 @@ view: udm_events__extensions__vulns__vulnerabilities__about__user_management_cha
     group_item_label: "Parent"
   }
 
+  dimension: attribute__cloud__vpc__product_object_id {
+    type: string
+    sql: ${TABLE}.attribute.cloud.vpc.product_object_id ;;
+    group_label: "Attribute Cloud Vpc"
+    group_item_label: "Product Object ID"
+  }
+
   dimension: attribute__cloud__vpc__resource_subtype {
     type: string
     sql: ${TABLE}.attribute.cloud.vpc.resource_subtype ;;
@@ -20981,11 +23142,39 @@ view: udm_events__extensions__vulns__vulnerabilities__about__user_management_cha
     group_item_label: "Type"
   }
 
+  dimension: attribute__creation_time__nanos {
+    type: number
+    sql: ${TABLE}.attribute.creation_time.nanos ;;
+    group_label: "Attribute Creation Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: attribute__creation_time__seconds {
+    type: number
+    sql: ${TABLE}.attribute.creation_time.seconds ;;
+    group_label: "Attribute Creation Time"
+    group_item_label: "Seconds"
+  }
+
   dimension: attribute__labels {
     hidden: yes
     sql: ${TABLE}.attribute.labels ;;
     group_label: "Attribute"
     group_item_label: "Labels"
+  }
+
+  dimension: attribute__last_update_time__nanos {
+    type: number
+    sql: ${TABLE}.attribute.last_update_time.nanos ;;
+    group_label: "Attribute Last Update Time"
+    group_item_label: "Nanos"
+  }
+
+  dimension: attribute__last_update_time__seconds {
+    type: number
+    sql: ${TABLE}.attribute.last_update_time.seconds ;;
+    group_label: "Attribute Last Update Time"
+    group_item_label: "Seconds"
   }
 
   dimension: attribute__permissions {

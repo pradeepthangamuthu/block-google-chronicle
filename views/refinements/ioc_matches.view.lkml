@@ -15,7 +15,13 @@ view: +ioc_matches {
     # }
     link: {
       label: "Investigate in Chronicle"
-      url: "@{CHRONICLE_URL}/assetResults?assetIdentifier={{value}}"
+      url: "
+      {% if value != ioc_matches.asset__asset_ip_address._value %}
+      @{CHRONICLE_URL}/assetResults?assetIdentifier={{value}}&assetType=hostname
+      {% else %}
+      @{CHRONICLE_URL}/assetResults?assetIdentifier={{value}}&assetType=ip
+      {% endif %}
+      "
       icon_url: "@{CHRONICLE_ICON_URL}"
     }
   }

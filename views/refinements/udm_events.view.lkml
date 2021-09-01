@@ -81,4 +81,95 @@ view: +udm_events {
     type: number
     sql: COALESCE(${TABLE}.principal.hostname}, ${TABLE}.principal.ip}) ;;
   }
+
+  # Naming enums
+  dimension: metadata__event_type_enum_name {
+    type:  string
+    sql:  ${metadata__event_type__enum.enum_name} ;;
+  }
+}
+
+# Naming enums
+view: +udm_events__security_result{
+  dimension: about__platform_enum_name {
+    type:  string
+    sql:  ${udm_events__security_result__about__platform__enum.enum_name} ;;
+  }
+
+  dimension: alert_state_enum_name {
+    type: string
+    sql: ${udm_events__security_result__alert_state__enum.enum_name} ;;
+  }
+
+  dimension: severity_enum_name {
+    type:  string
+    sql:  ${udm_events__security_result__severity__enum.enum_name} ;;
+  }
+
+  dimension: confidence_enum_name {
+    type:  string
+    sql:  ${udm_events__security_result__confidence__enum.enum_name} ;;
+  }
+
+  dimension: priority_enum_name {
+    type:  string
+    sql:  ${udm_events__security_result__priority__enum.enum_name} ;;
+  }
+
+  dimension: category_enum_name {
+    type:  string
+    sql:  ${udm_events__security_result__category__enum.enum_name} ;;
+  }
+
+  dimension: threat_status_enum_name {
+    type:  string
+    sql:  ${udm_events__security_result__threat_status__enum.enum_name} ;;
+  }
+}
+
+view: +udm_events__security_result__action {
+  dimension: enum__backstory__security_result__action_enum_name {
+    type:  string
+    sql:  ${udm_events__security_result__action__enum.enum_name} ;;
+  }
+}
+
+view: +udm_events__extensions__vulns__vulnerabilities {
+  dimension: severity_enum_name {
+    type:  string
+    sql:  ${udm_events__extensions__vulns__vulnerabilities__severity__enum.enum_name} ;;
+  }
+}
+
+# Adding views to fix the generated (broken) joins for some nested repeated fields.
+view: +udm_events__about {
+  dimension: ip {
+    hidden: yes
+    sql: ${TABLE}.ip ;;
+    group_label: "About"
+    group_item_label: "IP"
+  }
+
+  dimension: mac {
+    hidden: yes
+    sql: ${TABLE}.mac ;;
+    group_label: "About"
+    group_item_label: "Mac"
+  }
+}
+
+view: +udm_events__intermediary {
+  dimension: ip {
+    hidden: yes
+    sql: ${TABLE}.ip ;;
+    group_label: "Intermediary"
+    group_item_label: "IP"
+  }
+
+  dimension: mac {
+    hidden: yes
+    sql: ${TABLE}.mac ;;
+    group_label: "Intermediary"
+    group_item_label: "Mac"
+  }
 }
