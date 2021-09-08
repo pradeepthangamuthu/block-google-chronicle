@@ -11,9 +11,9 @@ view: +rule_detections {
     type: string
     sql: ${TABLE}.rule_name ;;
     link: {
-      label: "Investigate in Chronicle"
+      label: "Investigate rule detections"
       url: "@{CHRONICLE_URL}/ruleDetections?ruleId={{rule_detections.rule_id._value}}"
-      icon_url: "@{CHRONICLE_ICON_URL}"
+      icon_url: "@{RULE_DETECTIONS_PAGE_ICON_URL}"
     }
   }
 

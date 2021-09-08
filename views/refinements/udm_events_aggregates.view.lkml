@@ -5,9 +5,9 @@ view: +udm_events_aggregates {
     type: string
     sql: ${TABLE}.principal_userid ;;
     link: {
-      label: "Investigate in Chronicle"
+      label: "Investigate user"
       url: "@{CHRONICLE_URL}/userResults?userName={{value}}"
-      icon_url: "@{CHRONICLE_ICON_URL}"
+      icon_url: "@{USER_PAGE_ICON_URL}"
     }
   }
 }

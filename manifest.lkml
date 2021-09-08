@@ -76,6 +76,35 @@ constant: DASHBOARD_ICON_URL{
   value: "https://www.google.com/s2/favicons?domain=looker.com"
 }
 
+# Do not use the Chronicle Icon URL for links. Instead use one of the page specific icons below.
 constant: CHRONICLE_ICON_URL{
   value: "https://storage.googleapis.com/bml-image/Chronicle-RGB-Icon-Color.png"
+}
+
+constant: ASSET_PAGE_ICON_URL {
+  value: "https://backstory.chronicle.security/static/pageicons/asset-white.svg"
+}
+
+constant: DOMAIN_IP_PAGE_ICON_URL {
+  value: "googledata/html/external_content/backstory_chronicle_security/static/pageicons/domain-ip-white.svg"
+}
+
+constant: DOMAIN_PAGE_ICON_URL {
+  value: "googledata/html/external_content/backstory_chronicle_security/static/pageicons/domain-white.svg"
+}
+
+constant: FILE_HASH_PAGE_ICON_URL {
+  value: "googledata/html/external_content/backstory_chronicle_security/static/pageicons/file-hash-white.svg"
+}
+
+constant: RULE_DETECTIONS_PAGE_ICON_URL {
+  value: "googledata/html/external_content/backstory_chronicle_security/static/pageicons/rule-detections-white.svg"
+}
+
+constant: STRUCTURED_SEARCH_PAGE_ICON_URL {
+  value: "googledata/html/external_content/backstory_chronicle_security/static/pageicons/structured-search-white.svg"
+}
+
+constant: USER_PAGE_ICON_URL {
+  value: "googledata/html/external_content/backstory_chronicle_security/static/pageicons/user-white.svg"
 }
