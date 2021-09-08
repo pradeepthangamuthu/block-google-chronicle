@@ -86,25 +86,25 @@ constant: ASSET_PAGE_ICON_URL {
 }
 
 constant: DOMAIN_IP_PAGE_ICON_URL {
-  value: "googledata/html/external_content/backstory_chronicle_security/static/pageicons/domain-ip-white.svg"
+  value: "https://backstory.chronicle.security/static/pageicons/domain-ip-white.svg"
 }
 
 constant: DOMAIN_PAGE_ICON_URL {
-  value: "googledata/html/external_content/backstory_chronicle_security/static/pageicons/domain-white.svg"
+  value: "https://backstory.chronicle.security/static/pageicons/domain-white.svg"
 }
 
 constant: FILE_HASH_PAGE_ICON_URL {
-  value: "googledata/html/external_content/backstory_chronicle_security/static/pageicons/file-hash-white.svg"
+  value: "https://backstory.chronicle.security/static/pageicons/file-hash-white.svg"
 }
 
 constant: RULE_DETECTIONS_PAGE_ICON_URL {
-  value: "googledata/html/external_content/backstory_chronicle_security/static/pageicons/rule-detections-white.svg"
+  value: "https://backstory.chronicle.security/static/pageicons/rule-detections-white.svg"
 }
 
 constant: STRUCTURED_SEARCH_PAGE_ICON_URL {
-  value: "googledata/html/external_content/backstory_chronicle_security/static/pageicons/structured-search-white.svg"
+  value: "https://backstory.chronicle.security/static/pageicons/structured-search-white.svg"
 }
 
 constant: USER_PAGE_ICON_URL {
-  value: "googledata/html/external_content/backstory_chronicle_security/static/pageicons/user-white.svg"
+  value: "https://backstory.chronicle.security/static/pageicons/user-white.svg"
 }
