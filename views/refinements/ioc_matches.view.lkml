@@ -57,4 +57,17 @@ view: +ioc_matches {
         icon_url: "@{DOMAIN_PAGE_ICON_URL}"
       }
     }
+
+  dimension : ioc_value_ip {
+    type: string
+    sql:
+    CASE
+      WHEN ${TABLE}.ioc_type= 'IOC_TYPE_IP' THEN ${TABLE}.ioc_value
+    END;;
+      link: {
+        label: "Investigate IP"
+        url: "@{CHRONICLE_URL}/destinationIpResults?ip={{value}}"
+        icon_url: "@{DOMAIN_IP_PAGE_ICON_URL}"
+      }
+    }
 }

@@ -360,9 +360,9 @@
     #model: block_google_chronicle
     explore: ioc_matches
     type: looker_bar
-    fields: [ioc_matches.ioc_value, ioc_matches.count]
+    fields: [ioc_matches.ioc_value_ip, ioc_matches.count]
     filters:
-      ioc_matches.ioc_type: '"IOC_TYPE_IP"'
+      ioc_matches.ioc_value_ip: "-NULL"
     sorts: [ioc_matches.count desc]
     limit: 30
     query_timezone: America/Los_Angeles
