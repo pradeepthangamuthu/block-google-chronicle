@@ -20,11 +20,6 @@ view: +ingestion_stats {
   measure: total_entry_number {
     type: sum
     sql: ${entry_number} ;;
-  }
-
-  measure: total_entry_number_for_drill {
-    type: sum
-    sql: ${entry_number} ;;
     link: {
       label: "Data Ingestion and Health Dashboard"
       url: "@{DATA_INGESTION_AND_HEALTH_DASHBOARD}"
@@ -53,11 +48,6 @@ view: +ingestion_stats {
   }
 
   measure: total_size_bytes {
-    type: sum
-    sql: ${size_bytes} ;;
-  }
-
-  measure: total_size_bytes_for_drill {
     type: sum
     sql: ${size_bytes} ;;
     link: {
