@@ -100,8 +100,8 @@
     dynamic_fields: [{table_calculation: size_gb, label: Size (GB), expression: " round(${ingestion_stats.total_size_bytes}/1000/1000/1000,\
           \ 2)", value_format: !!null '', value_format_name: !!null '', is_disabled: true,
         _kind_hint: dimension, _type_hint: number}, {table_calculation: delta, label: Delta,
-        expression: 'round(${ingestion_stats.total_size_bytes} - offset(${ingestion_stats.total_size_bytes},
-          1),2)', value_format: "#,##0.0,,,\" GB\";-#,##0.0,,,\" GB\"", value_format_name: !!null '', is_disabled: false,
+        expression: '${ingestion_stats.total_size_bytes} - offset(${ingestion_stats.total_size_bytes},1)',
+        value_format: "#,##0.0,,,\" GB\";-#,##0.0,,,\" GB\"", value_format_name: !!null '', is_disabled: false,
         _kind_hint: measure, _type_hint: number}, {measure: sum_of_size_bytes, based_on: ingestion_stats.size_bytes,
         type: sum, label: Sum of Size Bytes, expression: !!null '', _kind_hint: measure,
         _type_hint: number}]
@@ -287,14 +287,14 @@
     #model: block_google_chronicle
     explore: ingestion_stats
     type: single_value
-    fields: [ingestion_stats.total_entry_number_for_drill, ingestion_stats.period]
+    fields: [ingestion_stats.total_entry_number, ingestion_stats.period]
     filters:
       ingestion_stats.log_type: -"FORWARDER_HEARTBEAT"
     sorts: [ingestion_stats.period desc]
     limit: 500
-    dynamic_fields: [{table_calculation: delta, label: Delta, expression: 'round(${ingestion_stats.total_entry_number}
-          - offset(${ingestion_stats.total_entry_number}, 1),2)',
-        value_format: "#,##0.0,\" K\";-#,##0.0,\" K\"", value_format_name: !!null '', _kind_hint: measure,
+    dynamic_fields: [{table_calculation: delta, label: Delta, expression: '${ingestion_stats.total_entry_number}
+          - offset(${ingestion_stats.total_entry_number}, 1)',
+        value_format: "#,##0,\" K\";-#,##0,\" K\"", value_format_name: !!null '', _kind_hint: measure,
         _type_hint: number}]
     query_timezone: America/Los_Angeles
     custom_color_enabled: true
