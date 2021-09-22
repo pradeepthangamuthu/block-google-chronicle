@@ -22,24 +22,14 @@ view: +ingestion_stats {
     sql: ${entry_number} ;;
   }
 
-  measure: total_entry_number_in_million {
+  measure: total_entry_number_for_drill {
     type: sum
-    sql: round(${entry_number}/1000000, 0) ;;
-  }
-
-  measure: total_entry_number_in_million_for_drill {
-    type: sum
-    sql: round(${entry_number}/1000000, 0) ;;
+    sql: ${entry_number} ;;
     link: {
       label: "Data Ingestion and Health Dashboard"
       url: "@{DATA_INGESTION_AND_HEALTH_DASHBOARD}"
       icon_url: "@{DASHBOARD_ICON_URL}"
     }
-  }
-
-  measure: total_entry_number {
-    type: sum
-    sql: ${entry_number} ;;
   }
 
   measure: total_entry_number_in_million {
@@ -65,6 +55,16 @@ view: +ingestion_stats {
   measure: total_size_bytes {
     type: sum
     sql: ${size_bytes} ;;
+  }
+
+  measure: total_size_bytes_for_drill {
+    type: sum
+    sql: ${size_bytes} ;;
+    link: {
+      label: "Data Ingestion and Health Dashboard"
+      url: "@{DATA_INGESTION_AND_HEALTH_DASHBOARD}"
+      icon_url: "@{DASHBOARD_ICON_URL}"
+    }
   }
 
   measure: total_size_bytes_GB {
