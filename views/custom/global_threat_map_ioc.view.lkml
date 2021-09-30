@@ -76,11 +76,6 @@ view: global_threat_map_ioc {
   dimension: ioc_matches_test_ioc_value {
     type: string
     sql: ${TABLE}.ioc_matches_test_ioc_value ;;
-    link: {
-      label: "IOC Matches Dashboard"
-      url: "@{IOC_MATCHES_DASHBOARD}"
-      icon_url: "@{DASHBOARD_ICON_URL}"
-    }
   }
 
   dimension: city {
