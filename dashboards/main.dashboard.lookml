@@ -86,7 +86,7 @@
     row: 3
     col: 16
     width: 8
-    height: 4
+    height: 3
   - title: Ingestion Data Size
     name: Ingestion Data Size
     #model: block_google_chronicle
@@ -171,7 +171,7 @@
     row: 3
     col: 7
     width: 9
-    height: 4
+    height: 3
   - title: Events Over Time
     name: Events Over Time
     #model: block_google_chronicle
@@ -341,7 +341,7 @@
     row: 3
     col: 0
     width: 7
-    height: 4
+    height: 3
   filters:
   - name: Time
     title: Time
