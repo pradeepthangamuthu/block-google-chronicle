@@ -3,6 +3,8 @@ include: "/views/refinements/udm_enum_value_to_name_mapping.view.lkml"
 include: "/explores/udm_events.explore.lkml"
 
 explore: +udm_events {
+  hidden:  yes
+
   # Naming enums
   join: metadata__event_type__enum {
     from: enum__backstory__metadata__event_type

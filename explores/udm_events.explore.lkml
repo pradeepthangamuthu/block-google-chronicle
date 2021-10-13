@@ -1,7 +1,6 @@
 include: "/views/refinements/udm_events.view.lkml"
 
 explore: udm_events {
-  hidden:  yes
   join: udm_events__src__ip {
     view_label: "Udm Events: Src Ip"
     sql: LEFT JOIN UNNEST(${udm_events.src__ip}) as udm_events__src__ip ;;
