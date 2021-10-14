@@ -48,6 +48,10 @@ constant: UDM_EVENTS_AGGREGRATES{
   value: "udm_events_aggregates"
 }
 
+constant: JOB_METADATA {
+  value: "job_metadata"
+}
+
 constant: DATA_INGESTION_AND_HEALTH_DASHBOARD{
   value: "/dashboards-next/@{MODEL_NAME}::data_ingestion_and_health"
 }
@@ -76,7 +80,6 @@ constant: DASHBOARD_ICON_URL{
   value: "https://www.google.com/s2/favicons?domain=looker.com"
 }
 
-# Do not use the Chronicle Icon URL for links. Instead use one of the page specific icons below.
 constant: CHRONICLE_ICON_URL{
   value: "https://storage.googleapis.com/bml-image/Chronicle-RGB-Icon-Color.png"
 }

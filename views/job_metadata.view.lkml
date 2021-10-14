@@ -1,5 +1,5 @@
 view: job_metadata {
-  sql_table_name: `job_metadata`
+  sql_table_name: `@{JOB_METADATA}`
     ;;
 
   dimension: customer_id {

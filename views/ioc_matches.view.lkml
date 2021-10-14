@@ -1,5 +1,5 @@
 view: ioc_matches {
-  sql_table_name: `ioc_matches`
+  sql_table_name: `@{IOC_MATCHES}`
     ;;
 
   dimension: asset__asset_ip_address {
