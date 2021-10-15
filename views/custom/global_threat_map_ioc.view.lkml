@@ -81,6 +81,11 @@ view: global_threat_map_ioc {
       url: "@{IOC_MATCHES_DASHBOARD}"
       icon_url: "@{DASHBOARD_ICON_URL}"
     }
+    link: {
+      label: "Investigate asset"
+      url: "@{CHRONICLE_URL}/assetResults?assetIdentifier={{value}}&assetType=ip"
+      icon_url: "@{CHRONICLE_ICON_URL}"
+    }
   }
 
   dimension: city {
