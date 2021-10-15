@@ -76,6 +76,11 @@ view: global_threat_map_ioc {
   dimension: ioc_matches_test_ioc_value {
     type: string
     sql: ${TABLE}.ioc_matches_test_ioc_value ;;
+    link: {
+      label: "Investigate asset"
+      url: "@{CHRONICLE_URL}/assetResults?assetIdentifier={{value}}&assetType=ip"
+      icon_url: "@{ASSET_PAGE_ICON_URL}"
+    }
   }
 
   dimension: city {
