@@ -13,6 +13,13 @@ explore: +udm_events {
     fields: [enum_name]
   }
 
+  join: network__ip_protocol__enum {
+    from: enum__backstory__network__ip_protocol
+    sql_on: ${network__ip_protocol__enum.enum_value} = ${udm_events.network__ip_protocol} ;;
+    relationship: one_to_one
+    fields: [enum_name]
+  }
+
   join:  udm_events__security_result__about__platform__enum {
     from: enum__backstory__noun__platform
     sql_on: ${udm_events__security_result__about__platform__enum.enum_value} = ${udm_events__security_result.about__platform} ;;

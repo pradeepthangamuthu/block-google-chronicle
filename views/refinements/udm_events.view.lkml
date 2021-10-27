@@ -87,6 +87,11 @@ view: +udm_events {
     type:  string
     sql:  ${metadata__event_type__enum.enum_name} ;;
   }
+
+  dimension: network__ip_protocol_enum_name {
+    type: string
+    sql: ${network__ip_protocol__enum.enum_name} ;;
+  }
 }
 
 view: +udm_events__security_result__action {
