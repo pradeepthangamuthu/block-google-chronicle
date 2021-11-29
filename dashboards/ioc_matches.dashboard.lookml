@@ -5,7 +5,7 @@
   elements:
   - title: IOC Matches Over Time by Category
     name: IOC Matches Over Time by Category
-    #model: block_google_chronicle
+
     explore: ioc_matches
     type: looker_line
     fields: [ioc_matches.count, ioc_matches.event_timestamp_time,
@@ -98,7 +98,6 @@
     height: 8
   - title: Top 10 IOC Matches by Category, Type and Count
     name: Top 10 IOC Matches by Category, Type and Count
-    #model: block_google_chronicle
     explore: ioc_matches
     type: looker_grid
     fields: [ioc_matches.count, ioc_matches.category, ioc_matches.ioc_type]
@@ -167,7 +166,6 @@
     height: 6
   - title: Top 10 IOC Values
     name: Top 10 IOC Values
-    #model: block_google_chronicle
     explore: ioc_matches
     type: looker_grid
     fields: [ioc_matches.count, ioc_matches.ioc_value]
@@ -236,7 +234,6 @@
     height: 6
   - title: Top 10 Rarely Seen Values
     name: Top 10 Rarely Seen Values
-    #model: block_google_chronicle
     explore: ioc_matches
     type: looker_grid
     fields: [ioc_matches.count, ioc_matches.ioc_value]
@@ -305,7 +302,6 @@
     height: 6
   - title: Top 10 Domains IOC Indicators
     name: Top 10 Domains IOC Indicators
-    #model: block_google_chronicle
     explore: ioc_matches
     type: looker_bar
     fields: [ioc_matches.count, ioc_matches.ioc_value_domain]
@@ -357,12 +353,11 @@
     height: 6
   - title: Top 10 IP IOC Indicators
     name: Top 10 IP IOC Indicators
-    #model: block_google_chronicle
     explore: ioc_matches
     type: looker_bar
     fields: [ioc_matches.ioc_value_ip, ioc_matches.count]
     filters:
-      ioc_matches.ioc_value_ip: "-NULL"
+      ioc_matches.ioc_type: '"IOC_TYPE_IP"'
     sorts: [ioc_matches.count desc]
     limit: 30
     query_timezone: America/Los_Angeles
@@ -409,7 +404,7 @@
     height: 6
   - title: Top 10 Assets by IOC Matches
     name: Top 10 Assets by IOC Matches
-    #model: block_google_chronicle
+
     explore: ioc_matches
     type: looker_bar
     fields: [ioc_matches.asset_hostname, ioc_matches.count]
@@ -468,7 +463,7 @@
       type: advanced
       display: popover
       options: []
-    #model: block_google_chronicle
+
     explore: ioc_matches
     listens_to_filters: []
     field: ioc_matches.event_timestamp_time
