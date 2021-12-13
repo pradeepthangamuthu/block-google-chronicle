@@ -5,7 +5,6 @@
   elements:
   - title: Sign Ins By Status
     name: Sign Ins By Status
-    
     explore: udm_events_aggregates
     type: looker_pie
     fields: [udm_events_aggregates.action, udm_events_aggregates.count]
@@ -60,7 +59,6 @@
     height: 6
   - title: Sign Ins by Status Over Time
     name: Sign Ins by Status Over Time
-    
     explore: udm_events_aggregates
     type: looker_line
     fields: [udm_events_aggregates.action, udm_events_aggregates.count, udm_events_aggregates.event_hour_date]
@@ -118,7 +116,6 @@
     height: 6
   - title: Top 10 Applications By Sign Ins
     name: Top 10 Applications By Sign Ins
-    
     explore: udm_events_aggregates
     type: looker_pie
     fields: [udm_events_aggregates.target_application, udm_events_aggregates.count]
@@ -173,7 +170,6 @@
     height: 6
   - title: Top 10 Sign Ins By IP
     name: Top 10 Sign Ins By IP
-    
     explore: udm_events_aggregates
     type: looker_pie
     fields: [udm_events_aggregates.count, udm_events_aggregates.principal_ip]
@@ -249,7 +245,6 @@
     height: 3
   - title: Number Of Successful Logins
     name: Number Of Successful Logins
-    
     explore: udm_events_aggregates
     type: single_value
     fields: [udm_events_aggregates.count]
@@ -316,7 +311,6 @@
     height: 3
   - title: Number Of Failed Sign Ins
     name: Number Of Failed Sign Ins
-    
     explore: udm_events_aggregates
     type: single_value
     fields: [udm_events_aggregates.count]
@@ -382,7 +376,6 @@
     height: 3
   - title: Sign Ins By Application
     name: Sign Ins By Application
-    
     explore: udm_events_aggregates
     type: looker_grid
     fields: [udm_events_aggregates.target_application, udm_events_aggregates.count,
@@ -463,7 +456,6 @@
     height: 6
   - title: Sign In Location Map
     name: Sign In Location Map
-    
     explore: user_login_source_geo_ip
     type: looker_map
     fields: [user_login_source_geo_ip.principal_ip, user_login_source_geo_ip.location,
@@ -504,7 +496,6 @@
     height: 7
   - title: Top 10 Users by Sign In Status
     name: Top 10 Users by Sign In Status
-    
     explore: udm_events_aggregates
     type: looker_grid
     fields: [udm_events_aggregates.userid_for_drill, udm_events_aggregates.action,
@@ -587,7 +578,6 @@
     height: 7
   - title: Sign Ins by Country
     name: Sign Ins by Country
-    
     explore: user_login_source_geo_ip
     type: looker_bar
     fields: [user_login_source_geo_ip.count, user_login_source_geo_ip.country_label]
@@ -661,7 +651,6 @@
     height: 6
   - title: Top 10 Countries by Sign Ins
     name: Top 10 Countries by Sign Ins
-    
     explore: user_login_source_geo_ip
     type: looker_pie
     fields: [user_login_source_geo_ip.count, user_login_source_geo_ip.country_label]
@@ -748,7 +737,6 @@
       type: advanced
       display: popover
       options: []
-    
     explore: udm_events_aggregates
     listens_to_filters: []
     field: udm_events_aggregates.event_hour_time

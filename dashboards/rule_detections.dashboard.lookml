@@ -5,7 +5,6 @@
   elements:
   - title: Rule Detections Over Time
     name: Rule Detections Over Time
-    
     explore: rule_detections
     type: looker_line
     fields: [rule_detections.count, rule_detections.event_timestamp_week]
@@ -65,7 +64,6 @@
     height: 6
   - title: Rule Detections by Severity Over Time
     name: Rule Detections by Severity Over Time
-    
     explore: rule_detections
     type: looker_area
     fields: [rule_detections.event_timestamp_date,
@@ -140,7 +138,6 @@
     height: 6
   - title: Rule Detections by Severity
     name: Rule Detections by Severity
-    
     explore: rule_detections
     type: looker_pie
     fields: [rule_detections.count, rule_detections.severity]
@@ -209,7 +206,6 @@
     height: 6
   - title: Top 10 Rule Names by Detections
     name: Top 10 Rule Names by Detections
-    
     explore: rule_detections
     type: looker_grid
     fields: [rule_detections.count, rule_detections.rule_name]
@@ -283,7 +279,6 @@
     height: 6
   - title: Rule Detections by Name Over Time
     name: Rule Detections by Name Over Time
-    
     explore: rule_detections
     type: looker_column
     fields: [rule_detections.count, rule_detections.rule_name, rule_detections.event_timestamp_date]
@@ -396,7 +391,6 @@
     height: 6
   - title: Top 10  IPs by Rule Detections
     name: Top 10  IPs by Rule Detections
-    
     explore: rule_detections
     type: looker_grid
     fields: [rule_detections__detection__assets.asset_ip_address, rule_detections.count]
@@ -470,7 +464,6 @@
     height: 6
   - title: Top 10 Asset Names by Rule Detections
     name: Top 10 Asset Names by Rule Detections
-    
     explore: rule_detections
     type: looker_grid
     fields: [rule_detections__detection__assets.hostname, rule_detections.count]
@@ -543,7 +536,6 @@
     height: 6
   - title: Top 10 Users by Rule Detections
     name: Top 10 Users by Rule Detections
-    
     explore: rule_detections
     type: looker_grid
     fields: [rule_detections__detection__users.user_name, rule_detections.count]
@@ -596,7 +588,6 @@
       type: advanced
       display: popover
       options: []
-    
     explore: rule_detections
     listens_to_filters: []
     field: rule_detections.event_timestamp_time
