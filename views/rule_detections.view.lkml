@@ -1,5 +1,5 @@
 view: rule_detections {
-  sql_table_name: `@{RULE_DETECTIONS}`
+  sql_table_name: `@{DATASET_NAME}.@{RULE_DETECTIONS}`
     ;;
 
   dimension: detection__assets {

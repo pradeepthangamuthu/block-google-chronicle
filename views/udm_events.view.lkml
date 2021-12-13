@@ -1,5 +1,5 @@
 view: udm_events {
-  sql_table_name: `@{UDM_EVENTS}`
+  sql_table_name: `@{DATASET_NAME}.@{UDM_EVENTS}`
     ;;
 
   dimension_group: _partitiondate {
