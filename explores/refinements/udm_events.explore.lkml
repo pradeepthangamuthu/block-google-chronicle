@@ -48,6 +48,13 @@ explore: +udm_events {
     fields: [enum_name]
   }
 
+  join: udm_events__security_result__alert_state__enum {
+    from: enum__backstory__security_result__alert_state
+    sql_on: ${udm_events__security_result__alert_state__enum.enum_value} = ${udm_events__security_result.alert_state} ;;
+    relationship: one_to_one
+    fields: [enum_name]
+  }
+
   join: udm_events__security_result__category__enum {
     from: enum__backstory__security_result__security_category
     sql_on: ${udm_events__security_result__category__enum.enum_value} = ${udm_events__security_result.category} ;;
