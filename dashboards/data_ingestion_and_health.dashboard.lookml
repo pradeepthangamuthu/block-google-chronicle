@@ -5,7 +5,6 @@
   elements:
   - title: Log Type Distribution by Events Count
     name: Log Type Distribution by Events Count
-    
     explore: ingestion_stats
     type: looker_pie
     fields: [ingestion_stats.log_type, ingestion_stats.total_entry_number]
@@ -52,7 +51,6 @@
     height: 6
   - title: Log Type Distribution by Throughput
     name: Log Type Distribution by Throughput
-    
     explore: ingestion_stats
     type: looker_pie
     fields: [ingestion_stats.log_type, ingestion_stats.total_size_bytes]
@@ -99,7 +97,6 @@
     height: 6
   - title: Daily Log Information
     name: Daily Log Information
-    
     explore: ingestion_stats
     type: looker_grid
     fields: [ingestion_stats.log_type, ingestion_stats.timestamp_date, ingestion_stats.total_entry_number]
@@ -138,7 +135,6 @@
     height: 6
   - title: Event Count vs Size (Last 24 hours)
     name: Event Count vs Size (Last 24 hours)
-    
     explore: ingestion_stats
     type: looker_line
     fields: [ingestion_stats.timestamp_hour, ingestion_stats.total_entry_number, ingestion_stats.total_size_bytes_GiB]
@@ -193,7 +189,6 @@
     height: 6
   - title: Event Count vs Size (Last 1 week)
     name: Event Count vs Size (Last 1 week)
-    
     explore: ingestion_stats
     type: looker_line
     fields: [ingestion_stats.timestamp_hour, ingestion_stats.total_entry_number, ingestion_stats.total_size_bytes_GiB]
@@ -248,7 +243,6 @@
     height: 6
   - title: Event Count vs Size (Last 3 months)
     name: Event Count vs Size (Last 3 months)
-    
     explore: ingestion_stats
     type: looker_line
     fields: [ingestion_stats.timestamp_month, ingestion_stats.total_entry_number,
@@ -307,7 +301,6 @@
     height: 6
   - title: Total Ingest Count
     name: Total Ingest Count
-    
     explore: ingestion_stats
     type: single_value
     fields: [ingestion_stats.total_entry_number, ingestion_stats.period]
@@ -365,7 +358,6 @@
     height: 3
   - title: Total Error Count
     name: Total Error Count
-    
     explore: ingestion_stats
     type: single_value
     fields: [ingestion_stats.total_error_events, ingestion_stats.period]
@@ -440,7 +432,6 @@
     height: 3
   - title: Recently Ingested Events
     name: Recently Ingested Events
-    
     explore: ingestion_stats
     type: looker_grid
     fields: [ingestion_stats.log_type, ingestion_stats.timestamp_time]
@@ -507,7 +498,6 @@
     height: 6
   - title: Ingestion - Events by Status
     name: Ingestion - Events by Status
-    
     explore: ingestion_stats
     type: looker_line
     fields: [ingestion_stats.total_events, ingestion_stats.total_normalized_events,
@@ -552,7 +542,6 @@
     height: 7
   - title: Ingestion - Events by Log Type
     name: Ingestion - Events by Log Type
-    
     explore: ingestion_stats
     type: looker_grid
     fields: [ingestion_stats.log_type, ingestion_stats.total_size_bytes, ingestion_stats.total_events,
@@ -628,7 +617,6 @@
     height: 6
   - title: Ingestion - Throughput Hourly
     name: Ingestion - Throughput Hourly
-    
     explore: ingestion_stats
     type: looker_area
     fields: [ingestion_stats.log_type, ingestion_stats.total_size_bytes, ingestion_stats.timestamp_hour]
@@ -749,7 +737,6 @@
     height: 7
   - title: Ingestion - Throughput Weekly
     name: Ingestion - Throughput Weekly
-    
     explore: ingestion_stats
     type: looker_area
     fields: [ingestion_stats.timestamp_week, ingestion_stats.log_type, ingestion_stats.total_size_bytes]
@@ -870,7 +857,6 @@
     height: 7
   - title: Ingestion - Throughput(Last 6 Months)
     name: Ingestion - Throughput(Last 6 Months)
-    
     explore: ingestion_stats
     type: looker_area
     fields: [ingestion_stats.log_type, ingestion_stats.total_size_bytes, ingestion_stats.timestamp_month]
@@ -991,7 +977,6 @@
     height: 7
   - title: Ingestion - Throughput(All Time)
     name: Ingestion - Throughput(All Time)
-    
     explore: ingestion_stats
     type: looker_area
     fields: [ingestion_stats.log_type, ingestion_stats.total_size_bytes, ingestion_stats.timestamp_year]
@@ -1129,7 +1114,6 @@
       type: advanced
       display: popover
       options: []
-    
     explore: ingestion_stats
     listens_to_filters: []
     field: ingestion_stats.period_filter

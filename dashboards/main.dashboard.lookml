@@ -32,7 +32,6 @@
     height: 1
   - title: Alert
     name: Alert
-    
     explore: rule_detections
     type: single_value
     fields: [rule_detections.count_for_drill, rule_detections.period]
@@ -89,7 +88,6 @@
     height: 3
   - title: Ingestion Data Size
     name: Ingestion Data Size
-    
     explore: ingestion_stats
     type: single_value
     fields: [ingestion_stats.total_size_bytes, ingestion_stats.period]
@@ -174,7 +172,6 @@
     height: 3
   - title: Events Over Time
     name: Events Over Time
-    
     explore: ingestion_stats
     type: looker_column
     fields: [total_events_count, ingestion_stats.timestamp_date, ingestion_stats.log_type_for_drill]
@@ -235,7 +232,6 @@
     height: 9
   - title: Global Threat Map - IOC IP Matches
     name: Global Threat Map - IOC IP Matches
-    
     explore: global_threat_map_ioc
     type: looker_map
     fields: [global_threat_map_ioc.ioc_matches_test_ioc_value, global_threat_map_ioc.location,
@@ -284,7 +280,6 @@
     height: 9
   - title: Events for Main Dashboard
     name: Events for Main Dashboard
-    
     explore: ingestion_stats
     type: single_value
     fields: [ingestion_stats.total_entry_number, ingestion_stats.period]
@@ -352,7 +347,6 @@
     ui_config:
       type: advanced
       display: popover
-    
     explore: ingestion_stats
     listens_to_filters: []
     field: ingestion_stats.period_filter

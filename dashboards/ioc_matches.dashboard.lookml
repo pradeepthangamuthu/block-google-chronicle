@@ -5,7 +5,6 @@
   elements:
   - title: IOC Matches Over Time by Category
     name: IOC Matches Over Time by Category
-
     explore: ioc_matches
     type: looker_line
     fields: [ioc_matches.count, ioc_matches.event_timestamp_time,
@@ -404,7 +403,6 @@
     height: 6
   - title: Top 10 Assets by IOC Matches
     name: Top 10 Assets by IOC Matches
-
     explore: ioc_matches
     type: looker_bar
     fields: [ioc_matches.asset_hostname, ioc_matches.count]
@@ -463,7 +461,6 @@
       type: advanced
       display: popover
       options: []
-
     explore: ioc_matches
     listens_to_filters: []
     field: ioc_matches.event_timestamp_time
