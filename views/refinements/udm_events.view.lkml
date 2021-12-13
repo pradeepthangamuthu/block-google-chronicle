@@ -144,6 +144,13 @@ view: +udm_events__security_result{
   }
 }
 
+view: +udm_events__security_result__action {
+  dimension: enum__backstory__security_result__action_enum_name {
+    type:  string
+    sql:  ${udm_events__security_result__action__enum.enum_name} ;;
+  }
+}
+
 view: +udm_events__extensions__vulns__vulnerabilities {
   dimension: severity_enum_name {
     type:  string
