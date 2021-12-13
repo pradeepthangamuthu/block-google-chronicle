@@ -6,12 +6,12 @@ constant: CONFIG_PROJECT_NAME {
 }
 
 constant: CONNECTION_NAME{
-  value: "your-chronicle-connection"
+  value: "c4"
   export: override_required
 }
 
 constant: DATASET_NAME{
-  value: "project.dataset"
+  value: "datalake"
   export: override_required
 }
 
@@ -21,7 +21,7 @@ constant: CHRONICLE_URL{
 }
 
 constant: MODEL_NAME{
-  value: "block_google_chronicle"
+  value: "block_google_chronicle_v2"
 }
 
 constant: IOC_MATCHES{
