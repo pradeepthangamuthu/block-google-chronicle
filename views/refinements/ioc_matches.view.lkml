@@ -8,11 +8,6 @@ view: +ioc_matches {
 
   dimension: asset_hostname {
     sql: COALESCE(${asset}.hostname, ${asset}.asset_ip_address) ;;
-    # link: {
-    #   label: "Asset Lookup on {{value}}"
-    #   url: "@{ASSET_LOOKUP}"
-    #   icon_url: "@{DASHBOARD_ICON_URL}"
-    # }
     link: {
       label: "Investigate asset"
       url: "
@@ -46,11 +41,6 @@ view: +ioc_matches {
     CASE
       WHEN ${TABLE}.ioc_type= 'IOC_TYPE_DOMAIN' THEN ${TABLE}.ioc_value
     END;;
-    # link: {
-    #   label: "Domain Lookup on {{value}}"
-    #   url: "@{DOMAIN_LOOKUP}"
-    #   icon_url: "@{DASHBOARD_ICON_URL}"
-    # }
       link: {
         label: "Investigate domain"
         url: "@{CHRONICLE_URL}/domainResults?domain={{value}}"

@@ -131,10 +131,5 @@ view: +ingestion_stats {
   dimension: log_type_for_drill {
     type: string
     sql: ${log_type} ;;
-    # link: {
-    #   label: "Data Ingestion and Health Dashboard"
-    #   url: "@{DATA_INGESTION_AND_HEALTH_DASHBOARD}"
-    #   icon_url: "@{DASHBOARD_ICON_URL}"
-    # }
   }
 }

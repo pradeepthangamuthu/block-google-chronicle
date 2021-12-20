@@ -19,11 +19,6 @@ view: +rule_detections {
 
   measure: count_for_drill {
     type: count
-    # link: {
-    #   label: "Rule Detections Dashboard"
-    #   url: "@{RULE_DETECTIONS_DASHBOARD}"
-    #   icon_url: "@{DASHBOARD_ICON_URL}"
-    # }
   }
 
   filter: period_filter {
