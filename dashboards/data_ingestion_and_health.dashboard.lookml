@@ -134,7 +134,7 @@
     width: 12
     height: 6
   - title: Event Count vs Size (Last 24 hours)
-    name: Event Count vs Size (Last 24 hours)=
+    name: Event Count vs Size (Last 24 hours)
     explore: ingestion_stats
     type: looker_line
     fields: [ingestion_stats.timestamp_hour, ingestion_stats.total_entry_number, ingestion_stats.total_size_bytes_GiB]
