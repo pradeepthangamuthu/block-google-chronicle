@@ -92,6 +92,12 @@ view: +udm_events {
     type: string
     sql: ${network__ip_protocol__enum.enum_name} ;;
   }
+
+  measure: count_all {
+    description: "Count of all UDM events where a Count distinct is not used."
+    type: number
+    sql: count(*) ;;
+  }
 }
 
 view: +udm_events__security_result__action {
