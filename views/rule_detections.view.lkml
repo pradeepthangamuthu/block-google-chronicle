@@ -72,6 +72,13 @@ view: rule_detections {
     group_item_label: "ID"
   }
 
+  dimension: detection__outcomes {
+    hidden: yes
+    sql: ${TABLE}.detection.outcomes ;;
+    group_label: "Detection"
+    group_item_label: "Outcomes"
+  }
+
   dimension: detection__rule_type {
     type: number
     sql: ${TABLE}.detection.rule_type ;;
@@ -257,6 +264,43 @@ view: rule_detections__detection__users {
   dimension: windows_sid {
     type: string
     sql: ${TABLE}.windows_sid ;;
+  }
+}
+
+view: rule_detections__detection__outcomes {
+  dimension: bool_val {
+    type: yesno
+    sql: ${TABLE}.bool_val ;;
+  }
+
+  dimension: bytes_val {
+    type: string
+    sql: ${TABLE}.bytes_val ;;
+  }
+
+  dimension: double_val {
+    type: number
+    sql: ${TABLE}.double_val ;;
+  }
+
+  dimension: int64_val {
+    type: number
+    sql: ${TABLE}.int64_val ;;
+  }
+
+  dimension: name {
+    type: string
+    sql: ${TABLE}.name ;;
+  }
+
+  dimension: string_val {
+    type: string
+    sql: ${TABLE}.string_val ;;
+  }
+
+  dimension: uint64_val {
+    type: number
+    sql: ${TABLE}.uint64_val ;;
   }
 }
 

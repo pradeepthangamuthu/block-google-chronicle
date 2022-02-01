@@ -105,6 +105,62 @@ view: ioc_matches {
     sql: ${TABLE}.is_global ;;
   }
 
+  dimension: location__city {
+    type: string
+    sql: ${TABLE}.location.city ;;
+    group_label: "Location"
+    group_item_label: "City"
+  }
+
+  dimension: location__country_or_region {
+    type: string
+    sql: ${TABLE}.location.country_or_region ;;
+    group_label: "Location"
+    group_item_label: "Country or Region"
+  }
+
+  dimension: location__desk_name {
+    type: string
+    sql: ${TABLE}.location.desk_name ;;
+    group_label: "Location"
+    group_item_label: "Desk Name"
+  }
+
+  dimension: location__floor_name {
+    type: string
+    sql: ${TABLE}.location.floor_name ;;
+    group_label: "Location"
+    group_item_label: "Floor Name"
+  }
+
+  dimension: location__name {
+    type: string
+    sql: ${TABLE}.location.name ;;
+    group_label: "Location"
+    group_item_label: "Name"
+  }
+
+  dimension: location__region_latitude {
+    type: number
+    sql: ${TABLE}.location.region_latitude ;;
+    group_label: "Location"
+    group_item_label: "Region Latitude"
+  }
+
+  dimension: location__region_longitude {
+    type: number
+    sql: ${TABLE}.location.region_longitude ;;
+    group_label: "Location"
+    group_item_label: "Region Longitude"
+  }
+
+  dimension: location__state {
+    type: string
+    sql: ${TABLE}.location.state ;;
+    group_label: "Location"
+    group_item_label: "State"
+  }
+
   dimension: severity {
     type: string
     sql: ${TABLE}.severity ;;
@@ -112,6 +168,6 @@ view: ioc_matches {
 
   measure: count {
     type: count
-    drill_fields: [feed_name, asset__hostname]
+    drill_fields: [feed_name, location__name, asset__hostname, location__desk_name, location__floor_name]
   }
 }
