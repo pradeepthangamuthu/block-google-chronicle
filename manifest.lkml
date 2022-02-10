@@ -45,6 +45,14 @@ constant: JOB_METADATA {
   value: "job_metadata"
 }
 
+constant: ENTITY_GRAPH {
+  value: "entity_graph"
+}
+
+constant: ENTITY_ENUM {
+  value: "entity_enum_value_to_name_mapping"
+}
+
 constant: DATA_INGESTION_AND_HEALTH_DASHBOARD{
   value: "/dashboards-next/@{MODEL_NAME}::data_ingestion_and_health"
 }
