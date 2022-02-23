@@ -7,6 +7,12 @@ explore: rule_detections {
     relationship: one_to_many
   }
 
+  join: rule_detections__detection__outcomes {
+    view_label: "Rule Detections: Detection Outcomes"
+    sql: LEFT JOIN UNNEST(${rule_detections.detection__outcomes}) as rule_detections__detection__outcomes ;;
+    relationship: one_to_many
+  }
+
   join: rule_detections__detection__fields {
     view_label: "Rule Detections: Detection Fields"
     sql: LEFT JOIN UNNEST(${rule_detections.detection__fields}) as rule_detections__detection__fields ;;
