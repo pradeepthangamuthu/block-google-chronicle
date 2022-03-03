@@ -21,6 +21,10 @@ constant: IOC_MATCHES{
   value: "ioc_matches"
 }
 
+constant: INGESTION_METRICS {
+  value: "ingestion_metrics"
+}
+
 constant: INGESTION_STATS{
   value: "ingestion_stats"
 }
