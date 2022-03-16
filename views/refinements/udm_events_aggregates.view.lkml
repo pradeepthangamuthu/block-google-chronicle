@@ -3,7 +3,7 @@ include: "/views/udm_events_aggregates.view.lkml"
 view: +udm_events_aggregates {
   dimension: userid_for_drill {
     type: string
-    sql: ${TABLE}.principal_userid ;;
+    sql: ${TABLE}.target_userid ;;
     link: {
       label: "Investigate in Chronicle"
       url: "@{CHRONICLE_URL}/userResults?userName={{value}}"
