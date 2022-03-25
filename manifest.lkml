@@ -45,6 +45,10 @@ constant: UDM_EVENTS_AGGREGRATES{
   value: "udm_events_aggregates"
 }
 
+constant: UDM_EVENTS_GCS{
+  value: "udm_events_gcs"
+}
+
 constant: JOB_METADATA {
   value: "job_metadata"
 }
