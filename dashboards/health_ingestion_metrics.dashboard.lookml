@@ -1,5 +1,5 @@
-- dashboard: data_ingestion_and_health_2
-  title: Data Ingestion and Health 2
+- dashboard: health_ingestion_metrics
+  title: Data Ingestion and Health
   layout: newspaper
   preferred_viewer: dashboards-next
   elements:
@@ -9,7 +9,9 @@
     type: looker_pie
     fields: [ingestion_metrics.log_type, ingestion_metrics.total_entry_number]
     filters:
+      ingestion_metrics.component: "Ingestion API"
       ingestion_metrics.period: This Period
+      ingestion_metrics.log_type: "-NULL"
     sorts: [ingestion_metrics.total_entry_number desc]
     limit: 500
     value_labels: legend
@@ -56,6 +58,7 @@
     fields: [ingestion_metrics.log_type, ingestion_metrics.total_size_bytes]
     filters:
       ingestion_metrics.period: This Period
+      ingestion_metrics.log_type: "-NULL"
     sorts: [ingestion_metrics.total_size_bytes desc]
     limit: 500
     value_labels: legend

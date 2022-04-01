@@ -19,7 +19,10 @@ view: +ingestion_metrics {
 
   measure: total_entry_number {
     type: sum
-    sql: ${log_count} ;;
+    sql:
+    CASE
+      WHEN ${TABLE}.component = 'Ingestion API' AND ${TABLE}.log_type IS NOT NULL THEN ${TABLE}.log_count
+    END;;
     # link: {
     #   label: "Data Ingestion and Health Dashboard"
     #   url: "@{DATA_INGESTION_AND_HEALTH_DASHBOARD}"
@@ -29,12 +32,12 @@ view: +ingestion_metrics {
 
   measure: total_entry_number_in_million {
     type: sum
-    sql: round(${log_count}/1000000, 0) ;;
+    sql: round(${total_entry_number}/1000000, 0) ;;
   }
 
   measure: total_entry_number_in_million_for_drill {
     type: sum
-    sql: round(${log_count}/1000000, 0) ;;
+    sql: round(${total_entry_number}/1000000, 0) ;;
     # link: {
     #   label: "Data Ingestion and Health Dashboard"
     #   url: "@{DATA_INGESTION_AND_HEALTH_DASHBOARD}"
@@ -44,12 +47,19 @@ view: +ingestion_metrics {
 
   measure: total_error_count_in_million {
     type: sum
-    sql: round(${drop_count}/1000000, 0) ;;
+    sql:
+    CASE
+      WHEN ${TABLE}.component = 'Normalizer' AND ${TABLE}.state = 'failed_validation' THEN round(${event_count}/1000000, 0)
+      WHEN ${TABLE}.component = 'Normalizer' AND ${TABLE}.state = 'failed_parsing' THEN round(${log_count}/1000000, 0)
+    END;;
   }
 
   measure: total_size_bytes {
     type: sum
-    sql: ${log_volume} ;;
+    sql:
+    CASE
+      WHEN ${TABLE}.component = 'Ingestion API' AND ${TABLE}.log_type IS NOT NULL THEN ${TABLE}.log_volume
+    END;;
     # link: {
     #   label: "Data Ingestion and Health Dashboard"
     #   url: "@{DATA_INGESTION_AND_HEALTH_DASHBOARD}"
@@ -78,28 +88,44 @@ view: +ingestion_metrics {
   }
   measure: total_events {
     type: sum
-    sql: ${log_count} ;;
+    sql:
+    CASE
+      WHEN ${TABLE}.component = 'Normalizer' AND ${TABLE}.state = 'validated' THEN ${TABLE}.event_count
+    END;;
   }
 
   measure: total_error_events {
     type: sum
-    sql: ${drop_count} ;;
+    sql:
+    CASE
+      WHEN ${TABLE}.component = 'Normalizer' AND ${TABLE}.state = 'failed_validation' THEN ${event_count}
+      WHEN ${TABLE}.component = 'Normalizer' AND ${TABLE}.state = 'failed_parsing' THEN ${log_count}
+    END;;
   }
 
   measure: total_normalized_events {
     type: sum
-    sql: ${event_count} ;;
+    sql:
+    CASE
+      WHEN ${TABLE}.component = 'Normalizer' AND ${TABLE}.state = 'validated' THEN ${TABLE}.event_count
+    END;;
   }
 
 
   measure: total_validation_error_events {
     type: sum
-    sql: ${drop_count} ;;
+    sql:
+    CASE
+      WHEN ${TABLE}.component = 'Normalizer' AND ${TABLE}.state = 'failed_validation' THEN ${event_count}
+    END;;
   }
 
   measure: total_parsing_error_events {
     type: sum
-    sql: ${drop_count} ;;
+    sql:
+    CASE
+      WHEN ${TABLE}.component = 'Normalizer' AND ${TABLE}.state = 'failed_parsing' THEN ${log_count}
+    END;;
   }
 
   # Breaks Events Over Time right now...
@@ -130,6 +156,14 @@ view: +ingestion_metrics {
 
   dimension: log_type_for_drill {
     type: string
-    sql: ${log_type} ;;
+    sql:
+    CASE
+      WHEN ${TABLE}.log_type is not null THEN ${log_type}
+    END;;
+  }
+
+  dimension: valid_log_type {
+    type: string
+    sql:COALESCE(${log_type},null);;
   }
 }
