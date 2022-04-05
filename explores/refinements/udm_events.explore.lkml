@@ -2,7 +2,14 @@ include: "/views/refinements/udm_events.view.lkml"
 include: "/views/refinements/udm_enum_value_to_name_mapping.view.lkml"
 include: "/explores/udm_events.explore.lkml"
 
+access_grant: can_explore_udm_events {
+  user_attribute: chronicle_feature_bq_export_udm_events_enabled
+  allowed_values: ["yes"]
+}
+
 explore: +udm_events {
+  # required_access_grants: [can_explore_udm_events]
+
   # Naming enums
   join: metadata__event_type__enum {
     from: enum__backstory__metadata__event_type
