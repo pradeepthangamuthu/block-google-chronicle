@@ -19,10 +19,7 @@ view: +ingestion_metrics {
 
   measure: total_entry_number {
     type: sum
-    sql:
-    CASE
-      WHEN ${TABLE}.component = 'Ingestion API' AND ${TABLE}.log_type IS NOT NULL THEN ${TABLE}.log_count
-    END;;
+    sql:${TABLE}.log_count;;
     # link: {
     #   label: "Data Ingestion and Health Dashboard"
     #   url: "@{DATA_INGESTION_AND_HEALTH_DASHBOARD}"
@@ -56,10 +53,7 @@ view: +ingestion_metrics {
 
   measure: total_size_bytes {
     type: sum
-    sql:
-    CASE
-      WHEN ${TABLE}.component = 'Ingestion API' AND ${TABLE}.log_type IS NOT NULL THEN ${TABLE}.log_volume
-    END;;
+    sql:${TABLE}.log_volume;;
     # link: {
     #   label: "Data Ingestion and Health Dashboard"
     #   url: "@{DATA_INGESTION_AND_HEALTH_DASHBOARD}"
