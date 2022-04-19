@@ -9,7 +9,7 @@ view: ingestion_metric_with_ingestion_stats {
         ingestion_metrics.event_count AS event_count,
         ingestion_metrics.state AS state
       FROM `@{INGESTION_METRICS}` AS ingestion_metrics
-      WHERE UNIX_SECONDS(TIMESTAMP (ingestion_metrics.start_time)) > 1650335400),
+      WHERE UNIX_SECONDS(TIMESTAMP (ingestion_metrics.start_time)) > 1650947400),
       ingestion_stats AS (SELECT
         ingestion_stats.timestamp_sec AS time,
         ingestion_stats.log_type AS log_type,
@@ -21,7 +21,7 @@ view: ingestion_metric_with_ingestion_stats {
         ingestion_stats.validation_error_count AS validation_error_count,
         ingestion_stats.total_error_count AS total_error_count,
       FROM `@{INGESTION_STATS}` AS ingestion_stats
-      WHERE ingestion_stats.timestamp_sec < 1650335400)
+      WHERE ingestion_stats.timestamp_sec < 1650947400)
       SELECT * FROM @{INGESTION_METRICS} FULL JOIN @{INGESTION_STATS} USING (time, log_type)
        ;;
   }
@@ -46,7 +46,7 @@ view: ingestion_metric_with_ingestion_stats {
     type: sum
     sql:
     CASE
-      WHEN ${TABLE}.time < 1650335400
+      WHEN ${TABLE}.time < 1650947400
         THEN ${TABLE}.entry_number
       ELSE
           CASE
@@ -80,7 +80,7 @@ view: ingestion_metric_with_ingestion_stats {
     type: sum
     sql:
         CASE
-          WHEN ${TABLE}.time < 1650335400
+          WHEN ${TABLE}.time < 1650947400
             THEN ${TABLE}.total_error_count
           ELSE
             CASE
@@ -96,7 +96,7 @@ view: ingestion_metric_with_ingestion_stats {
     type: sum
     sql:
         CASE
-          WHEN ${TABLE}.time < 1650335400
+          WHEN ${TABLE}.time < 1650947400
             THEN ${TABLE}.size_bytes
           ELSE
               CASE
@@ -130,7 +130,7 @@ view: ingestion_metric_with_ingestion_stats {
     type: sum
     sql:
         CASE
-          WHEN ${TABLE}.time < 1650335400
+          WHEN ${TABLE}.time < 1650947400
             THEN round((${TABLE}.size_bytes)/1024/1024/1024, 2)
           ELSE
               CASE
@@ -143,7 +143,7 @@ view: ingestion_metric_with_ingestion_stats {
     type: sum
     sql:
         CASE
-          WHEN ${TABLE}.time < 1650335400
+          WHEN ${TABLE}.time < 1650947400
             THEN ${TABLE}.entry_number
           ELSE
               CASE
@@ -157,7 +157,7 @@ view: ingestion_metric_with_ingestion_stats {
     type: sum
     sql:
         CASE
-          WHEN ${TABLE}.time < 1650335400
+          WHEN ${TABLE}.time < 1650947400
             THEN ${TABLE}.total_error_count
           ELSE
             CASE
@@ -173,7 +173,7 @@ view: ingestion_metric_with_ingestion_stats {
     type: sum
     sql:
         CASE
-          WHEN ${TABLE}.time < 1650335400
+          WHEN ${TABLE}.time < 1650947400
             THEN ${TABLE}.normalized_event_count
           ELSE
             CASE
@@ -186,7 +186,7 @@ view: ingestion_metric_with_ingestion_stats {
     type: sum
     sql:
         CASE
-          WHEN ${TABLE}.time < 1650335400
+          WHEN ${TABLE}.time < 1650947400
             THEN ${TABLE}.validation_error_count
           ELSE
             CASE
@@ -199,7 +199,7 @@ view: ingestion_metric_with_ingestion_stats {
     type: sum
     sql:
         CASE
-          WHEN ${TABLE}.time < 1650335400
+          WHEN ${TABLE}.time < 1650947400
             THEN ${TABLE}.parsing_error_count
           ELSE
             CASE
