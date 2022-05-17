@@ -69,6 +69,7 @@ view: global_threat_map_ioc {
   }
 
   filter: period_filter {
+    hidden: yes
     type: date
     description: "Use this filter to define the current and previous period for analysis"
   }

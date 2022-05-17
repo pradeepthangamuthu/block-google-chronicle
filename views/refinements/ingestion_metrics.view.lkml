@@ -143,8 +143,10 @@ view: +ingestion_metrics {
   }
 
   filter: period_filter {
+    label: "Filter for Period Dimension"
+    hidden: yes
     type: date
-    description: "Use this filter to define the current and previous period for analysis"
+    description: "Use this filter to define the current and previous period for analysis - only to be used with the Period Dimension"
     sql: ${period} IS NOT NULL ;;
   }
 

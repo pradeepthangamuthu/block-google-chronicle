@@ -51,6 +51,7 @@ view: asset_rule_detections_with_udm_events {
   }
 
   filter: period_filter {
+    hidden: yes
     type: date
     description: "Use this filter to define the current and previous period for analysis"
   }

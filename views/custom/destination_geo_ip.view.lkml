@@ -73,8 +73,10 @@ view: destination_geo_ip {
   }
 
   filter: period_filter {
+    label: "Filter for Period Dimension"
+    hidden: yes
     type: date
-    description: "Use this filter to define the current and previous period for analysis"
+    description: "Use this filter to define the current and previous period for analysis - only to be used with the Period Dimension"
   }
 
 # ${event_timestamp_raw} is the timestamp dimension we are building our reporting period off of
