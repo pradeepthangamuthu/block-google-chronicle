@@ -42,8 +42,17 @@ view: events {
     group_item_label: "Vulnerabilities"
   }
 
-  dimension: hour_time_bucket {
-    type: string
+  dimension_group: hour_time_bucket {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
     sql: ${TABLE}.hour_time_bucket ;;
   }
 
