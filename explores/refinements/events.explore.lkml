@@ -1,8 +1,7 @@
 include: "/explores/events.explore.lkml"
-include: "/chronicle_features.lkml"
 
 explore: +events {
   label: "UDM Events (Preview)"
   # This is an embedded looker only accress_grant
-  required_access_grants: [has_chronicle_feature_bq_export_external_source_enabled]
+  # required_access_grants: [has_chronicle_feature_bq_export_external_source_enabled]
 }
