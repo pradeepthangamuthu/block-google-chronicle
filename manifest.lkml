@@ -66,7 +66,7 @@ constant: ENTITY_ENUM {
 }
 
 constant: DATA_INGESTION_AND_HEALTH_DASHBOARD{
-  value: "/dashboards-next/@{MODEL_NAME}::data_ingestion_and_health"
+  value: "/dashboards-next/@{MODEL_NAME}::health_ingestion_metrics"
 }
 
 constant: RULE_DETECTIONS_DASHBOARD{
