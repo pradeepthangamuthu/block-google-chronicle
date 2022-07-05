@@ -113,7 +113,7 @@
     enable_conditional_formatting: false
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
-    value_format: "[>=1000000000000000]#,##0.0,,,,\" PB\";[>=1000000000000]#,##0.0,,,,\" TB\";#,##0.0,,,\" GB\""
+    value_format: "[>=1000000000000000]#,##0.0,,,,,\" PB\";[>=1000000000000]#,##0.0,,,,\" TB\";#,##0.0,,,\" GB\""
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
