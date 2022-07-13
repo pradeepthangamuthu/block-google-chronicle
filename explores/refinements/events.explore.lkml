@@ -97,5 +97,4 @@ explore: +events {
   fields: [ALL_FIELDS*,]
   sql_always_where: {% condition events.time_filter %} events.hour_time_bucket {% endcondition %}
     AND {% condition events.time_filter %} TIMESTAMP_SECONDS(${event_timestamp_raw}) {% endcondition %};;
->>>>>>> 252ce69 ([b/231320704] Migrate explore and view refinements from udm_events to events)
 }
