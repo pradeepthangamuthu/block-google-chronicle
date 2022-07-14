@@ -1,5 +1,5 @@
 - dashboard: data_ingestion_and_health
-  title: Data Ingestion and Health
+  title: Data Ingestion and Health (DEPRECATED)
   layout: newspaper
   preferred_viewer: dashboards-next
   elements:
