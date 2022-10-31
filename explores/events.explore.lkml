@@ -109,6 +109,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__src__labels {
+    view_label: "Events: Src Labels"
+    sql: LEFT JOIN UNNEST(${events.src__labels}) as events__src__labels ;;
+    relationship: one_to_many
+  }
+
   join: events__about__asset__ip {
     view_label: "Events: About Asset Ip"
     sql: LEFT JOIN UNNEST(${events__about.asset__ip}) as events__about__asset__ip ;;
@@ -163,6 +169,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__about__labels {
+    view_label: "Events: About Labels"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels ;;
+    relationship: one_to_many
+  }
+
   join: events__intermediary__mac {
     view_label: "Events: Intermediary Mac"
     sql: LEFT JOIN UNNEST(${events__intermediary.mac}) as events__intermediary__mac ;;
@@ -190,6 +202,12 @@ explore: events {
   join: events__target__file__names {
     view_label: "Events: Target File Names"
     sql: LEFT JOIN UNNEST(${events.target__file__names}) as events__target__file__names ;;
+    relationship: one_to_many
+  }
+
+  join: events__target__labels {
+    view_label: "Events: Target Labels"
+    sql: LEFT JOIN UNNEST(${events.target__labels}) as events__target__labels ;;
     relationship: one_to_many
   }
 
@@ -235,6 +253,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__observer__labels {
+    view_label: "Events: Observer Labels"
+    sql: LEFT JOIN UNNEST(${events.observer__labels}) as events__observer__labels ;;
+    relationship: one_to_many
+  }
+
   join: events__src__user__department {
     view_label: "Events: Src User Department"
     sql: LEFT JOIN UNNEST(${events.src__user__department}) as events__src__user__department ;;
@@ -256,6 +280,24 @@ explore: events {
   join: events__principal__file__names {
     view_label: "Events: Principal File Names"
     sql: LEFT JOIN UNNEST(${events.principal__file__names}) as events__principal__file__names ;;
+    relationship: one_to_many
+  }
+
+  join: events__principal__labels {
+    view_label: "Events: Principal Labels"
+    sql: LEFT JOIN UNNEST(${events.principal__labels}) as events__principal__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__src__ip_location {
+    view_label: "Events: Src Ip Location"
+    sql: LEFT JOIN UNNEST(${events.src__ip_location}) as events__src__ip_location ;;
+    relationship: one_to_many
+  }
+
+  join: events__src__asset__labels {
+    view_label: "Events: Src Asset Labels"
+    sql: LEFT JOIN UNNEST(${events.src__asset__labels}) as events__src__asset__labels ;;
     relationship: one_to_many
   }
 
@@ -319,6 +361,18 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__about__ip_location {
+    view_label: "Events: About Ip Location"
+    sql: LEFT JOIN UNNEST(${events__about.ip_location}) as events__about__ip_location ;;
+    relationship: one_to_many
+  }
+
+  join: events__about__asset__labels {
+    view_label: "Events: About Asset Labels"
+    sql: LEFT JOIN UNNEST(${events__about.asset__labels}) as events__about__asset__labels ;;
+    relationship: one_to_many
+  }
+
   join: events__intermediary__asset__mac {
     view_label: "Events: Intermediary Asset Mac"
     sql: LEFT JOIN UNNEST(${events__intermediary.asset__mac}) as events__intermediary__asset__mac ;;
@@ -352,6 +406,24 @@ explore: events {
   join: events__intermediary__file__names {
     view_label: "Events: Intermediary File Names"
     sql: LEFT JOIN UNNEST(${events__intermediary.file__names}) as events__intermediary__file__names ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__labels {
+    view_label: "Events: Intermediary Labels"
+    sql: LEFT JOIN UNNEST(${events__intermediary.labels}) as events__intermediary__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__target__ip_location {
+    view_label: "Events: Target Ip Location"
+    sql: LEFT JOIN UNNEST(${events.target__ip_location}) as events__target__ip_location ;;
+    relationship: one_to_many
+  }
+
+  join: events__target__asset__labels {
+    view_label: "Events: Target Asset Labels"
+    sql: LEFT JOIN UNNEST(${events.target__asset__labels}) as events__target__asset__labels ;;
     relationship: one_to_many
   }
 
@@ -415,9 +487,27 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__observer__ip_location {
+    view_label: "Events: Observer Ip Location"
+    sql: LEFT JOIN UNNEST(${events.observer__ip_location}) as events__observer__ip_location ;;
+    relationship: one_to_many
+  }
+
+  join: events__observer__asset__labels {
+    view_label: "Events: Observer Asset Labels"
+    sql: LEFT JOIN UNNEST(${events.observer__asset__labels}) as events__observer__asset__labels ;;
+    relationship: one_to_many
+  }
+
   join: events__extensions__auth__mechanism {
     view_label: "Events: Extensions Auth Mechanism"
     sql: LEFT JOIN UNNEST(${events.extensions__auth__mechanism}) as events__extensions__auth__mechanism ;;
+    relationship: one_to_many
+  }
+
+  join: events__src__resource_ancestors {
+    view_label: "Events: Src Resource Ancestors"
+    sql: LEFT JOIN UNNEST(${events.src__resource_ancestors}) as events__src__resource_ancestors ;;
     relationship: one_to_many
   }
 
@@ -478,6 +568,18 @@ explore: events {
   join: events__network__dhcp__options {
     view_label: "Events: Network Dhcp Options"
     sql: LEFT JOIN UNNEST(${events.network__dhcp__options}) as events__network__dhcp__options ;;
+    relationship: one_to_many
+  }
+
+  join: events__principal__ip_location {
+    view_label: "Events: Principal Ip Location"
+    sql: LEFT JOIN UNNEST(${events.principal__ip_location}) as events__principal__ip_location ;;
+    relationship: one_to_many
+  }
+
+  join: events__principal__asset__labels {
+    view_label: "Events: Principal Asset Labels"
+    sql: LEFT JOIN UNNEST(${events.principal__asset__labels}) as events__principal__asset__labels ;;
     relationship: one_to_many
   }
 
@@ -565,15 +667,15 @@ explore: events {
     relationship: one_to_many
   }
 
-  join: events__src__resource_ancestors {
-    view_label: "Events: Src Resource Ancestors"
-    sql: LEFT JOIN UNNEST(${events.src__resource_ancestors}) as events__src__resource_ancestors ;;
-    relationship: one_to_many
-  }
-
   join: events__src__domain__admin__department {
     view_label: "Events: Src Domain Admin Department"
     sql: LEFT JOIN UNNEST(${events.src__domain__admin__department}) as events__src__domain__admin__department ;;
+    relationship: one_to_many
+  }
+
+  join: events__about__resource_ancestors {
+    view_label: "Events: About Resource Ancestors"
+    sql: LEFT JOIN UNNEST(${events__about.resource_ancestors}) as events__about__resource_ancestors ;;
     relationship: one_to_many
   }
 
@@ -667,6 +769,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__target__resource_ancestors {
+    view_label: "Events: Target Resource Ancestors"
+    sql: LEFT JOIN UNNEST(${events.target__resource_ancestors}) as events__target__resource_ancestors ;;
+    relationship: one_to_many
+  }
+
   join: events__target__process_ancestors {
     view_label: "Events: Target Process Ancestors"
     sql: LEFT JOIN UNNEST(${events.target__process_ancestors}) as events__target__process_ancestors ;;
@@ -739,15 +847,21 @@ explore: events {
     relationship: one_to_many
   }
 
-  join: events__about__resource_ancestors {
-    view_label: "Events: About Resource Ancestors"
-    sql: LEFT JOIN UNNEST(${events__about.resource_ancestors}) as events__about__resource_ancestors ;;
-    relationship: one_to_many
-  }
-
   join: events__about__domain__admin__department {
     view_label: "Events: About Domain Admin Department"
     sql: LEFT JOIN UNNEST(${events__about.domain__admin__department}) as events__about__domain__admin__department ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__ip_location {
+    view_label: "Events: Intermediary Ip Location"
+    sql: LEFT JOIN UNNEST(${events__intermediary.ip_location}) as events__intermediary__ip_location ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__asset__labels {
+    view_label: "Events: Intermediary Asset Labels"
+    sql: LEFT JOIN UNNEST(${events__intermediary.asset__labels}) as events__intermediary__asset__labels ;;
     relationship: one_to_many
   }
 
@@ -784,6 +898,12 @@ explore: events {
   join: events__principal__user__email_addresses {
     view_label: "Events: Principal User Email Addresses"
     sql: LEFT JOIN UNNEST(${events.principal__user__email_addresses}) as events__principal__user__email_addresses ;;
+    relationship: one_to_many
+  }
+
+  join: events__observer__resource_ancestors {
+    view_label: "Events: Observer Resource Ancestors"
+    sql: LEFT JOIN UNNEST(${events.observer__resource_ancestors}) as events__observer__resource_ancestors ;;
     relationship: one_to_many
   }
 
@@ -829,15 +949,15 @@ explore: events {
     relationship: one_to_many
   }
 
-  join: events__target__resource_ancestors {
-    view_label: "Events: Target Resource Ancestors"
-    sql: LEFT JOIN UNNEST(${events.target__resource_ancestors}) as events__target__resource_ancestors ;;
-    relationship: one_to_many
-  }
-
   join: events__target__domain__admin__department {
     view_label: "Events: Target Domain Admin Department"
     sql: LEFT JOIN UNNEST(${events.target__domain__admin__department}) as events__target__domain__admin__department ;;
+    relationship: one_to_many
+  }
+
+  join: events__principal__resource_ancestors {
+    view_label: "Events: Principal Resource Ancestors"
+    sql: LEFT JOIN UNNEST(${events.principal__resource_ancestors}) as events__principal__resource_ancestors ;;
     relationship: one_to_many
   }
 
@@ -1009,12 +1129,6 @@ explore: events {
     relationship: one_to_many
   }
 
-  join: events__observer__resource_ancestors {
-    view_label: "Events: Observer Resource Ancestors"
-    sql: LEFT JOIN UNNEST(${events.observer__resource_ancestors}) as events__observer__resource_ancestors ;;
-    relationship: one_to_many
-  }
-
   join: events__observer__domain__admin__department {
     view_label: "Events: Observer Domain Admin Department"
     sql: LEFT JOIN UNNEST(${events.observer__domain__admin__department}) as events__observer__domain__admin__department ;;
@@ -1105,6 +1219,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__security_result__about__labels {
+    view_label: "Events: Security Result About Labels"
+    sql: LEFT JOIN UNNEST(${events__security_result.about__labels}) as events__security_result__about__labels ;;
+    relationship: one_to_many
+  }
+
   join: events__security_result__category_details {
     view_label: "Events: Security Result Category Details"
     sql: LEFT JOIN UNNEST(${events__security_result.category_details}) as events__security_result__category_details ;;
@@ -1156,12 +1276,6 @@ explore: events {
   join: events__principal__group__email_addresses {
     view_label: "Events: Principal Group Email Addresses"
     sql: LEFT JOIN UNNEST(${events.principal__group__email_addresses}) as events__principal__group__email_addresses ;;
-    relationship: one_to_many
-  }
-
-  join: events__principal__resource_ancestors {
-    view_label: "Events: Principal Resource Ancestors"
-    sql: LEFT JOIN UNNEST(${events.principal__resource_ancestors}) as events__principal__resource_ancestors ;;
     relationship: one_to_many
   }
 
@@ -1291,6 +1405,24 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__metadata__tags__data_tap_config_name {
+    view_label: "Events: Metadata Tags Data Tap Config Name"
+    sql: LEFT JOIN UNNEST(${events.metadata__tags__data_tap_config_name}) as events__metadata__tags__data_tap_config_name ;;
+    relationship: one_to_many
+  }
+
+  join: events__src__cloud__vpc__attribute__roles {
+    view_label: "Events: Src Cloud Vpc Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events.src__cloud__vpc__attribute__roles}) as events__src__cloud__vpc__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__src__cloud__vpc__attribute__labels {
+    view_label: "Events: Src Cloud Vpc Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events.src__cloud__vpc__attribute__labels}) as events__src__cloud__vpc__attribute__labels ;;
+    relationship: one_to_many
+  }
+
   join: events__src__file__pe_file__imports__functions {
     view_label: "Events: Src File Pe File Imports Functions"
     sql: LEFT JOIN UNNEST(${events__src__file__pe_file__imports.functions}) as events__src__file__pe_file__imports__functions ;;
@@ -1360,6 +1492,12 @@ explore: events {
   join: events__about__domain__registrant__department {
     view_label: "Events: About Domain Registrant Department"
     sql: LEFT JOIN UNNEST(${events__about.domain__registrant__department}) as events__about__domain__registrant__department ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__resource_ancestors {
+    view_label: "Events: Intermediary Resource Ancestors"
+    sql: LEFT JOIN UNNEST(${events__intermediary.resource_ancestors}) as events__intermediary__resource_ancestors ;;
     relationship: one_to_many
   }
 
@@ -1681,6 +1819,18 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__about__cloud__vpc__attribute__roles {
+    view_label: "Events: About Cloud Vpc Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__about.cloud__vpc__attribute__roles}) as events__about__cloud__vpc__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__about__cloud__vpc__attribute__labels {
+    view_label: "Events: About Cloud Vpc Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__about.cloud__vpc__attribute__labels}) as events__about__cloud__vpc__attribute__labels ;;
+    relationship: one_to_many
+  }
+
   join: events__about__file__pe_file__imports__functions {
     view_label: "Events: About File Pe File Imports Functions"
     sql: LEFT JOIN UNNEST(${events__about__file__pe_file__imports.functions}) as events__about__file__pe_file__imports__functions ;;
@@ -1708,12 +1858,6 @@ explore: events {
   join: events__intermediary__group__email_addresses {
     view_label: "Events: Intermediary Group Email Addresses"
     sql: LEFT JOIN UNNEST(${events__intermediary.group__email_addresses}) as events__intermediary__group__email_addresses ;;
-    relationship: one_to_many
-  }
-
-  join: events__intermediary__resource_ancestors {
-    view_label: "Events: Intermediary Resource Ancestors"
-    sql: LEFT JOIN UNNEST(${events__intermediary.resource_ancestors}) as events__intermediary__resource_ancestors ;;
     relationship: one_to_many
   }
 
@@ -1891,6 +2035,18 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__target__cloud__vpc__attribute__roles {
+    view_label: "Events: Target Cloud Vpc Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events.target__cloud__vpc__attribute__roles}) as events__target__cloud__vpc__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__target__cloud__vpc__attribute__labels {
+    view_label: "Events: Target Cloud Vpc Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events.target__cloud__vpc__attribute__labels}) as events__target__cloud__vpc__attribute__labels ;;
+    relationship: one_to_many
+  }
+
   join: events__target__file__pe_file__imports__functions {
     view_label: "Events: Target File Pe File Imports Functions"
     sql: LEFT JOIN UNNEST(${events__target__file__pe_file__imports.functions}) as events__target__file__pe_file__imports__functions ;;
@@ -1990,6 +2146,18 @@ explore: events {
   join: events__observer__domain__zone__group_identifiers {
     view_label: "Events: Observer Domain Zone Group Identifiers"
     sql: LEFT JOIN UNNEST(${events.observer__domain__zone__group_identifiers}) as events__observer__domain__zone__group_identifiers ;;
+    relationship: one_to_many
+  }
+
+  join: events__src__cloud__project__attribute__roles {
+    view_label: "Events: Src Cloud Project Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events.src__cloud__project__attribute__roles}) as events__src__cloud__project__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__src__cloud__project__attribute__labels {
+    view_label: "Events: Src Cloud Project Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events.src__cloud__project__attribute__labels}) as events__src__cloud__project__attribute__labels ;;
     relationship: one_to_many
   }
 
@@ -2101,6 +2269,18 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__security_result__about__ip_location {
+    view_label: "Events: Security Result About Ip Location"
+    sql: LEFT JOIN UNNEST(${events__security_result.about__ip_location}) as events__security_result__about__ip_location ;;
+    relationship: one_to_many
+  }
+
+  join: events__security_result__about__asset__labels {
+    view_label: "Events: Security Result About Asset Labels"
+    sql: LEFT JOIN UNNEST(${events__security_result.about__asset__labels}) as events__security_result__about__asset__labels ;;
+    relationship: one_to_many
+  }
+
   join: events__target__domain__registrant__phone_numbers {
     view_label: "Events: Target Domain Registrant Phone Numbers"
     sql: LEFT JOIN UNNEST(${events.target__domain__registrant__phone_numbers}) as events__target__domain__registrant__phone_numbers ;;
@@ -2146,6 +2326,18 @@ explore: events {
   join: events__principal__domain__zone__group_identifiers {
     view_label: "Events: Principal Domain Zone Group Identifiers"
     sql: LEFT JOIN UNNEST(${events.principal__domain__zone__group_identifiers}) as events__principal__domain__zone__group_identifiers ;;
+    relationship: one_to_many
+  }
+
+  join: events__observer__cloud__vpc__attribute__roles {
+    view_label: "Events: Observer Cloud Vpc Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events.observer__cloud__vpc__attribute__roles}) as events__observer__cloud__vpc__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__observer__cloud__vpc__attribute__labels {
+    view_label: "Events: Observer Cloud Vpc Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events.observer__cloud__vpc__attribute__labels}) as events__observer__cloud__vpc__attribute__labels ;;
     relationship: one_to_many
   }
 
@@ -2317,6 +2509,18 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__principal__cloud__vpc__attribute__roles {
+    view_label: "Events: Principal Cloud Vpc Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events.principal__cloud__vpc__attribute__roles}) as events__principal__cloud__vpc__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__principal__cloud__vpc__attribute__labels {
+    view_label: "Events: Principal Cloud Vpc Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events.principal__cloud__vpc__attribute__labels}) as events__principal__cloud__vpc__attribute__labels ;;
+    relationship: one_to_many
+  }
+
   join: events__principal__file__pe_file__imports__functions {
     view_label: "Events: Principal File Pe File Imports Functions"
     sql: LEFT JOIN UNNEST(${events__principal__file__pe_file__imports.functions}) as events__principal__file__pe_file__imports__functions ;;
@@ -2359,9 +2563,27 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__src__cloud__vpc__attribute__permissions {
+    view_label: "Events: Src Cloud Vpc Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events.src__cloud__vpc__attribute__permissions}) as events__src__cloud__vpc__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
   join: events__src__process__file__pe_file__imports {
     view_label: "Events: Src Process File Pe File Imports"
     sql: LEFT JOIN UNNEST(${events.src__process__file__pe_file__imports}) as events__src__process__file__pe_file__imports ;;
+    relationship: one_to_many
+  }
+
+  join: events__about__cloud__project__attribute__roles {
+    view_label: "Events: About Cloud Project Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__about.cloud__project__attribute__roles}) as events__about__cloud__project__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__about__cloud__project__attribute__labels {
+    view_label: "Events: About Cloud Project Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__about.cloud__project__attribute__labels}) as events__about__cloud__project__attribute__labels ;;
     relationship: one_to_many
   }
 
@@ -2521,6 +2743,18 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__extensions__vulns__vulnerabilities__about__ip {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Ip"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__ip}) as events__extensions__vulns__vulnerabilities__about__ip ;;
+    relationship: one_to_many
+  }
+
+  join: events__src__file__pe_file__resources_type_count {
+    view_label: "Events: Src File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events.src__file__pe_file__resources_type_count}) as events__src__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
   join: events__src__process__file__pe_file__resource {
     view_label: "Events: Src Process File Pe File Resource"
     sql: LEFT JOIN UNNEST(${events.src__process__file__pe_file__resource}) as events__src__process__file__pe_file__resource ;;
@@ -2623,6 +2857,18 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__target__cloud__project__attribute__roles {
+    view_label: "Events: Target Cloud Project Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events.target__cloud__project__attribute__roles}) as events__target__cloud__project__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__target__cloud__project__attribute__labels {
+    view_label: "Events: Target Cloud Project Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events.target__cloud__project__attribute__labels}) as events__target__cloud__project__attribute__labels ;;
+    relationship: one_to_many
+  }
+
   join: events__target__file__pe_file__signature_info__signer {
     view_label: "Events: Target File Pe File Signature Info Signer"
     sql: LEFT JOIN UNNEST(${events.target__file__pe_file__signature_info__signer}) as events__target__file__pe_file__signature_info__signer ;;
@@ -2719,6 +2965,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__extensions__vulns__vulnerabilities__about__mac {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Mac"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__mac}) as events__extensions__vulns__vulnerabilities__about__mac ;;
+    relationship: one_to_many
+  }
+
   join: events__src__process__file__pe_file__imports__functions {
     view_label: "Events: Src Process File Pe File Imports Functions"
     sql: LEFT JOIN UNNEST(${events__src__process__file__pe_file__imports.functions}) as events__src__process__file__pe_file__imports__functions ;;
@@ -2758,6 +3010,12 @@ explore: events {
   join: events__src__domain__registrant__attribute__labels {
     view_label: "Events: Src Domain Registrant Attribute Labels"
     sql: LEFT JOIN UNNEST(${events.src__domain__registrant__attribute__labels}) as events__src__domain__registrant__attribute__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__about__cloud__vpc__attribute__permissions {
+    view_label: "Events: About Cloud Vpc Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__about.cloud__vpc__attribute__permissions}) as events__about__cloud__vpc__attribute__permissions ;;
     relationship: one_to_many
   }
 
@@ -2869,6 +3127,18 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__observer__cloud__project__attribute__roles {
+    view_label: "Events: Observer Cloud Project Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events.observer__cloud__project__attribute__roles}) as events__observer__cloud__project__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__observer__cloud__project__attribute__labels {
+    view_label: "Events: Observer Cloud Project Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events.observer__cloud__project__attribute__labels}) as events__observer__cloud__project__attribute__labels ;;
+    relationship: one_to_many
+  }
+
   join: events__observer__file__pe_file__signature_info__signer {
     view_label: "Events: Observer File Pe File Signature Info Signer"
     sql: LEFT JOIN UNNEST(${events.observer__file__pe_file__signature_info__signer}) as events__observer__file__pe_file__signature_info__signer ;;
@@ -2905,6 +3175,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__about__file__pe_file__resources_type_count {
+    view_label: "Events: About File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events__about.file__pe_file__resources_type_count}) as events__about__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
   join: events__about__process__file__pe_file__resource {
     view_label: "Events: About Process File Pe File Resource"
     sql: LEFT JOIN UNNEST(${events__about.process__file__pe_file__resource}) as events__about__process__file__pe_file__resource ;;
@@ -2914,6 +3190,18 @@ explore: events {
   join: events__about__user_management_chain__email_addresses {
     view_label: "Events: About User Management Chain Email Addresses"
     sql: LEFT JOIN UNNEST(${events__about__user_management_chain.email_addresses}) as events__about__user_management_chain__email_addresses ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__cloud__vpc__attribute__roles {
+    view_label: "Events: Intermediary Cloud Vpc Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__intermediary.cloud__vpc__attribute__roles}) as events__intermediary__cloud__vpc__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__cloud__vpc__attribute__labels {
+    view_label: "Events: Intermediary Cloud Vpc Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__intermediary.cloud__vpc__attribute__labels}) as events__intermediary__cloud__vpc__attribute__labels ;;
     relationship: one_to_many
   }
 
@@ -2941,15 +3229,39 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__security_result__about__resource_ancestors {
+    view_label: "Events: Security Result About Resource Ancestors"
+    sql: LEFT JOIN UNNEST(${events__security_result.about__resource_ancestors}) as events__security_result__about__resource_ancestors ;;
+    relationship: one_to_many
+  }
+
   join: events__security_result__about__process_ancestors {
     view_label: "Events: Security Result About Process Ancestors"
     sql: LEFT JOIN UNNEST(${events__security_result.about__process_ancestors}) as events__security_result__about__process_ancestors ;;
     relationship: one_to_many
   }
 
+  join: events__target__cloud__vpc__attribute__permissions {
+    view_label: "Events: Target Cloud Vpc Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events.target__cloud__vpc__attribute__permissions}) as events__target__cloud__vpc__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
   join: events__target__process__file__pe_file__imports {
     view_label: "Events: Target Process File Pe File Imports"
     sql: LEFT JOIN UNNEST(${events.target__process__file__pe_file__imports}) as events__target__process__file__pe_file__imports ;;
+    relationship: one_to_many
+  }
+
+  join: events__principal__cloud__project__attribute__roles {
+    view_label: "Events: Principal Cloud Project Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events.principal__cloud__project__attribute__roles}) as events__principal__cloud__project__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__principal__cloud__project__attribute__labels {
+    view_label: "Events: Principal Cloud Project Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events.principal__cloud__project__attribute__labels}) as events__principal__cloud__project__attribute__labels ;;
     relationship: one_to_many
   }
 
@@ -2998,6 +3310,18 @@ explore: events {
   join: events__observer__domain__registrant__group_identifiers {
     view_label: "Events: Observer Domain Registrant Group Identifiers"
     sql: LEFT JOIN UNNEST(${events.observer__domain__registrant__group_identifiers}) as events__observer__domain__registrant__group_identifiers ;;
+    relationship: one_to_many
+  }
+
+  join: events__src__cloud__project__attribute__permissions {
+    view_label: "Events: Src Cloud Project Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events.src__cloud__project__attribute__permissions}) as events__src__cloud__project__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__src__file__pe_file__signature_info__signers {
+    view_label: "Events: Src File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events.src__file__pe_file__signature_info__signers}) as events__src__file__pe_file__signature_info__signers ;;
     relationship: one_to_many
   }
 
@@ -3097,6 +3421,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__target__file__pe_file__resources_type_count {
+    view_label: "Events: Target File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events.target__file__pe_file__resources_type_count}) as events__target__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
   join: events__target__process__file__pe_file__resource {
     view_label: "Events: Target Process File Pe File Resource"
     sql: LEFT JOIN UNNEST(${events.target__process__file__pe_file__resource}) as events__target__process__file__pe_file__resource ;;
@@ -3145,9 +3475,27 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__observer__cloud__vpc__attribute__permissions {
+    view_label: "Events: Observer Cloud Vpc Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events.observer__cloud__vpc__attribute__permissions}) as events__observer__cloud__vpc__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
   join: events__observer__process__file__pe_file__imports {
     view_label: "Events: Observer Process File Pe File Imports"
     sql: LEFT JOIN UNNEST(${events.observer__process__file__pe_file__imports}) as events__observer__process__file__pe_file__imports ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__nat_ip {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Nat Ip"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__nat_ip}) as events__extensions__vulns__vulnerabilities__about__nat_ip ;;
+    relationship: one_to_many
+  }
+
+  join: events__src__file__pe_file__resources_language_count {
+    view_label: "Events: Src File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events.src__file__pe_file__resources_language_count}) as events__src__file__pe_file__resources_language_count ;;
     relationship: one_to_many
   }
 
@@ -3247,12 +3595,6 @@ explore: events {
     relationship: one_to_many
   }
 
-  join: events__security_result__about__resource_ancestors {
-    view_label: "Events: Security Result About Resource Ancestors"
-    sql: LEFT JOIN UNNEST(${events__security_result.about__resource_ancestors}) as events__security_result__about__resource_ancestors ;;
-    relationship: one_to_many
-  }
-
   join: events__security_result__about__domain__admin__department {
     view_label: "Events: Security Result About Domain Admin Department"
     sql: LEFT JOIN UNNEST(${events__security_result.about__domain__admin__department}) as events__security_result__about__domain__admin__department ;;
@@ -3301,9 +3643,21 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__principal__cloud__vpc__attribute__permissions {
+    view_label: "Events: Principal Cloud Vpc Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events.principal__cloud__vpc__attribute__permissions}) as events__principal__cloud__vpc__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
   join: events__principal__process__file__pe_file__imports {
     view_label: "Events: Principal Process File Pe File Imports"
     sql: LEFT JOIN UNNEST(${events.principal__process__file__pe_file__imports}) as events__principal__process__file__pe_file__imports ;;
+    relationship: one_to_many
+  }
+
+  join: events__observer__file__pe_file__resources_type_count {
+    view_label: "Events: Observer File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events.observer__file__pe_file__resources_type_count}) as events__observer__file__pe_file__resources_type_count ;;
     relationship: one_to_many
   }
 
@@ -3340,6 +3694,18 @@ explore: events {
   join: events__src__user_management_chain__attribute__labels {
     view_label: "Events: Src User Management Chain Attribute Labels"
     sql: LEFT JOIN UNNEST(${events__src__user_management_chain.attribute__labels}) as events__src__user_management_chain__attribute__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__about__cloud__project__attribute__permissions {
+    view_label: "Events: About Cloud Project Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__about.cloud__project__attribute__permissions}) as events__about__cloud__project__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__about__file__pe_file__signature_info__signers {
+    view_label: "Events: About File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events__about.file__pe_file__signature_info__signers}) as events__about__file__pe_file__signature_info__signers ;;
     relationship: one_to_many
   }
 
@@ -3403,6 +3769,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__principal__file__pe_file__resources_type_count {
+    view_label: "Events: Principal File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events.principal__file__pe_file__resources_type_count}) as events__principal__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
   join: events__principal__process__file__pe_file__resource {
     view_label: "Events: Principal Process File Pe File Resource"
     sql: LEFT JOIN UNNEST(${events.principal__process__file__pe_file__resource}) as events__principal__process__file__pe_file__resource ;;
@@ -3457,9 +3829,21 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__extensions__vulns__vulnerabilities__about__asset__ip {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Asset Ip"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__asset__ip}) as events__extensions__vulns__vulnerabilities__about__asset__ip ;;
+    relationship: one_to_many
+  }
+
   join: events__src__process_ancestors__file__pe_file__section {
     view_label: "Events: Src Process Ancestors File Pe File Section"
     sql: LEFT JOIN UNNEST(${events__src__process_ancestors.file__pe_file__section}) as events__src__process_ancestors__file__pe_file__section ;;
+    relationship: one_to_many
+  }
+
+  join: events__about__file__pe_file__resources_language_count {
+    view_label: "Events: About File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events__about.file__pe_file__resources_language_count}) as events__about__file__pe_file__resources_language_count ;;
     relationship: one_to_many
   }
 
@@ -3472,6 +3856,18 @@ explore: events {
   join: events__about__domain__billing__attribute__permissions {
     view_label: "Events: About Domain Billing Attribute Permissions"
     sql: LEFT JOIN UNNEST(${events__about.domain__billing__attribute__permissions}) as events__about__domain__billing__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__cloud__project__attribute__roles {
+    view_label: "Events: Intermediary Cloud Project Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__intermediary.cloud__project__attribute__roles}) as events__intermediary__cloud__project__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__cloud__project__attribute__labels {
+    view_label: "Events: Intermediary Cloud Project Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__intermediary.cloud__project__attribute__labels}) as events__intermediary__cloud__project__attribute__labels ;;
     relationship: one_to_many
   }
 
@@ -3526,6 +3922,18 @@ explore: events {
   join: events__security_result__about__user__attribute__labels {
     view_label: "Events: Security Result About User Attribute Labels"
     sql: LEFT JOIN UNNEST(${events__security_result.about__user__attribute__labels}) as events__security_result__about__user__attribute__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__target__cloud__project__attribute__permissions {
+    view_label: "Events: Target Cloud Project Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events.target__cloud__project__attribute__permissions}) as events__target__cloud__project__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__target__file__pe_file__signature_info__signers {
+    view_label: "Events: Target File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events.target__file__pe_file__signature_info__signers}) as events__target__file__pe_file__signature_info__signers ;;
     relationship: one_to_many
   }
 
@@ -3598,6 +4006,12 @@ explore: events {
   join: events__observer__domain__admin__attribute__permissions {
     view_label: "Events: Observer Domain Admin Attribute Permissions"
     sql: LEFT JOIN UNNEST(${events.observer__domain__admin__attribute__permissions}) as events__observer__domain__admin__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__asset__mac {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Asset Mac"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__asset__mac}) as events__extensions__vulns__vulnerabilities__about__asset__mac ;;
     relationship: one_to_many
   }
 
@@ -3691,6 +4105,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__target__file__pe_file__resources_language_count {
+    view_label: "Events: Target File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events.target__file__pe_file__resources_language_count}) as events__target__file__pe_file__resources_language_count ;;
+    relationship: one_to_many
+  }
+
   join: events__target__file__pe_file__resources_type_count_str {
     view_label: "Events: Target File Pe File Resources Type Count Str"
     sql: LEFT JOIN UNNEST(${events.target__file__pe_file__resources_type_count_str}) as events__target__file__pe_file__resources_type_count_str ;;
@@ -3727,15 +4147,45 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__observer__cloud__project__attribute__permissions {
+    view_label: "Events: Observer Cloud Project Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events.observer__cloud__project__attribute__permissions}) as events__observer__cloud__project__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__observer__file__pe_file__signature_info__signers {
+    view_label: "Events: Observer File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events.observer__file__pe_file__signature_info__signers}) as events__observer__file__pe_file__signature_info__signers ;;
+    relationship: one_to_many
+  }
+
   join: events__observer__process_ancestors__file__capabilities_tags {
     view_label: "Events: Observer Process Ancestors File Capabilities Tags"
     sql: LEFT JOIN UNNEST(${events__observer__process_ancestors.file__capabilities_tags}) as events__observer__process_ancestors__file__capabilities_tags ;;
     relationship: one_to_many
   }
 
+  join: events__extensions__vulns__vulnerabilities__about__file__names {
+    view_label: "Events: Extensions Vulns Vulnerabilities About File Names"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__file__names}) as events__extensions__vulns__vulnerabilities__about__file__names ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__labels {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Labels"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__labels}) as events__extensions__vulns__vulnerabilities__about__labels ;;
+    relationship: one_to_many
+  }
+
   join: events__src__file__pe_file__resources_language_count_str {
     view_label: "Events: Src File Pe File Resources Language Count Str"
     sql: LEFT JOIN UNNEST(${events.src__file__pe_file__resources_language_count_str}) as events__src__file__pe_file__resources_language_count_str ;;
+    relationship: one_to_many
+  }
+
+  join: events__src__process__file__pe_file__resources_type_count {
+    view_label: "Events: Src Process File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events.src__process__file__pe_file__resources_type_count}) as events__src__process__file__pe_file__resources_type_count ;;
     relationship: one_to_many
   }
 
@@ -3748,6 +4198,12 @@ explore: events {
   join: events__about__process_ancestors__file__pe_file__section {
     view_label: "Events: About Process Ancestors File Pe File Section"
     sql: LEFT JOIN UNNEST(${events__about__process_ancestors.file__pe_file__section}) as events__about__process_ancestors__file__pe_file__section ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__cloud__vpc__attribute__permissions {
+    view_label: "Events: Intermediary Cloud Vpc Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__intermediary.cloud__vpc__attribute__permissions}) as events__intermediary__cloud__vpc__attribute__permissions ;;
     relationship: one_to_many
   }
 
@@ -3799,9 +4255,27 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__principal__cloud__project__attribute__permissions {
+    view_label: "Events: Principal Cloud Project Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events.principal__cloud__project__attribute__permissions}) as events__principal__cloud__project__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__principal__file__pe_file__signature_info__signers {
+    view_label: "Events: Principal File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events.principal__file__pe_file__signature_info__signers}) as events__principal__file__pe_file__signature_info__signers ;;
+    relationship: one_to_many
+  }
+
   join: events__principal__process_ancestors__file__capabilities_tags {
     view_label: "Events: Principal Process Ancestors File Capabilities Tags"
     sql: LEFT JOIN UNNEST(${events__principal__process_ancestors.file__capabilities_tags}) as events__principal__process_ancestors__file__capabilities_tags ;;
+    relationship: one_to_many
+  }
+
+  join: events__observer__file__pe_file__resources_language_count {
+    view_label: "Events: Observer File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events.observer__file__pe_file__resources_language_count}) as events__observer__file__pe_file__resources_language_count ;;
     relationship: one_to_many
   }
 
@@ -3826,6 +4300,12 @@ explore: events {
   join: events__about__domain__registrant__attribute__permissions {
     view_label: "Events: About Domain Registrant Attribute Permissions"
     sql: LEFT JOIN UNNEST(${events__about.domain__registrant__attribute__permissions}) as events__about__domain__registrant__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__file__pe_file__resources_type_count {
+    view_label: "Events: Intermediary File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events__intermediary.file__pe_file__resources_type_count}) as events__intermediary__file__pe_file__resources_type_count ;;
     relationship: one_to_many
   }
 
@@ -3895,6 +4375,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__principal__file__pe_file__resources_language_count {
+    view_label: "Events: Principal File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events.principal__file__pe_file__resources_language_count}) as events__principal__file__pe_file__resources_language_count ;;
+    relationship: one_to_many
+  }
+
   join: events__principal__file__pe_file__resources_type_count_str {
     view_label: "Events: Principal File Pe File Resources Type Count Str"
     sql: LEFT JOIN UNNEST(${events.principal__file__pe_file__resources_type_count_str}) as events__principal__file__pe_file__resources_type_count_str ;;
@@ -3931,6 +4417,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__extensions__vulns__vulnerabilities__about__asset__nat_ip {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Asset Nat Ip"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__asset__nat_ip}) as events__extensions__vulns__vulnerabilities__about__asset__nat_ip ;;
+    relationship: one_to_many
+  }
+
   join: events__src__process_ancestors__file__pe_file__resource {
     view_label: "Events: Src Process Ancestors File Pe File Resource"
     sql: LEFT JOIN UNNEST(${events__src__process_ancestors.file__pe_file__resource}) as events__src__process_ancestors__file__pe_file__resource ;;
@@ -3940,6 +4432,12 @@ explore: events {
   join: events__about__file__pe_file__resources_language_count_str {
     view_label: "Events: About File Pe File Resources Language Count Str"
     sql: LEFT JOIN UNNEST(${events__about.file__pe_file__resources_language_count_str}) as events__about__file__pe_file__resources_language_count_str ;;
+    relationship: one_to_many
+  }
+
+  join: events__about__process__file__pe_file__resources_type_count {
+    view_label: "Events: About Process File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events__about.process__file__pe_file__resources_type_count}) as events__about__process__file__pe_file__resources_type_count ;;
     relationship: one_to_many
   }
 
@@ -4057,6 +4555,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__src__process__file__pe_file__signature_info__signers {
+    view_label: "Events: Src Process File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events.src__process__file__pe_file__signature_info__signers}) as events__src__process__file__pe_file__signature_info__signers ;;
+    relationship: one_to_many
+  }
+
   join: events__src__user_management_chain__attribute__permissions {
     view_label: "Events: Src User Management Chain Attribute Permissions"
     sql: LEFT JOIN UNNEST(${events__src__user_management_chain.attribute__permissions}) as events__src__user_management_chain__attribute__permissions ;;
@@ -4099,6 +4603,18 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__security_result__about__cloud__vpc__attribute__roles {
+    view_label: "Events: Security Result About Cloud Vpc Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__security_result.about__cloud__vpc__attribute__roles}) as events__security_result__about__cloud__vpc__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__security_result__about__cloud__vpc__attribute__labels {
+    view_label: "Events: Security Result About Cloud Vpc Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__security_result.about__cloud__vpc__attribute__labels}) as events__security_result__about__cloud__vpc__attribute__labels ;;
+    relationship: one_to_many
+  }
+
   join: events__security_result__about__file__pe_file__imports__functions {
     view_label: "Events: Security Result About File Pe File Imports Functions"
     sql: LEFT JOIN UNNEST(${events__security_result__about__file__pe_file__imports.functions}) as events__security_result__about__file__pe_file__imports__functions ;;
@@ -4129,6 +4645,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__target__process__file__pe_file__resources_type_count {
+    view_label: "Events: Target Process File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events.target__process__file__pe_file__resources_type_count}) as events__target__process__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
   join: events__target__resource_ancestors__attribute__permissions {
     view_label: "Events: Target Resource Ancestors Attribute Permissions"
     sql: LEFT JOIN UNNEST(${events__target__resource_ancestors.attribute__permissions}) as events__target__resource_ancestors__attribute__permissions ;;
@@ -4147,6 +4669,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__src__process__file__pe_file__resources_language_count {
+    view_label: "Events: Src Process File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events.src__process__file__pe_file__resources_language_count}) as events__src__process__file__pe_file__resources_language_count ;;
+    relationship: one_to_many
+  }
+
   join: events__src__process__file__pe_file__resources_type_count_str {
     view_label: "Events: Src Process File Pe File Resources Type Count Str"
     sql: LEFT JOIN UNNEST(${events.src__process__file__pe_file__resources_type_count_str}) as events__src__process__file__pe_file__resources_type_count_str ;;
@@ -4156,6 +4684,18 @@ explore: events {
   join: events__about__process_ancestors__file__pe_file__resource {
     view_label: "Events: About Process Ancestors File Pe File Resource"
     sql: LEFT JOIN UNNEST(${events__about__process_ancestors.file__pe_file__resource}) as events__about__process_ancestors__file__pe_file__resource ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__cloud__project__attribute__permissions {
+    view_label: "Events: Intermediary Cloud Project Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__intermediary.cloud__project__attribute__permissions}) as events__intermediary__cloud__project__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__file__pe_file__signature_info__signers {
+    view_label: "Events: Intermediary File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events__intermediary.file__pe_file__signature_info__signers}) as events__intermediary__file__pe_file__signature_info__signers ;;
     relationship: one_to_many
   }
 
@@ -4201,9 +4741,27 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__observer__process__file__pe_file__resources_type_count {
+    view_label: "Events: Observer Process File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events.observer__process__file__pe_file__resources_type_count}) as events__observer__process__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
   join: events__observer__resource_ancestors__attribute__permissions {
     view_label: "Events: Observer Resource Ancestors Attribute Permissions"
     sql: LEFT JOIN UNNEST(${events__observer__resource_ancestors.attribute__permissions}) as events__observer__resource_ancestors__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__user__department {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Department"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__user__department}) as events__extensions__vulns__vulnerabilities__about__user__department ;;
+    relationship: one_to_many
+  }
+
+  join: events__about__process__file__pe_file__signature_info__signers {
+    view_label: "Events: About Process File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events__about.process__file__pe_file__signature_info__signers}) as events__about__process__file__pe_file__signature_info__signers ;;
     relationship: one_to_many
   }
 
@@ -4216,6 +4774,12 @@ explore: events {
   join: events__about__process_ancestors__file__pe_file__imports__functions {
     view_label: "Events: About Process Ancestors File Pe File Imports Functions"
     sql: LEFT JOIN UNNEST(${events__about__process_ancestors__file__pe_file__imports.functions}) as events__about__process_ancestors__file__pe_file__imports__functions ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__file__pe_file__resources_language_count {
+    view_label: "Events: Intermediary File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events__intermediary.file__pe_file__resources_language_count}) as events__intermediary__file__pe_file__resources_language_count ;;
     relationship: one_to_many
   }
 
@@ -4297,6 +4861,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__principal__process__file__pe_file__resources_type_count {
+    view_label: "Events: Principal Process File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events.principal__process__file__pe_file__resources_type_count}) as events__principal__process__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
   join: events__principal__resource_ancestors__attribute__permissions {
     view_label: "Events: Principal Resource Ancestors Attribute Permissions"
     sql: LEFT JOIN UNNEST(${events__principal__resource_ancestors.attribute__permissions}) as events__principal__resource_ancestors__attribute__permissions ;;
@@ -4306,6 +4876,24 @@ explore: events {
   join: events__observer__process_ancestors__file__pe_file__imports {
     view_label: "Events: Observer Process Ancestors File Pe File Imports"
     sql: LEFT JOIN UNNEST(${events__observer__process_ancestors.file__pe_file__imports}) as events__observer__process_ancestors__file__pe_file__imports ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__ip_location {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Ip Location"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__ip_location}) as events__extensions__vulns__vulnerabilities__about__ip_location ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__asset__labels {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Asset Labels"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__asset__labels}) as events__extensions__vulns__vulnerabilities__about__asset__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__about__process__file__pe_file__resources_language_count {
+    view_label: "Events: About Process File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events__about.process__file__pe_file__resources_language_count}) as events__about__process__file__pe_file__resources_language_count ;;
     relationship: one_to_many
   }
 
@@ -4369,6 +4957,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__target__process__file__pe_file__signature_info__signers {
+    view_label: "Events: Target Process File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events.target__process__file__pe_file__signature_info__signers}) as events__target__process__file__pe_file__signature_info__signers ;;
+    relationship: one_to_many
+  }
+
   join: events__target__user_management_chain__attribute__permissions {
     view_label: "Events: Target User Management Chain Attribute Permissions"
     sql: LEFT JOIN UNNEST(${events__target__user_management_chain.attribute__permissions}) as events__target__user_management_chain__attribute__permissions ;;
@@ -4405,6 +4999,18 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__security_result__about__cloud__project__attribute__roles {
+    view_label: "Events: Security Result About Cloud Project Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__security_result.about__cloud__project__attribute__roles}) as events__security_result__about__cloud__project__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__security_result__about__cloud__project__attribute__labels {
+    view_label: "Events: Security Result About Cloud Project Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__security_result.about__cloud__project__attribute__labels}) as events__security_result__about__cloud__project__attribute__labels ;;
+    relationship: one_to_many
+  }
+
   join: events__security_result__about__file__pe_file__signature_info__signer {
     view_label: "Events: Security Result About File Pe File Signature Info Signer"
     sql: LEFT JOIN UNNEST(${events__security_result.about__file__pe_file__signature_info__signer}) as events__security_result__about__file__pe_file__signature_info__signer ;;
@@ -4414,6 +5020,12 @@ explore: events {
   join: events__security_result__about__group__attribute__permissions {
     view_label: "Events: Security Result About Group Attribute Permissions"
     sql: LEFT JOIN UNNEST(${events__security_result.about__group__attribute__permissions}) as events__security_result__about__group__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__target__process__file__pe_file__resources_language_count {
+    view_label: "Events: Target Process File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events.target__process__file__pe_file__resources_language_count}) as events__target__process__file__pe_file__resources_language_count ;;
     relationship: one_to_many
   }
 
@@ -4429,6 +5041,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__observer__process__file__pe_file__signature_info__signers {
+    view_label: "Events: Observer Process File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events.observer__process__file__pe_file__signature_info__signers}) as events__observer__process__file__pe_file__signature_info__signers ;;
+    relationship: one_to_many
+  }
+
   join: events__observer__user_management_chain__attribute__permissions {
     view_label: "Events: Observer User Management Chain Attribute Permissions"
     sql: LEFT JOIN UNNEST(${events__observer__user_management_chain.attribute__permissions}) as events__observer__user_management_chain__attribute__permissions ;;
@@ -4438,6 +5056,30 @@ explore: events {
   join: events__observer__process_ancestors__file__pe_file__imports__functions {
     view_label: "Events: Observer Process Ancestors File Pe File Imports Functions"
     sql: LEFT JOIN UNNEST(${events__observer__process_ancestors__file__pe_file__imports.functions}) as events__observer__process_ancestors__file__pe_file__imports__functions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process__file__names {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process File Names"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__process__file__names}) as events__extensions__vulns__vulnerabilities__about__process__file__names ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__name_server {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Name Server"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__name_server}) as events__extensions__vulns__vulnerabilities__about__domain__name_server ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__asset__hardware {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Asset Hardware"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__asset__hardware}) as events__extensions__vulns__vulnerabilities__about__asset__hardware ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__user__phone_numbers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Phone Numbers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__user__phone_numbers}) as events__extensions__vulns__vulnerabilities__about__user__phone_numbers ;;
     relationship: one_to_many
   }
 
@@ -4489,6 +5131,12 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__principal__process__file__pe_file__signature_info__signers {
+    view_label: "Events: Principal Process File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events.principal__process__file__pe_file__signature_info__signers}) as events__principal__process__file__pe_file__signature_info__signers ;;
+    relationship: one_to_many
+  }
+
   join: events__principal__user_management_chain__attribute__permissions {
     view_label: "Events: Principal User Management Chain Attribute Permissions"
     sql: LEFT JOIN UNNEST(${events__principal__user_management_chain.attribute__permissions}) as events__principal__user_management_chain__attribute__permissions ;;
@@ -4501,9 +5149,21 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__observer__process__file__pe_file__resources_language_count {
+    view_label: "Events: Observer Process File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events.observer__process__file__pe_file__resources_language_count}) as events__observer__process__file__pe_file__resources_language_count ;;
+    relationship: one_to_many
+  }
+
   join: events__observer__process__file__pe_file__resources_type_count_str {
     view_label: "Events: Observer Process File Pe File Resources Type Count Str"
     sql: LEFT JOIN UNNEST(${events.observer__process__file__pe_file__resources_type_count_str}) as events__observer__process__file__pe_file__resources_type_count_str ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__asset__software {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Asset Software"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__asset__software}) as events__extensions__vulns__vulnerabilities__about__asset__software ;;
     relationship: one_to_many
   }
 
@@ -4519,9 +5179,21 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__intermediary__process__file__pe_file__resources_type_count {
+    view_label: "Events: Intermediary Process File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events__intermediary.process__file__pe_file__resources_type_count}) as events__intermediary__process__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
   join: events__intermediary__resource_ancestors__attribute__permissions {
     view_label: "Events: Intermediary Resource Ancestors Attribute Permissions"
     sql: LEFT JOIN UNNEST(${events__intermediary__resource_ancestors.attribute__permissions}) as events__intermediary__resource_ancestors__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__security_result__about__cloud__vpc__attribute__permissions {
+    view_label: "Events: Security Result About Cloud Vpc Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__security_result.about__cloud__vpc__attribute__permissions}) as events__security_result__about__cloud__vpc__attribute__permissions ;;
     relationship: one_to_many
   }
 
@@ -4531,9 +5203,27 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__principal__process__file__pe_file__resources_language_count {
+    view_label: "Events: Principal Process File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events.principal__process__file__pe_file__resources_language_count}) as events__principal__process__file__pe_file__resources_language_count ;;
+    relationship: one_to_many
+  }
+
   join: events__principal__process__file__pe_file__resources_type_count_str {
     view_label: "Events: Principal Process File Pe File Resources Type Count Str"
     sql: LEFT JOIN UNNEST(${events.principal__process__file__pe_file__resources_type_count_str}) as events__principal__process__file__pe_file__resources_type_count_str ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__user__email_addresses {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Email Addresses"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__user__email_addresses}) as events__extensions__vulns__vulnerabilities__about__user__email_addresses ;;
+    relationship: one_to_many
+  }
+
+  join: events__src__process_ancestors__file__pe_file__resources_type_count {
+    view_label: "Events: Src Process Ancestors File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events__src__process_ancestors.file__pe_file__resources_type_count}) as events__src__process_ancestors__file__pe_file__resources_type_count ;;
     relationship: one_to_many
   }
 
@@ -4546,6 +5236,12 @@ explore: events {
   join: events__intermediary__process_ancestors__file__pe_file__imports {
     view_label: "Events: Intermediary Process Ancestors File Pe File Imports"
     sql: LEFT JOIN UNNEST(${events__intermediary__process_ancestors.file__pe_file__imports}) as events__intermediary__process_ancestors__file__pe_file__imports ;;
+    relationship: one_to_many
+  }
+
+  join: events__security_result__about__file__pe_file__resources_type_count {
+    view_label: "Events: Security Result About File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events__security_result.about__file__pe_file__resources_type_count}) as events__security_result__about__file__pe_file__resources_type_count ;;
     relationship: one_to_many
   }
 
@@ -4564,6 +5260,18 @@ explore: events {
   join: events__target__process_ancestors__file__pe_file__signature_info__signer {
     view_label: "Events: Target Process Ancestors File Pe File Signature Info Signer"
     sql: LEFT JOIN UNNEST(${events__target__process_ancestors.file__pe_file__signature_info__signer}) as events__target__process_ancestors__file__pe_file__signature_info__signer ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__resource_ancestors {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Resource Ancestors"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__resource_ancestors}) as events__extensions__vulns__vulnerabilities__about__resource_ancestors ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process_ancestors {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process Ancestors"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__process_ancestors}) as events__extensions__vulns__vulnerabilities__about__process_ancestors ;;
     relationship: one_to_many
   }
 
@@ -4627,6 +5335,48 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__extensions__vulns__vulnerabilities__about__file__capabilities_tags {
+    view_label: "Events: Extensions Vulns Vulnerabilities About File Capabilities Tags"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__file__capabilities_tags}) as events__extensions__vulns__vulnerabilities__about__file__capabilities_tags ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__tech__department {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Tech Department"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__tech__department}) as events__extensions__vulns__vulnerabilities__about__domain__tech__department ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__zone__department {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Zone Department"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__zone__department}) as events__extensions__vulns__vulnerabilities__about__domain__zone__department ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__investigation__comments {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Investigation Comments"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__investigation__comments}) as events__extensions__vulns__vulnerabilities__about__investigation__comments ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__user__group_identifiers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Group Identifiers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__user__group_identifiers}) as events__extensions__vulns__vulnerabilities__about__user__group_identifiers ;;
+    relationship: one_to_many
+  }
+
+  join: events__about__process_ancestors__file__pe_file__resources_type_count {
+    view_label: "Events: About Process Ancestors File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events__about__process_ancestors.file__pe_file__resources_type_count}) as events__about__process_ancestors__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__process__file__pe_file__signature_info__signers {
+    view_label: "Events: Intermediary Process File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events__intermediary.process__file__pe_file__signature_info__signers}) as events__intermediary__process__file__pe_file__signature_info__signers ;;
+    relationship: one_to_many
+  }
+
   join: events__intermediary__user_management_chain__attribute__permissions {
     view_label: "Events: Intermediary User Management Chain Attribute Permissions"
     sql: LEFT JOIN UNNEST(${events__intermediary__user_management_chain.attribute__permissions}) as events__intermediary__user_management_chain__attribute__permissions ;;
@@ -4675,9 +5425,45 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__extensions__vulns__vulnerabilities__about__group__email_addresses {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Group Email Addresses"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__group__email_addresses}) as events__extensions__vulns__vulnerabilities__about__group__email_addresses ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__admin__department {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Admin Department"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__admin__department}) as events__extensions__vulns__vulnerabilities__about__domain__admin__department ;;
+    relationship: one_to_many
+  }
+
+  join: events__src__process_ancestors__file__pe_file__signature_info__signers {
+    view_label: "Events: Src Process Ancestors File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events__src__process_ancestors.file__pe_file__signature_info__signers}) as events__src__process_ancestors__file__pe_file__signature_info__signers ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__process__file__pe_file__resources_language_count {
+    view_label: "Events: Intermediary Process File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events__intermediary.process__file__pe_file__resources_language_count}) as events__intermediary__process__file__pe_file__resources_language_count ;;
+    relationship: one_to_many
+  }
+
   join: events__intermediary__process__file__pe_file__resources_type_count_str {
     view_label: "Events: Intermediary Process File Pe File Resources Type Count Str"
     sql: LEFT JOIN UNNEST(${events__intermediary.process__file__pe_file__resources_type_count_str}) as events__intermediary__process__file__pe_file__resources_type_count_str ;;
+    relationship: one_to_many
+  }
+
+  join: events__security_result__about__cloud__project__attribute__permissions {
+    view_label: "Events: Security Result About Cloud Project Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__security_result.about__cloud__project__attribute__permissions}) as events__security_result__about__cloud__project__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__security_result__about__file__pe_file__signature_info__signers {
+    view_label: "Events: Security Result About File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events__security_result.about__file__pe_file__signature_info__signers}) as events__security_result__about__file__pe_file__signature_info__signers ;;
     relationship: one_to_many
   }
 
@@ -4687,15 +5473,33 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__target__process_ancestors__file__pe_file__resources_type_count {
+    view_label: "Events: Target Process Ancestors File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events__target__process_ancestors.file__pe_file__resources_type_count}) as events__target__process_ancestors__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
   join: events__principal__process__file__pe_file__resources_language_count_str {
     view_label: "Events: Principal Process File Pe File Resources Language Count Str"
     sql: LEFT JOIN UNNEST(${events.principal__process__file__pe_file__resources_language_count_str}) as events__principal__process__file__pe_file__resources_language_count_str ;;
     relationship: one_to_many
   }
 
+  join: events__src__process_ancestors__file__pe_file__resources_language_count {
+    view_label: "Events: Src Process Ancestors File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events__src__process_ancestors.file__pe_file__resources_language_count}) as events__src__process_ancestors__file__pe_file__resources_language_count ;;
+    relationship: one_to_many
+  }
+
   join: events__src__process_ancestors__file__pe_file__resources_type_count_str {
     view_label: "Events: Src Process Ancestors File Pe File Resources Type Count Str"
     sql: LEFT JOIN UNNEST(${events__src__process_ancestors.file__pe_file__resources_type_count_str}) as events__src__process_ancestors__file__pe_file__resources_type_count_str ;;
+    relationship: one_to_many
+  }
+
+  join: events__security_result__about__file__pe_file__resources_language_count {
+    view_label: "Events: Security Result About File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events__security_result.about__file__pe_file__resources_language_count}) as events__security_result__about__file__pe_file__resources_language_count ;;
     relationship: one_to_many
   }
 
@@ -4708,6 +5512,60 @@ explore: events {
   join: events__security_result__about__domain__billing__attribute__permissions {
     view_label: "Events: Security Result About Domain Billing Attribute Permissions"
     sql: LEFT JOIN UNNEST(${events__security_result.about__domain__billing__attribute__permissions}) as events__security_result__about__domain__billing__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__observer__process_ancestors__file__pe_file__resources_type_count {
+    view_label: "Events: Observer Process Ancestors File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events__observer__process_ancestors.file__pe_file__resources_type_count}) as events__observer__process_ancestors__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__file__pe_file__section {
+    view_label: "Events: Extensions Vulns Vulnerabilities About File Pe File Section"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__file__pe_file__section}) as events__extensions__vulns__vulnerabilities__about__file__pe_file__section ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__tech__phone_numbers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Tech Phone Numbers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__tech__phone_numbers}) as events__extensions__vulns__vulnerabilities__about__domain__tech__phone_numbers ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__billing__department {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Billing Department"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__billing__department}) as events__extensions__vulns__vulnerabilities__about__domain__billing__department ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__zone__phone_numbers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Zone Phone Numbers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__zone__phone_numbers}) as events__extensions__vulns__vulnerabilities__about__domain__zone__phone_numbers ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__user__time_off {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Time Off"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__user__time_off}) as events__extensions__vulns__vulnerabilities__about__user__time_off ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__user__attribute__roles {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__user__attribute__roles}) as events__extensions__vulns__vulnerabilities__about__user__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__user__attribute__labels {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__user__attribute__labels}) as events__extensions__vulns__vulnerabilities__about__user__attribute__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__about__process_ancestors__file__pe_file__signature_info__signers {
+    view_label: "Events: About Process Ancestors File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events__about__process_ancestors.file__pe_file__signature_info__signers}) as events__about__process_ancestors__file__pe_file__signature_info__signers ;;
     relationship: one_to_many
   }
 
@@ -4735,6 +5593,36 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__principal__process_ancestors__file__pe_file__resources_type_count {
+    view_label: "Events: Principal Process Ancestors File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events__principal__process_ancestors.file__pe_file__resources_type_count}) as events__principal__process_ancestors__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__admin__phone_numbers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Admin Phone Numbers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__admin__phone_numbers}) as events__extensions__vulns__vulnerabilities__about__domain__admin__phone_numbers ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__asset__attribute__roles {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Asset Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__asset__attribute__roles}) as events__extensions__vulns__vulnerabilities__about__asset__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__asset__attribute__labels {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Asset Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__asset__attribute__labels}) as events__extensions__vulns__vulnerabilities__about__asset__attribute__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__about__process_ancestors__file__pe_file__resources_language_count {
+    view_label: "Events: About Process Ancestors File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events__about__process_ancestors.file__pe_file__resources_language_count}) as events__about__process_ancestors__file__pe_file__resources_language_count ;;
+    relationship: one_to_many
+  }
+
   join: events__about__process_ancestors__file__pe_file__resources_type_count_str {
     view_label: "Events: About Process Ancestors File Pe File Resources Type Count Str"
     sql: LEFT JOIN UNNEST(${events__about__process_ancestors.file__pe_file__resources_type_count_str}) as events__about__process_ancestors__file__pe_file__resources_type_count_str ;;
@@ -4753,6 +5641,30 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__target__process_ancestors__file__pe_file__signature_info__signers {
+    view_label: "Events: Target Process Ancestors File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events__target__process_ancestors.file__pe_file__signature_info__signers}) as events__target__process_ancestors__file__pe_file__signature_info__signers ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__user_management_chain {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Management Chain"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__user_management_chain}) as events__extensions__vulns__vulnerabilities__about__user_management_chain ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__tech__email_addresses {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Tech Email Addresses"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__tech__email_addresses}) as events__extensions__vulns__vulnerabilities__about__domain__tech__email_addresses ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__zone__email_addresses {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Zone Email Addresses"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__zone__email_addresses}) as events__extensions__vulns__vulnerabilities__about__domain__zone__email_addresses ;;
+    relationship: one_to_many
+  }
+
   join: events__intermediary__process__file__pe_file__resources_language_count_str {
     view_label: "Events: Intermediary Process File Pe File Resources Language Count Str"
     sql: LEFT JOIN UNNEST(${events__intermediary.process__file__pe_file__resources_language_count_str}) as events__intermediary__process__file__pe_file__resources_language_count_str ;;
@@ -4765,9 +5677,69 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__target__process_ancestors__file__pe_file__resources_language_count {
+    view_label: "Events: Target Process Ancestors File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events__target__process_ancestors.file__pe_file__resources_language_count}) as events__target__process_ancestors__file__pe_file__resources_language_count ;;
+    relationship: one_to_many
+  }
+
   join: events__target__process_ancestors__file__pe_file__resources_type_count_str {
     view_label: "Events: Target Process Ancestors File Pe File Resources Type Count Str"
     sql: LEFT JOIN UNNEST(${events__target__process_ancestors.file__pe_file__resources_type_count_str}) as events__target__process_ancestors__file__pe_file__resources_type_count_str ;;
+    relationship: one_to_many
+  }
+
+  join: events__observer__process_ancestors__file__pe_file__signature_info__signers {
+    view_label: "Events: Observer Process Ancestors File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events__observer__process_ancestors.file__pe_file__signature_info__signers}) as events__observer__process_ancestors__file__pe_file__signature_info__signers ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__file__pe_file__imports {
+    view_label: "Events: Extensions Vulns Vulnerabilities About File Pe File Imports"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__file__pe_file__imports}) as events__extensions__vulns__vulnerabilities__about__file__pe_file__imports ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__group__attribute__roles {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Group Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__group__attribute__roles}) as events__extensions__vulns__vulnerabilities__about__group__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__group__attribute__labels {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Group Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__group__attribute__labels}) as events__extensions__vulns__vulnerabilities__about__group__attribute__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process__command_line_history {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process Command Line History"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__process__command_line_history}) as events__extensions__vulns__vulnerabilities__about__process__command_line_history ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process_ancestors__file__names {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process Ancestors File Names"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__process_ancestors.file__names}) as events__extensions__vulns__vulnerabilities__about__process_ancestors__file__names ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__admin__email_addresses {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Admin Email Addresses"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__admin__email_addresses}) as events__extensions__vulns__vulnerabilities__about__domain__admin__email_addresses ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__billing__phone_numbers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Billing Phone Numbers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__billing__phone_numbers}) as events__extensions__vulns__vulnerabilities__about__domain__billing__phone_numbers ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__registrant__department {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Registrant Department"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__registrant__department}) as events__extensions__vulns__vulnerabilities__about__domain__registrant__department ;;
     relationship: one_to_many
   }
 
@@ -4783,9 +5755,27 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__security_result__about__process__file__pe_file__resources_type_count {
+    view_label: "Events: Security Result About Process File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events__security_result.about__process__file__pe_file__resources_type_count}) as events__security_result__about__process__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
   join: events__security_result__about__resource_ancestors__attribute__permissions {
     view_label: "Events: Security Result About Resource Ancestors Attribute Permissions"
     sql: LEFT JOIN UNNEST(${events__security_result__about__resource_ancestors.attribute__permissions}) as events__security_result__about__resource_ancestors__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__principal__process_ancestors__file__pe_file__signature_info__signers {
+    view_label: "Events: Principal Process Ancestors File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events__principal__process_ancestors.file__pe_file__signature_info__signers}) as events__principal__process_ancestors__file__pe_file__signature_info__signers ;;
+    relationship: one_to_many
+  }
+
+  join: events__observer__process_ancestors__file__pe_file__resources_language_count {
+    view_label: "Events: Observer Process Ancestors File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events__observer__process_ancestors.file__pe_file__resources_language_count}) as events__observer__process_ancestors__file__pe_file__resources_language_count ;;
     relationship: one_to_many
   }
 
@@ -4795,15 +5785,93 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__extensions__vulns__vulnerabilities__about__file__pe_file__resource {
+    view_label: "Events: Extensions Vulns Vulnerabilities About File Pe File Resource"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__file__pe_file__resource}) as events__extensions__vulns__vulnerabilities__about__file__pe_file__resource ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__resource__attribute__roles {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Resource Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__resource__attribute__roles}) as events__extensions__vulns__vulnerabilities__about__resource__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__resource__attribute__labels {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Resource Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__resource__attribute__labels}) as events__extensions__vulns__vulnerabilities__about__resource__attribute__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__tech__group_identifiers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Tech Group Identifiers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__tech__group_identifiers}) as events__extensions__vulns__vulnerabilities__about__domain__tech__group_identifiers ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__zone__group_identifiers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Zone Group Identifiers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__zone__group_identifiers}) as events__extensions__vulns__vulnerabilities__about__domain__zone__group_identifiers ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__process_ancestors__file__pe_file__resources_type_count {
+    view_label: "Events: Intermediary Process Ancestors File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events__intermediary__process_ancestors.file__pe_file__resources_type_count}) as events__intermediary__process_ancestors__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
   join: events__security_result__about__process_ancestors__file__pe_file__imports {
     view_label: "Events: Security Result About Process Ancestors File Pe File Imports"
     sql: LEFT JOIN UNNEST(${events__security_result__about__process_ancestors.file__pe_file__imports}) as events__security_result__about__process_ancestors__file__pe_file__imports ;;
     relationship: one_to_many
   }
 
+  join: events__principal__process_ancestors__file__pe_file__resources_language_count {
+    view_label: "Events: Principal Process Ancestors File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events__principal__process_ancestors.file__pe_file__resources_language_count}) as events__principal__process_ancestors__file__pe_file__resources_language_count ;;
+    relationship: one_to_many
+  }
+
   join: events__principal__process_ancestors__file__pe_file__resources_type_count_str {
     view_label: "Events: Principal Process Ancestors File Pe File Resources Type Count Str"
     sql: LEFT JOIN UNNEST(${events__principal__process_ancestors.file__pe_file__resources_type_count_str}) as events__principal__process_ancestors__file__pe_file__resources_type_count_str ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__cloud__vpc__attribute__roles {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Cloud Vpc Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__cloud__vpc__attribute__roles}) as events__extensions__vulns__vulnerabilities__about__cloud__vpc__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__cloud__vpc__attribute__labels {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Cloud Vpc Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__cloud__vpc__attribute__labels}) as events__extensions__vulns__vulnerabilities__about__cloud__vpc__attribute__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__file__pe_file__imports__functions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About File Pe File Imports Functions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__file__pe_file__imports.functions}) as events__extensions__vulns__vulnerabilities__about__file__pe_file__imports__functions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process__file__capabilities_tags {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process File Capabilities Tags"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__process__file__capabilities_tags}) as events__extensions__vulns__vulnerabilities__about__process__file__capabilities_tags ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__admin__group_identifiers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Admin Group Identifiers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__admin__group_identifiers}) as events__extensions__vulns__vulnerabilities__about__domain__admin__group_identifiers ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__billing__email_addresses {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Billing Email Addresses"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__billing__email_addresses}) as events__extensions__vulns__vulnerabilities__about__domain__billing__email_addresses ;;
     relationship: one_to_many
   }
 
@@ -4816,6 +5884,30 @@ explore: events {
   join: events__security_result__about__process_ancestors__file__pe_file__resource {
     view_label: "Events: Security Result About Process Ancestors File Pe File Resource"
     sql: LEFT JOIN UNNEST(${events__security_result__about__process_ancestors.file__pe_file__resource}) as events__security_result__about__process_ancestors__file__pe_file__resource ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__registrant__phone_numbers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Registrant Phone Numbers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__registrant__phone_numbers}) as events__extensions__vulns__vulnerabilities__about__domain__registrant__phone_numbers ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__asset__software__permissions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Asset Software Permissions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__asset__software.permissions}) as events__extensions__vulns__vulnerabilities__about__asset__software__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__user__attribute__permissions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__user__attribute__permissions}) as events__extensions__vulns__vulnerabilities__about__user__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__security_result__about__process__file__pe_file__signature_info__signers {
+    view_label: "Events: Security Result About Process File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events__security_result.about__process__file__pe_file__signature_info__signers}) as events__security_result__about__process__file__pe_file__signature_info__signers ;;
     relationship: one_to_many
   }
 
@@ -4837,6 +5929,72 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__extensions__vulns__vulnerabilities__about__user_management_chain__department {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Management Chain Department"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__user_management_chain.department}) as events__extensions__vulns__vulnerabilities__about__user_management_chain__department ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__tech__time_off {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Tech Time Off"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__tech__time_off}) as events__extensions__vulns__vulnerabilities__about__domain__tech__time_off ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__tech__attribute__roles {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Tech Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__tech__attribute__roles}) as events__extensions__vulns__vulnerabilities__about__domain__tech__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__tech__attribute__labels {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Tech Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__tech__attribute__labels}) as events__extensions__vulns__vulnerabilities__about__domain__tech__attribute__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__billing__group_identifiers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Billing Group Identifiers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__billing__group_identifiers}) as events__extensions__vulns__vulnerabilities__about__domain__billing__group_identifiers ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__zone__time_off {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Zone Time Off"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__zone__time_off}) as events__extensions__vulns__vulnerabilities__about__domain__zone__time_off ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__zone__attribute__roles {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Zone Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__zone__attribute__roles}) as events__extensions__vulns__vulnerabilities__about__domain__zone__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__zone__attribute__labels {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Zone Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__zone__attribute__labels}) as events__extensions__vulns__vulnerabilities__about__domain__zone__attribute__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__asset__attribute__permissions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Asset Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__asset__attribute__permissions}) as events__extensions__vulns__vulnerabilities__about__asset__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__process_ancestors__file__pe_file__signature_info__signers {
+    view_label: "Events: Intermediary Process Ancestors File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events__intermediary__process_ancestors.file__pe_file__signature_info__signers}) as events__intermediary__process_ancestors__file__pe_file__signature_info__signers ;;
+    relationship: one_to_many
+  }
+
+  join: events__security_result__about__process__file__pe_file__resources_language_count {
+    view_label: "Events: Security Result About Process File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events__security_result.about__process__file__pe_file__resources_language_count}) as events__security_result__about__process__file__pe_file__resources_language_count ;;
+    relationship: one_to_many
+  }
+
   join: events__security_result__about__process__file__pe_file__resources_type_count_str {
     view_label: "Events: Security Result About Process File Pe File Resources Type Count Str"
     sql: LEFT JOIN UNNEST(${events__security_result.about__process__file__pe_file__resources_type_count_str}) as events__security_result__about__process__file__pe_file__resources_type_count_str ;;
@@ -4846,6 +6004,42 @@ explore: events {
   join: events__observer__process_ancestors__file__pe_file__resources_language_count_str {
     view_label: "Events: Observer Process Ancestors File Pe File Resources Language Count Str"
     sql: LEFT JOIN UNNEST(${events__observer__process_ancestors.file__pe_file__resources_language_count_str}) as events__observer__process_ancestors__file__pe_file__resources_language_count_str ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process__file__pe_file__section {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process File Pe File Section"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__process__file__pe_file__section}) as events__extensions__vulns__vulnerabilities__about__process__file__pe_file__section ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__admin__time_off {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Admin Time Off"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__admin__time_off}) as events__extensions__vulns__vulnerabilities__about__domain__admin__time_off ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__admin__attribute__roles {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Admin Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__admin__attribute__roles}) as events__extensions__vulns__vulnerabilities__about__domain__admin__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__admin__attribute__labels {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Admin Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__admin__attribute__labels}) as events__extensions__vulns__vulnerabilities__about__domain__admin__attribute__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__registrant__email_addresses {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Registrant Email Addresses"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__registrant__email_addresses}) as events__extensions__vulns__vulnerabilities__about__domain__registrant__email_addresses ;;
+    relationship: one_to_many
+  }
+
+  join: events__intermediary__process_ancestors__file__pe_file__resources_language_count {
+    view_label: "Events: Intermediary Process Ancestors File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events__intermediary__process_ancestors.file__pe_file__resources_language_count}) as events__intermediary__process_ancestors__file__pe_file__resources_language_count ;;
     relationship: one_to_many
   }
 
@@ -4861,9 +6055,81 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__extensions__vulns__vulnerabilities__about__cloud__project__attribute__roles {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Cloud Project Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__cloud__project__attribute__roles}) as events__extensions__vulns__vulnerabilities__about__cloud__project__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__cloud__project__attribute__labels {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Cloud Project Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__cloud__project__attribute__labels}) as events__extensions__vulns__vulnerabilities__about__cloud__project__attribute__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__file__pe_file__signature_info__signer {
+    view_label: "Events: Extensions Vulns Vulnerabilities About File Pe File Signature Info Signer"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__file__pe_file__signature_info__signer}) as events__extensions__vulns__vulnerabilities__about__file__pe_file__signature_info__signer ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__group__attribute__permissions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Group Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__group__attribute__permissions}) as events__extensions__vulns__vulnerabilities__about__group__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__resource__attribute__permissions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Resource Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__resource__attribute__permissions}) as events__extensions__vulns__vulnerabilities__about__resource__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__user_management_chain__phone_numbers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Management Chain Phone Numbers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__user_management_chain.phone_numbers}) as events__extensions__vulns__vulnerabilities__about__user_management_chain__phone_numbers ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__billing__time_off {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Billing Time Off"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__billing__time_off}) as events__extensions__vulns__vulnerabilities__about__domain__billing__time_off ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__billing__attribute__roles {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Billing Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__billing__attribute__roles}) as events__extensions__vulns__vulnerabilities__about__domain__billing__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__billing__attribute__labels {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Billing Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__billing__attribute__labels}) as events__extensions__vulns__vulnerabilities__about__domain__billing__attribute__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__registrant__group_identifiers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Registrant Group Identifiers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__registrant__group_identifiers}) as events__extensions__vulns__vulnerabilities__about__domain__registrant__group_identifiers ;;
+    relationship: one_to_many
+  }
+
   join: events__security_result__about__process_ancestors__file__pe_file__signature_info__signer {
     view_label: "Events: Security Result About Process Ancestors File Pe File Signature Info Signer"
     sql: LEFT JOIN UNNEST(${events__security_result__about__process_ancestors.file__pe_file__signature_info__signer}) as events__security_result__about__process_ancestors__file__pe_file__signature_info__signer ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__cloud__vpc__attribute__permissions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Cloud Vpc Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__cloud__vpc__attribute__permissions}) as events__extensions__vulns__vulnerabilities__about__cloud__vpc__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process__file__pe_file__imports {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process File Pe File Imports"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__process__file__pe_file__imports}) as events__extensions__vulns__vulnerabilities__about__process__file__pe_file__imports ;;
     relationship: one_to_many
   }
 
@@ -4873,9 +6139,171 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__extensions__vulns__vulnerabilities__about__file__pe_file__resources_type_count {
+    view_label: "Events: Extensions Vulns Vulnerabilities About File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__file__pe_file__resources_type_count}) as events__extensions__vulns__vulnerabilities__about__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process__file__pe_file__resource {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process File Pe File Resource"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__process__file__pe_file__resource}) as events__extensions__vulns__vulnerabilities__about__process__file__pe_file__resource ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__user_management_chain__email_addresses {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Management Chain Email Addresses"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__user_management_chain.email_addresses}) as events__extensions__vulns__vulnerabilities__about__user_management_chain__email_addresses ;;
+    relationship: one_to_many
+  }
+
   join: events__intermediary__process_ancestors__file__pe_file__resources_language_count_str {
     view_label: "Events: Intermediary Process Ancestors File Pe File Resources Language Count Str"
     sql: LEFT JOIN UNNEST(${events__intermediary__process_ancestors.file__pe_file__resources_language_count_str}) as events__intermediary__process_ancestors__file__pe_file__resources_language_count_str ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process__file__pe_file__imports__functions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process File Pe File Imports Functions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__process__file__pe_file__imports.functions}) as events__extensions__vulns__vulnerabilities__about__process__file__pe_file__imports__functions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process_ancestors__command_line_history {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process Ancestors Command Line History"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__process_ancestors.command_line_history}) as events__extensions__vulns__vulnerabilities__about__process_ancestors__command_line_history ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__tech__attribute__permissions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Tech Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__tech__attribute__permissions}) as events__extensions__vulns__vulnerabilities__about__domain__tech__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__zone__attribute__permissions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Zone Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__zone__attribute__permissions}) as events__extensions__vulns__vulnerabilities__about__domain__zone__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__registrant__time_off {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Registrant Time Off"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__registrant__time_off}) as events__extensions__vulns__vulnerabilities__about__domain__registrant__time_off ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__registrant__attribute__roles {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Registrant Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__registrant__attribute__roles}) as events__extensions__vulns__vulnerabilities__about__domain__registrant__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__registrant__attribute__labels {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Registrant Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__registrant__attribute__labels}) as events__extensions__vulns__vulnerabilities__about__domain__registrant__attribute__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__security_result__about__process_ancestors__file__pe_file__resources_type_count {
+    view_label: "Events: Security Result About Process Ancestors File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events__security_result__about__process_ancestors.file__pe_file__resources_type_count}) as events__security_result__about__process_ancestors__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__resource_ancestors__attribute__roles {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Resource Ancestors Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__resource_ancestors.attribute__roles}) as events__extensions__vulns__vulnerabilities__about__resource_ancestors__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__resource_ancestors__attribute__labels {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Resource Ancestors Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__resource_ancestors.attribute__labels}) as events__extensions__vulns__vulnerabilities__about__resource_ancestors__attribute__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__user_management_chain__group_identifiers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Management Chain Group Identifiers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__user_management_chain.group_identifiers}) as events__extensions__vulns__vulnerabilities__about__user_management_chain__group_identifiers ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__admin__attribute__permissions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Admin Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__admin__attribute__permissions}) as events__extensions__vulns__vulnerabilities__about__domain__admin__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__cloud__project__attribute__permissions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Cloud Project Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__cloud__project__attribute__permissions}) as events__extensions__vulns__vulnerabilities__about__cloud__project__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__file__pe_file__signature_info__signers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__file__pe_file__signature_info__signers}) as events__extensions__vulns__vulnerabilities__about__file__pe_file__signature_info__signers ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process_ancestors__file__capabilities_tags {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process Ancestors File Capabilities Tags"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__process_ancestors.file__capabilities_tags}) as events__extensions__vulns__vulnerabilities__about__process_ancestors__file__capabilities_tags ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__file__pe_file__resources_language_count {
+    view_label: "Events: Extensions Vulns Vulnerabilities About File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__file__pe_file__resources_language_count}) as events__extensions__vulns__vulnerabilities__about__file__pe_file__resources_language_count ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__file__pe_file__resources_type_count_str {
+    view_label: "Events: Extensions Vulns Vulnerabilities About File Pe File Resources Type Count Str"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__file__pe_file__resources_type_count_str}) as events__extensions__vulns__vulnerabilities__about__file__pe_file__resources_type_count_str ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__billing__attribute__permissions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Billing Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__billing__attribute__permissions}) as events__extensions__vulns__vulnerabilities__about__domain__billing__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__security_result__about__process_ancestors__file__pe_file__signature_info__signers {
+    view_label: "Events: Security Result About Process Ancestors File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events__security_result__about__process_ancestors.file__pe_file__signature_info__signers}) as events__security_result__about__process_ancestors__file__pe_file__signature_info__signers ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process__file__pe_file__signature_info__signer {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process File Pe File Signature Info Signer"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__process__file__pe_file__signature_info__signer}) as events__extensions__vulns__vulnerabilities__about__process__file__pe_file__signature_info__signer ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__user_management_chain__time_off {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Management Chain Time Off"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__user_management_chain.time_off}) as events__extensions__vulns__vulnerabilities__about__user_management_chain__time_off ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__user_management_chain__attribute__roles {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Management Chain Attribute Roles"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__user_management_chain.attribute__roles}) as events__extensions__vulns__vulnerabilities__about__user_management_chain__attribute__roles ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__user_management_chain__attribute__labels {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Management Chain Attribute Labels"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__user_management_chain.attribute__labels}) as events__extensions__vulns__vulnerabilities__about__user_management_chain__attribute__labels ;;
+    relationship: one_to_many
+  }
+
+  join: events__security_result__about__process_ancestors__file__pe_file__resources_language_count {
+    view_label: "Events: Security Result About Process Ancestors File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events__security_result__about__process_ancestors.file__pe_file__resources_language_count}) as events__security_result__about__process_ancestors__file__pe_file__resources_language_count ;;
     relationship: one_to_many
   }
 
@@ -4885,9 +6313,123 @@ explore: events {
     relationship: one_to_many
   }
 
+  join: events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__section {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process Ancestors File Pe File Section"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__process_ancestors.file__pe_file__section}) as events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__section ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__domain__registrant__attribute__permissions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Domain Registrant Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__domain__registrant__attribute__permissions}) as events__extensions__vulns__vulnerabilities__about__domain__registrant__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__file__pe_file__resources_language_count_str {
+    view_label: "Events: Extensions Vulns Vulnerabilities About File Pe File Resources Language Count Str"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__file__pe_file__resources_language_count_str}) as events__extensions__vulns__vulnerabilities__about__file__pe_file__resources_language_count_str ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process__file__pe_file__resources_type_count {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__process__file__pe_file__resources_type_count}) as events__extensions__vulns__vulnerabilities__about__process__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__resource_ancestors__attribute__permissions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Resource Ancestors Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__resource_ancestors.attribute__permissions}) as events__extensions__vulns__vulnerabilities__about__resource_ancestors__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__imports {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process Ancestors File Pe File Imports"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__process_ancestors.file__pe_file__imports}) as events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__imports ;;
+    relationship: one_to_many
+  }
+
   join: events__security_result__about__process_ancestors__file__pe_file__resources_language_count_str {
     view_label: "Events: Security Result About Process Ancestors File Pe File Resources Language Count Str"
     sql: LEFT JOIN UNNEST(${events__security_result__about__process_ancestors.file__pe_file__resources_language_count_str}) as events__security_result__about__process_ancestors__file__pe_file__resources_language_count_str ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__resource {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process Ancestors File Pe File Resource"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__process_ancestors.file__pe_file__resource}) as events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__resource ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process__file__pe_file__signature_info__signers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__process__file__pe_file__signature_info__signers}) as events__extensions__vulns__vulnerabilities__about__process__file__pe_file__signature_info__signers ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__user_management_chain__attribute__permissions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About User Management Chain Attribute Permissions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__user_management_chain.attribute__permissions}) as events__extensions__vulns__vulnerabilities__about__user_management_chain__attribute__permissions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__imports__functions {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process Ancestors File Pe File Imports Functions"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__imports.functions}) as events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__imports__functions ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process__file__pe_file__resources_language_count {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__process__file__pe_file__resources_language_count}) as events__extensions__vulns__vulnerabilities__about__process__file__pe_file__resources_language_count ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process__file__pe_file__resources_type_count_str {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process File Pe File Resources Type Count Str"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__process__file__pe_file__resources_type_count_str}) as events__extensions__vulns__vulnerabilities__about__process__file__pe_file__resources_type_count_str ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__signature_info__signer {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process Ancestors File Pe File Signature Info Signer"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__process_ancestors.file__pe_file__signature_info__signer}) as events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__signature_info__signer ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process__file__pe_file__resources_language_count_str {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process File Pe File Resources Language Count Str"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities.about__process__file__pe_file__resources_language_count_str}) as events__extensions__vulns__vulnerabilities__about__process__file__pe_file__resources_language_count_str ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__resources_type_count {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process Ancestors File Pe File Resources Type Count"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__process_ancestors.file__pe_file__resources_type_count}) as events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__resources_type_count ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__signature_info__signers {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process Ancestors File Pe File Signature Info Signers"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__process_ancestors.file__pe_file__signature_info__signers}) as events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__signature_info__signers ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__resources_language_count {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process Ancestors File Pe File Resources Language Count"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__process_ancestors.file__pe_file__resources_language_count}) as events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__resources_language_count ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__resources_type_count_str {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process Ancestors File Pe File Resources Type Count Str"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__process_ancestors.file__pe_file__resources_type_count_str}) as events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__resources_type_count_str ;;
+    relationship: one_to_many
+  }
+
+  join: events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__resources_language_count_str {
+    view_label: "Events: Extensions Vulns Vulnerabilities About Process Ancestors File Pe File Resources Language Count Str"
+    sql: LEFT JOIN UNNEST(${events__extensions__vulns__vulnerabilities__about__process_ancestors.file__pe_file__resources_language_count_str}) as events__extensions__vulns__vulnerabilities__about__process_ancestors__file__pe_file__resources_language_count_str ;;
     relationship: one_to_many
   }
 }
