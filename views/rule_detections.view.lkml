@@ -141,6 +141,65 @@ view: rule_detections {
     sql: ${TABLE}.severity ;;
   }
 
+  dimension: severity_visual {
+    sql: upper(${TABLE}.severity) ;;
+    html:
+      {% if value == 'SUPER HIGH' or value == 'CRITICAL' %}
+        <div style="display:flex; flex-direction:row;">
+          <div style="width:4px; height: 14px; display:inline; background-color: #9AA0A6;">&nbsp</div>
+          <div style="width:4px; height: 14px; display:inline; background-color: #FCC934;">&nbsp</div>
+          <div style="width:4px; height: 14px; display:inline; background-color: #FA903E;">&nbsp</div>
+          <div style="width:4px; height: 14px; display:inline; background-color: #FF5A50;">&nbsp</div>
+          <div style="width:4px; height: 14px; display:inline; background-color: #B31412;">&nbsp</div>
+          <span>&nbsp;&nbsp;{{value}}</span>
+        </div>
+      {% elsif value == 'HIGH' or value == 'LARGE' %}
+        <div style="display:flex; flex-direction:row;">
+          <div style="width:4px; height: 14px; display:inline; background-color: #9AA0A6;">&nbsp</div>
+          <div style="width:4px; height: 14px; display:inline; background-color: #FCC934;">&nbsp</div>
+          <div style="width:4px; height: 14px; display:inline; background-color: #FA903E;">&nbsp</div>
+          <div style="width:4px; height: 14px; display:inline; background-color: #FF5A50;">&nbsp</div>
+          <span>&nbsp;&nbsp;{{value}}</span>
+        </div>
+      {% elsif value == 'MEDIUM' %}
+        <div style="display:flex; flex-direction:row;">
+          <div style="width:4px; height: 14px; display:inline; background-color: #9AA0A6;">&nbsp</div>
+          <div style="width:4px; height: 14px; display:inline; background-color: #FCC934;">&nbsp</div>
+          <div style="width:4px; height: 14px; display:inline; background-color: #FA903E;">&nbsp</div>
+          <span>&nbsp;&nbsp;{{value}}</span>
+        </div>
+      {% elsif value == 'LOW' %}
+        <div style="display:flex; flex-direction:row;">
+          <div style="width:4px; height: 14px; display:inline; background-color: #9AA0A6;">&nbsp</div>
+          <div style="width:4px; height: 14px; display:inline; background-color: #FCC934;">&nbsp</div>
+          <span>&nbsp;&nbsp;{{value}}</span>
+        </div>
+      {% else %}
+        <div style="display:flex; flex-direction:row;">
+          <div style="width:4px; height: 14px; display:inline; background-color: #9AA0A6;">&nbsp</div>
+          <span>&nbsp;&nbsp;{{value}}</span>
+        </div>
+      {% endif %}
+      ;;
+  }
+
+  dimension: severity_int {
+    type:  number
+    sql:
+      case
+        when upper(${TABLE}.severity) = 'SUPER HIGH' OR upper(${TABLE}.severity) = 'CRITICAL'
+          THEN 5
+        when upper(${TABLE}.severity) = 'HIGH' OR upper(${TABLE}.severity) = 'LARGE'
+          THEN 4
+        when upper(${TABLE}.severity) = 'MEDIUM'
+          THEN 3
+        when upper(${TABLE}.severity) = 'LOW'
+          THEN 2
+        ELSE  1
+      END
+    ;;
+  }
+  
   dimension: version_timestamp__nanos {
     type: number
     sql: ${TABLE}.version_timestamp.nanos ;;
