@@ -421,12 +421,6 @@ explore: udm_events {
     relationship: one_to_many
   }
 
-  join: udm_events__target__ip_location {
-    view_label: "Udm Events: Target Ip Location"
-    sql: LEFT JOIN UNNEST(${udm_events.target__ip_location}) as udm_events__target__ip_location ;;
-    relationship: one_to_many
-  }
-
   join: udm_events__network__dns__answers {
     view_label: "Udm Events: Network Dns Answers"
     sql: LEFT JOIN UNNEST(${udm_events.network__dns__answers}) as udm_events__network__dns__answers ;;
@@ -505,27 +499,9 @@ explore: udm_events {
     relationship: one_to_many
   }
 
-  join: udm_events__target__process__file__names {
-    view_label: "Udm Events: Target Process File Names"
-    sql: LEFT JOIN UNNEST(${udm_events.target__process__file__names}) as udm_events__target__process__file__names ;;
-    relationship: one_to_many
-  }
-
   join: udm_events__network__dns__authority {
     view_label: "Udm Events: Network Dns Authority"
     sql: LEFT JOIN UNNEST(${udm_events.network__dns__authority}) as udm_events__network__dns__authority ;;
-    relationship: one_to_many
-  }
-
-  join: udm_events__principal__ip_location {
-    view_label: "Udm Events: Principal Ip Location"
-    sql: LEFT JOIN UNNEST(${udm_events.principal__ip_location}) as udm_events__principal__ip_location ;;
-    relationship: one_to_many
-  }
-
-  join: udm_events__principal__asset__labels {
-    view_label: "Udm Events: Principal Asset Labels"
-    sql: LEFT JOIN UNNEST(${udm_events.principal__asset__labels}) as udm_events__principal__asset__labels ;;
     relationship: one_to_many
   }
 
@@ -595,12 +571,6 @@ explore: udm_events {
     relationship: one_to_many
   }
 
-  join: udm_events__about__resource_ancestors {
-    view_label: "Udm Events: About Resource Ancestors"
-    sql: LEFT JOIN UNNEST(${udm_events__about.resource_ancestors}) as udm_events__about__resource_ancestors ;;
-    relationship: one_to_many
-  }
-
   join: udm_events__about__process_ancestors {
     view_label: "Udm Events: About Process Ancestors"
     sql: LEFT JOIN UNNEST(${udm_events__about.process_ancestors}) as udm_events__about__process_ancestors ;;
@@ -661,12 +631,6 @@ explore: udm_events {
     relationship: one_to_many
   }
 
-  join: udm_events__src__domain__admin__department {
-    view_label: "Udm Events: Src Domain Admin Department"
-    sql: LEFT JOIN UNNEST(${udm_events.src__domain__admin__department}) as udm_events__src__domain__admin__department ;;
-    relationship: one_to_many
-  }
-
   join: udm_events__observer__process__file__names {
     view_label: "Udm Events: Observer Process File Names"
     sql: LEFT JOIN UNNEST(${udm_events.observer__process__file__names}) as udm_events__observer__process__file__names ;;
@@ -676,24 +640,6 @@ explore: udm_events {
   join: udm_events__observer__domain__name_server {
     view_label: "Udm Events: Observer Domain Name Server"
     sql: LEFT JOIN UNNEST(${udm_events.observer__domain__name_server}) as udm_events__observer__domain__name_server ;;
-    relationship: one_to_many
-  }
-
-  join: udm_events__about__file__capabilities_tags {
-    view_label: "Udm Events: About File Capabilities Tags"
-    sql: LEFT JOIN UNNEST(${udm_events__about.file__capabilities_tags}) as udm_events__about__file__capabilities_tags ;;
-    relationship: one_to_many
-  }
-
-  join: udm_events__about__domain__tech__department {
-    view_label: "Udm Events: About Domain Tech Department"
-    sql: LEFT JOIN UNNEST(${udm_events__about.domain__tech__department}) as udm_events__about__domain__tech__department ;;
-    relationship: one_to_many
-  }
-
-  join: udm_events__about__domain__zone__department {
-    view_label: "Udm Events: About Domain Zone Department"
-    sql: LEFT JOIN UNNEST(${udm_events__about.domain__zone__department}) as udm_events__about__domain__zone__department ;;
     relationship: one_to_many
   }
 
@@ -2914,18 +2860,6 @@ explore: udm_events {
   join: udm_events__about__cloud__vpc__attribute__permissions {
     view_label: "Udm Events: About Cloud Vpc Attribute Permissions"
     sql: LEFT JOIN UNNEST(${udm_events__about.cloud__vpc__attribute__permissions}) as udm_events__about__cloud__vpc__attribute__permissions ;;
-    relationship: one_to_many
-  }
-
-  join: udm_events__about__process__file__pe_file__imports {
-    view_label: "Udm Events: About Process File Pe File Imports"
-    sql: LEFT JOIN UNNEST(${udm_events__about.process__file__pe_file__imports}) as udm_events__about__process__file__pe_file__imports ;;
-    relationship: one_to_many
-  }
-
-  join: udm_events__intermediary__file__pe_file__resource {
-    view_label: "Udm Events: Intermediary File Pe File Resource"
-    sql: LEFT JOIN UNNEST(${udm_events__intermediary.file__pe_file__resource}) as udm_events__intermediary__file__pe_file__resource ;;
     relationship: one_to_many
   }
 
