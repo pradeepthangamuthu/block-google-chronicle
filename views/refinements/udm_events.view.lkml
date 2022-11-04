@@ -24,6 +24,102 @@ view: +udm_events {
     sql: ${TABLE}.metadata.event_timestamp.seconds ;;
   }
 
+  dimension_group: metadata__collected_timestamp {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      hour,
+      minute,
+      year
+    ]
+    datatype: epoch
+    sql: ${TABLE}.metadata.collected_timestamp.seconds ;;
+  }
+
+  dimension_group: metadata__ingested_timestamp {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      hour,
+      minute,
+      year
+    ]
+    datatype: epoch
+    sql: ${TABLE}.metadata.ingested_timestamp.seconds ;;
+  }
+
+  dimension_group: network__tls__client__certificate__not_after__timestamp {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      hour,
+      minute,
+      year
+    ]
+    datatype: epoch
+    sql: ${TABLE}.network.tls.client.certificate.not_after.seconds ;;
+  }
+
+  dimension_group: network__tls__client__certificate__not_before__timestamp {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      hour,
+      minute,
+      year
+    ]
+    datatype: epoch
+    sql: ${TABLE}.network.tls.client.certificate.not_before.seconds ;;
+  }
+
+  dimension_group: network__tls__server__certificate__not_after__timestamp {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      hour,
+      minute,
+      year
+    ]
+    datatype: epoch
+    sql: ${TABLE}.network.tls.server.certificate.not_after.seconds ;;
+  }
+
+  dimension_group: network__tls__server__certificate__not_before__timestamp {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      hour,
+      minute,
+      year
+    ]
+    datatype: epoch
+    sql: ${TABLE}.network.tls.server.certificate.not_before.seconds ;;
+  }
+
   filter: time_filter {
     type: date_time
   }

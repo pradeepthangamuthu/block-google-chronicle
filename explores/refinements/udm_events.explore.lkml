@@ -8,6 +8,8 @@ access_grant: can_explore_udm_events {
 }
 
 explore: +udm_events {
+  label: "UDM Events"
+
   # required_access_grants: [can_explore_udm_events]
 
   # Naming enums
