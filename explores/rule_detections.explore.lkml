@@ -7,12 +7,6 @@ explore: rule_detections {
     relationship: one_to_many
   }
 
-  join: rule_detections__detection__outcomes {
-    view_label: "Rule Detections: Detection Outcomes"
-    sql: LEFT JOIN UNNEST(${rule_detections.detection__outcomes}) as rule_detections__detection__outcomes ;;
-    relationship: one_to_many
-  }
-
   join: rule_detections__detection__fields {
     view_label: "Rule Detections: Detection Fields"
     sql: LEFT JOIN UNNEST(${rule_detections.detection__fields}) as rule_detections__detection__fields ;;
@@ -22,6 +16,12 @@ explore: rule_detections {
   join: rule_detections__detection__users {
     view_label: "Rule Detections: Detection Users"
     sql: LEFT JOIN UNNEST(${rule_detections.detection__users}) as rule_detections__detection__users ;;
+    relationship: one_to_many
+  }
+
+  join: rule_detections__detection__outcomes {
+    view_label: "Rule Detections: Detection Outcomes"
+    sql: LEFT JOIN UNNEST(${rule_detections.detection__outcomes}) as rule_detections__detection__outcomes ;;
     relationship: one_to_many
   }
 
@@ -217,6 +217,12 @@ explore: rule_detections {
     relationship: one_to_many
   }
 
+  join: rule_detections__detection__fields__bool_seq__bool_vals {
+    view_label: "Rule Detections: Detection Fields Bool Seq Bool Vals"
+    sql: LEFT JOIN UNNEST(${rule_detections__detection__fields.bool_seq__bool_vals}) as rule_detections__detection__fields__bool_seq__bool_vals ;;
+    relationship: one_to_many
+  }
+
   join: rule_detections__detection__events__principal__asset__ip {
     view_label: "Rule Detections: Detection Events Principal Asset Ip"
     sql: LEFT JOIN UNNEST(${rule_detections__detection__events.principal__asset__ip}) as rule_detections__detection__events__principal__asset__ip ;;
@@ -259,6 +265,24 @@ explore: rule_detections {
     relationship: one_to_many
   }
 
+  join: rule_detections__detection__outcomes__bool_seq__bool_vals {
+    view_label: "Rule Detections: Detection Outcomes Bool Seq Bool Vals"
+    sql: LEFT JOIN UNNEST(${rule_detections__detection__outcomes.bool_seq__bool_vals}) as rule_detections__detection__outcomes__bool_seq__bool_vals ;;
+    relationship: one_to_many
+  }
+
+  join: rule_detections__detection__fields__bytes_seq__bytes_vals {
+    view_label: "Rule Detections: Detection Fields Bytes Seq Bytes Vals"
+    sql: LEFT JOIN UNNEST(${rule_detections__detection__fields.bytes_seq__bytes_vals}) as rule_detections__detection__fields__bytes_seq__bytes_vals ;;
+    relationship: one_to_many
+  }
+
+  join: rule_detections__detection__fields__int64_seq__int64_vals {
+    view_label: "Rule Detections: Detection Fields Int64 Seq Int64 Vals"
+    sql: LEFT JOIN UNNEST(${rule_detections__detection__fields.int64_seq__int64_vals}) as rule_detections__detection__fields__int64_seq__int64_vals ;;
+    relationship: one_to_many
+  }
+
   join: rule_detections__detection__events__principal__labels {
     view_label: "Rule Detections: Detection Events Principal Labels"
     sql: LEFT JOIN UNNEST(${rule_detections__detection__events.principal__labels}) as rule_detections__detection__events__principal__labels ;;
@@ -268,6 +292,12 @@ explore: rule_detections {
   join: rule_detections__detection__events__src__asset__labels {
     view_label: "Rule Detections: Detection Events Src Asset Labels"
     sql: LEFT JOIN UNNEST(${rule_detections__detection__events.src__asset__labels}) as rule_detections__detection__events__src__asset__labels ;;
+    relationship: one_to_many
+  }
+
+  join: rule_detections__detection__fields__bytes_list__bytes_vals {
+    view_label: "Rule Detections: Detection Fields Bytes List Bytes Vals"
+    sql: LEFT JOIN UNNEST(${rule_detections__detection__fields.bytes_list__bytes_vals}) as rule_detections__detection__fields__bytes_list__bytes_vals ;;
     relationship: one_to_many
   }
 
@@ -292,6 +322,36 @@ explore: rule_detections {
   join: rule_detections__detection__events__network__email__subject {
     view_label: "Rule Detections: Detection Events Network Email Subject"
     sql: LEFT JOIN UNNEST(${rule_detections__detection__events.network__email__subject}) as rule_detections__detection__events__network__email__subject ;;
+    relationship: one_to_many
+  }
+
+  join: rule_detections__detection__outcomes__bytes_seq__bytes_vals {
+    view_label: "Rule Detections: Detection Outcomes Bytes Seq Bytes Vals"
+    sql: LEFT JOIN UNNEST(${rule_detections__detection__outcomes.bytes_seq__bytes_vals}) as rule_detections__detection__outcomes__bytes_seq__bytes_vals ;;
+    relationship: one_to_many
+  }
+
+  join: rule_detections__detection__outcomes__int64_seq__int64_vals {
+    view_label: "Rule Detections: Detection Outcomes Int64 Seq Int64 Vals"
+    sql: LEFT JOIN UNNEST(${rule_detections__detection__outcomes.int64_seq__int64_vals}) as rule_detections__detection__outcomes__int64_seq__int64_vals ;;
+    relationship: one_to_many
+  }
+
+  join: rule_detections__detection__fields__double_seq__double_vals {
+    view_label: "Rule Detections: Detection Fields Double Seq Double Vals"
+    sql: LEFT JOIN UNNEST(${rule_detections__detection__fields.double_seq__double_vals}) as rule_detections__detection__fields__double_seq__double_vals ;;
+    relationship: one_to_many
+  }
+
+  join: rule_detections__detection__fields__string_seq__string_vals {
+    view_label: "Rule Detections: Detection Fields String Seq String Vals"
+    sql: LEFT JOIN UNNEST(${rule_detections__detection__fields.string_seq__string_vals}) as rule_detections__detection__fields__string_seq__string_vals ;;
+    relationship: one_to_many
+  }
+
+  join: rule_detections__detection__fields__uint64_seq__uint64_vals {
+    view_label: "Rule Detections: Detection Fields Uint64 Seq Uint64 Vals"
+    sql: LEFT JOIN UNNEST(${rule_detections__detection__fields.uint64_seq__uint64_vals}) as rule_detections__detection__fields__uint64_seq__uint64_vals ;;
     relationship: one_to_many
   }
 
@@ -331,6 +391,18 @@ explore: rule_detections {
     relationship: one_to_many
   }
 
+  join: rule_detections__detection__outcomes__bytes_list__bytes_vals {
+    view_label: "Rule Detections: Detection Outcomes Bytes List Bytes Vals"
+    sql: LEFT JOIN UNNEST(${rule_detections__detection__outcomes.bytes_list__bytes_vals}) as rule_detections__detection__outcomes__bytes_list__bytes_vals ;;
+    relationship: one_to_many
+  }
+
+  join: rule_detections__detection__fields__string_list__string_vals {
+    view_label: "Rule Detections: Detection Fields String List String Vals"
+    sql: LEFT JOIN UNNEST(${rule_detections__detection__fields.string_list__string_vals}) as rule_detections__detection__fields__string_list__string_vals ;;
+    relationship: one_to_many
+  }
+
   join: rule_detections__detection__events__src__asset__software {
     view_label: "Rule Detections: Detection Events Src Asset Software"
     sql: LEFT JOIN UNNEST(${rule_detections__detection__events.src__asset__software}) as rule_detections__detection__events__src__asset__software ;;
@@ -358,6 +430,24 @@ explore: rule_detections {
   join: rule_detections__detection__events__network__dns__answers {
     view_label: "Rule Detections: Detection Events Network Dns Answers"
     sql: LEFT JOIN UNNEST(${rule_detections__detection__events.network__dns__answers}) as rule_detections__detection__events__network__dns__answers ;;
+    relationship: one_to_many
+  }
+
+  join: rule_detections__detection__outcomes__double_seq__double_vals {
+    view_label: "Rule Detections: Detection Outcomes Double Seq Double Vals"
+    sql: LEFT JOIN UNNEST(${rule_detections__detection__outcomes.double_seq__double_vals}) as rule_detections__detection__outcomes__double_seq__double_vals ;;
+    relationship: one_to_many
+  }
+
+  join: rule_detections__detection__outcomes__string_seq__string_vals {
+    view_label: "Rule Detections: Detection Outcomes String Seq String Vals"
+    sql: LEFT JOIN UNNEST(${rule_detections__detection__outcomes.string_seq__string_vals}) as rule_detections__detection__outcomes__string_seq__string_vals ;;
+    relationship: one_to_many
+  }
+
+  join: rule_detections__detection__outcomes__uint64_seq__uint64_vals {
+    view_label: "Rule Detections: Detection Outcomes Uint64 Seq Uint64 Vals"
+    sql: LEFT JOIN UNNEST(${rule_detections__detection__outcomes.uint64_seq__uint64_vals}) as rule_detections__detection__outcomes__uint64_seq__uint64_vals ;;
     relationship: one_to_many
   }
 
@@ -394,6 +484,12 @@ explore: rule_detections {
   join: rule_detections__detection__events__security_result__category {
     view_label: "Rule Detections: Detection Events Security Result Category"
     sql: LEFT JOIN UNNEST(${rule_detections__detection__events__security_result.category}) as rule_detections__detection__events__security_result__category ;;
+    relationship: one_to_many
+  }
+
+  join: rule_detections__detection__outcomes__string_list__string_vals {
+    view_label: "Rule Detections: Detection Outcomes String List String Vals"
+    sql: LEFT JOIN UNNEST(${rule_detections__detection__outcomes.string_list__string_vals}) as rule_detections__detection__outcomes__string_list__string_vals ;;
     relationship: one_to_many
   }
 

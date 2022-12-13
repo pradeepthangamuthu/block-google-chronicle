@@ -258,9 +258,37 @@ view: rule_detections__detection__assets {
 }
 
 view: rule_detections__detection__fields {
+  dimension: bool_list__bool_vals {
+    type: string
+    sql: ${TABLE}.bool_list.bool_vals ;;
+    group_label: "Bool List"
+    group_item_label: "Bool Vals"
+  }
+
+  dimension: bool_seq__bool_vals {
+    hidden: yes
+    sql: ${TABLE}.bool_seq.bool_vals ;;
+    group_label: "Bool Seq"
+    group_item_label: "Bool Vals"
+  }
+
   dimension: bool_val {
     type: yesno
     sql: ${TABLE}.bool_val ;;
+  }
+
+  dimension: bytes_list__bytes_vals {
+    hidden: yes
+    sql: ${TABLE}.bytes_list.bytes_vals ;;
+    group_label: "Bytes List"
+    group_item_label: "Bytes Vals"
+  }
+
+  dimension: bytes_seq__bytes_vals {
+    hidden: yes
+    sql: ${TABLE}.bytes_seq.bytes_vals ;;
+    group_label: "Bytes Seq"
+    group_item_label: "Bytes Vals"
   }
 
   dimension: bytes_val {
@@ -268,9 +296,42 @@ view: rule_detections__detection__fields {
     sql: ${TABLE}.bytes_val ;;
   }
 
+  dimension: double_list__double_vals {
+    type: string
+    sql: ${TABLE}.double_list.double_vals ;;
+    group_label: "Double List"
+    group_item_label: "Double Vals"
+  }
+
+  dimension: double_seq__double_vals {
+    hidden: yes
+    sql: ${TABLE}.double_seq.double_vals ;;
+    group_label: "Double Seq"
+    group_item_label: "Double Vals"
+  }
+
   dimension: double_val {
     type: number
     sql: ${TABLE}.double_val ;;
+  }
+
+  dimension: field_path {
+    type: string
+    sql: ${TABLE}.field_path ;;
+  }
+
+  dimension: int64_list__int64_vals {
+    type: string
+    sql: ${TABLE}.int64_list.int64_vals ;;
+    group_label: "Int64 List"
+    group_item_label: "Int64 Vals"
+  }
+
+  dimension: int64_seq__int64_vals {
+    hidden: yes
+    sql: ${TABLE}.int64_seq.int64_vals ;;
+    group_label: "Int64 Seq"
+    group_item_label: "Int64 Vals"
   }
 
   dimension: int64_val {
@@ -283,9 +344,37 @@ view: rule_detections__detection__fields {
     sql: ${TABLE}.name ;;
   }
 
+  dimension: string_list__string_vals {
+    hidden: yes
+    sql: ${TABLE}.string_list.string_vals ;;
+    group_label: "String List"
+    group_item_label: "String Vals"
+  }
+
+  dimension: string_seq__string_vals {
+    hidden: yes
+    sql: ${TABLE}.string_seq.string_vals ;;
+    group_label: "String Seq"
+    group_item_label: "String Vals"
+  }
+
   dimension: string_val {
     type: string
     sql: ${TABLE}.string_val ;;
+  }
+
+  dimension: uint64_list__uint64_vals {
+    type: string
+    sql: ${TABLE}.uint64_list.uint64_vals ;;
+    group_label: "Uint64 List"
+    group_item_label: "Uint64 Vals"
+  }
+
+  dimension: uint64_seq__uint64_vals {
+    hidden: yes
+    sql: ${TABLE}.uint64_seq.uint64_vals ;;
+    group_label: "Uint64 Seq"
+    group_item_label: "Uint64 Vals"
   }
 
   dimension: uint64_val {
@@ -327,9 +416,37 @@ view: rule_detections__detection__users {
 }
 
 view: rule_detections__detection__outcomes {
+  dimension: bool_list__bool_vals {
+    type: string
+    sql: ${TABLE}.bool_list.bool_vals ;;
+    group_label: "Bool List"
+    group_item_label: "Bool Vals"
+  }
+
+  dimension: bool_seq__bool_vals {
+    hidden: yes
+    sql: ${TABLE}.bool_seq.bool_vals ;;
+    group_label: "Bool Seq"
+    group_item_label: "Bool Vals"
+  }
+
   dimension: bool_val {
     type: yesno
     sql: ${TABLE}.bool_val ;;
+  }
+
+  dimension: bytes_list__bytes_vals {
+    hidden: yes
+    sql: ${TABLE}.bytes_list.bytes_vals ;;
+    group_label: "Bytes List"
+    group_item_label: "Bytes Vals"
+  }
+
+  dimension: bytes_seq__bytes_vals {
+    hidden: yes
+    sql: ${TABLE}.bytes_seq.bytes_vals ;;
+    group_label: "Bytes Seq"
+    group_item_label: "Bytes Vals"
   }
 
   dimension: bytes_val {
@@ -337,9 +454,42 @@ view: rule_detections__detection__outcomes {
     sql: ${TABLE}.bytes_val ;;
   }
 
+  dimension: double_list__double_vals {
+    type: string
+    sql: ${TABLE}.double_list.double_vals ;;
+    group_label: "Double List"
+    group_item_label: "Double Vals"
+  }
+
+  dimension: double_seq__double_vals {
+    hidden: yes
+    sql: ${TABLE}.double_seq.double_vals ;;
+    group_label: "Double Seq"
+    group_item_label: "Double Vals"
+  }
+
   dimension: double_val {
     type: number
     sql: ${TABLE}.double_val ;;
+  }
+
+  dimension: field_path {
+    type: string
+    sql: ${TABLE}.field_path ;;
+  }
+
+  dimension: int64_list__int64_vals {
+    type: string
+    sql: ${TABLE}.int64_list.int64_vals ;;
+    group_label: "Int64 List"
+    group_item_label: "Int64 Vals"
+  }
+
+  dimension: int64_seq__int64_vals {
+    hidden: yes
+    sql: ${TABLE}.int64_seq.int64_vals ;;
+    group_label: "Int64 Seq"
+    group_item_label: "Int64 Vals"
   }
 
   dimension: int64_val {
@@ -352,9 +502,37 @@ view: rule_detections__detection__outcomes {
     sql: ${TABLE}.name ;;
   }
 
+  dimension: string_list__string_vals {
+    hidden: yes
+    sql: ${TABLE}.string_list.string_vals ;;
+    group_label: "String List"
+    group_item_label: "String Vals"
+  }
+
+  dimension: string_seq__string_vals {
+    hidden: yes
+    sql: ${TABLE}.string_seq.string_vals ;;
+    group_label: "String Seq"
+    group_item_label: "String Vals"
+  }
+
   dimension: string_val {
     type: string
     sql: ${TABLE}.string_val ;;
+  }
+
+  dimension: uint64_list__uint64_vals {
+    type: string
+    sql: ${TABLE}.uint64_list.uint64_vals ;;
+    group_label: "Uint64 List"
+    group_item_label: "Uint64 Vals"
+  }
+
+  dimension: uint64_seq__uint64_vals {
+    hidden: yes
+    sql: ${TABLE}.uint64_seq.uint64_vals ;;
+    group_label: "Uint64 Seq"
+    group_item_label: "Uint64 Vals"
   }
 
   dimension: uint64_val {
@@ -9169,6 +9347,13 @@ view: rule_detections__detection__events__network__email__bcc {
   }
 }
 
+view: rule_detections__detection__fields__bool_seq__bool_vals {
+  dimension: rule_detections__detection__fields__bool_seq__bool_vals {
+    type: yesno
+    sql: rule_detections__detection__fields__bool_seq__bool_vals ;;
+  }
+}
+
 view: rule_detections__detection__events__principal__asset__ip {
   dimension: rule_detections__detection__events__principal__asset__ip {
     type: string
@@ -9223,6 +9408,27 @@ view: rule_detections__detection__events__intermediary__nat_ip {
   }
 }
 
+view: rule_detections__detection__outcomes__bool_seq__bool_vals {
+  dimension: rule_detections__detection__outcomes__bool_seq__bool_vals {
+    type: yesno
+    sql: rule_detections__detection__outcomes__bool_seq__bool_vals ;;
+  }
+}
+
+view: rule_detections__detection__fields__bytes_seq__bytes_vals {
+  dimension: rule_detections__detection__fields__bytes_seq__bytes_vals {
+    type: string
+    sql: rule_detections__detection__fields__bytes_seq__bytes_vals ;;
+  }
+}
+
+view: rule_detections__detection__fields__int64_seq__int64_vals {
+  dimension: rule_detections__detection__fields__int64_seq__int64_vals {
+    type: number
+    sql: rule_detections__detection__fields__int64_seq__int64_vals ;;
+  }
+}
+
 view: rule_detections__detection__events__principal__labels {
   dimension: key {
     type: string
@@ -9244,6 +9450,13 @@ view: rule_detections__detection__events__src__asset__labels {
   dimension: value {
     type: string
     sql: ${TABLE}.value ;;
+  }
+}
+
+view: rule_detections__detection__fields__bytes_list__bytes_vals {
+  dimension: rule_detections__detection__fields__bytes_list__bytes_vals {
+    type: string
+    sql: rule_detections__detection__fields__bytes_list__bytes_vals ;;
   }
 }
 
@@ -9300,6 +9513,41 @@ view: rule_detections__detection__events__network__email__subject {
   dimension: rule_detections__detection__events__network__email__subject {
     type: string
     sql: rule_detections__detection__events__network__email__subject ;;
+  }
+}
+
+view: rule_detections__detection__outcomes__bytes_seq__bytes_vals {
+  dimension: rule_detections__detection__outcomes__bytes_seq__bytes_vals {
+    type: string
+    sql: rule_detections__detection__outcomes__bytes_seq__bytes_vals ;;
+  }
+}
+
+view: rule_detections__detection__outcomes__int64_seq__int64_vals {
+  dimension: rule_detections__detection__outcomes__int64_seq__int64_vals {
+    type: number
+    sql: rule_detections__detection__outcomes__int64_seq__int64_vals ;;
+  }
+}
+
+view: rule_detections__detection__fields__double_seq__double_vals {
+  dimension: rule_detections__detection__fields__double_seq__double_vals {
+    type: number
+    sql: rule_detections__detection__fields__double_seq__double_vals ;;
+  }
+}
+
+view: rule_detections__detection__fields__string_seq__string_vals {
+  dimension: rule_detections__detection__fields__string_seq__string_vals {
+    type: string
+    sql: rule_detections__detection__fields__string_seq__string_vals ;;
+  }
+}
+
+view: rule_detections__detection__fields__uint64_seq__uint64_vals {
+  dimension: rule_detections__detection__fields__uint64_seq__uint64_vals {
+    type: number
+    sql: rule_detections__detection__fields__uint64_seq__uint64_vals ;;
   }
 }
 
@@ -9387,6 +9635,20 @@ view: rule_detections__detection__events__target__user__department {
   dimension: rule_detections__detection__events__target__user__department {
     type: string
     sql: rule_detections__detection__events__target__user__department ;;
+  }
+}
+
+view: rule_detections__detection__outcomes__bytes_list__bytes_vals {
+  dimension: rule_detections__detection__outcomes__bytes_list__bytes_vals {
+    type: string
+    sql: rule_detections__detection__outcomes__bytes_list__bytes_vals ;;
+  }
+}
+
+view: rule_detections__detection__fields__string_list__string_vals {
+  dimension: rule_detections__detection__fields__string_list__string_vals {
+    type: string
+    sql: rule_detections__detection__fields__string_list__string_vals ;;
   }
 }
 
@@ -10881,6 +11143,27 @@ view: rule_detections__detection__events__network__dns__answers {
   }
 }
 
+view: rule_detections__detection__outcomes__double_seq__double_vals {
+  dimension: rule_detections__detection__outcomes__double_seq__double_vals {
+    type: number
+    sql: rule_detections__detection__outcomes__double_seq__double_vals ;;
+  }
+}
+
+view: rule_detections__detection__outcomes__string_seq__string_vals {
+  dimension: rule_detections__detection__outcomes__string_seq__string_vals {
+    type: string
+    sql: rule_detections__detection__outcomes__string_seq__string_vals ;;
+  }
+}
+
+view: rule_detections__detection__outcomes__uint64_seq__uint64_vals {
+  dimension: rule_detections__detection__outcomes__uint64_seq__uint64_vals {
+    type: number
+    sql: rule_detections__detection__outcomes__uint64_seq__uint64_vals ;;
+  }
+}
+
 view: rule_detections__detection__events__observer__user__department {
   dimension: rule_detections__detection__events__observer__user__department {
     type: string
@@ -10960,6 +11243,13 @@ view: rule_detections__detection__events__security_result__category {
   dimension: rule_detections__detection__events__security_result__category {
     type: number
     sql: rule_detections__detection__events__security_result__category ;;
+  }
+}
+
+view: rule_detections__detection__outcomes__string_list__string_vals {
+  dimension: rule_detections__detection__outcomes__string_list__string_vals {
+    type: string
+    sql: rule_detections__detection__outcomes__string_list__string_vals ;;
   }
 }
 
