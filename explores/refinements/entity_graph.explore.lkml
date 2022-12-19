@@ -3,7 +3,6 @@ include: "/views/refinements/entity_enum_value_to_name_mapping.view.lkml"
 include: "/explores/entity_graph.explore.lkml"
 
 explore: +entity_graph {
-  hidden:  yes
 
   #Naming Enums
   join: entity_graph__entity__asset__type {
