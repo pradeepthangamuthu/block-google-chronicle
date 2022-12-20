@@ -26,7 +26,8 @@ For more information on the Block structure and customization, refer to [Looker 
   - CHRONICLE_URL: this block contains links back to the different views in Chronicle. Enter the base URL of your Chronicle tenant, for e.g. https://tenant.backstory.chronicle.security/
 3. Access the block from Browse - Applications & Tools - Google Chronicle Block or the LookML dashboards folder (/folders/lookml). You can customize these dashboards by copying them into one of your instances folders.
 
-**NOTE:** When development mode is enabled the latest changes might not be picked up. Kindly disable development mode and validate.  https://cloud.google.com/looker/docs/dev-mode-prod-mode#development_mode
+**NOTE:** When development mode is enabled the latest block updates might not reflect properly. Kindly disable development mode and validate.  
+To know more about development mode - https://cloud.google.com/looker/docs/dev-mode-prod-mode#development_mode
 
 ## What if I find an error? Suggestions for improvements?
 
