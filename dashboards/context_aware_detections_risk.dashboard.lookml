@@ -9,7 +9,7 @@
     name: Aggregate Risk
     explore: rule_detections
     type: looker_area
-    fields: [rule_detections.event_timestamp_date, sum_of_int64_val]
+    fields: [rule_detections.event_timestamp_date, sum_of_int64_val, rule_detections__detection__outcomes.name]
     fill_fields: [rule_detections.event_timestamp_date]
     sorts: [sum_of_int64_val]
     limit: 500
@@ -78,7 +78,9 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     defaults_version: 1
-    hidden_fields: []
+    hidden_fields: [rule_detections__detection__outcomes.name]
+    filters:
+      rule_detections__detection__outcomes.name: '"risk_score"'
     listen:
       Time: rule_detections.event_timestamp_time
     row: 2
