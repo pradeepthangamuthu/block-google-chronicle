@@ -26,6 +26,11 @@ view: +rule_detections {
     }
   }
 
+  measure: count {
+    type: count
+    drill_fields: [rule_name, count]
+  }
+
   filter: period_filter {
     label: "Filter for Period Dimension"
     hidden: yes
@@ -74,5 +79,17 @@ view: +rule_detections {
     ]
     datatype: epoch
     sql: ${detection__detection_timestamp__seconds} ;;
+  }
+}
+
+view: +rule_detections__detection__users {
+  dimension: user_name_with_link {
+    type: string
+    sql: ${TABLE}.user_name ;;
+    link: {
+      label: "Investigate in Chronicle"
+      url: "@{CHRONICLE_URL}/userResults?userName={{value}}"
+      icon_url: "@{USER_PAGE_ICON_URL}"
+    }
   }
 }

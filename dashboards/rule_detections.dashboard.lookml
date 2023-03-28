@@ -9,7 +9,7 @@
     type: looker_line
     fields: [rule_detections.count, rule_detections.event_timestamp_week]
     fill_fields: [rule_detections.event_timestamp_week]
-    sorts: [ule_detections.event_timestamp_week desc]
+    sorts: [rule_detections.event_timestamp_week desc]
     limit: 500
     query_timezone: America/Los_Angeles
     x_axis_gridlines: false
@@ -208,8 +208,8 @@
     name: Top 10 Rule Names by Detections
     explore: rule_detections
     type: looker_grid
-    fields: [rule_detections.count, rule_detections.rule_name]
-    sorts: [rule_detections.count desc]
+    fields: [rule_detections.count_for_drill, rule_detections.rule_name]
+    sorts: [rule_detections.count_for_drill desc]
     limit: 30
     query_timezone: America/Los_Angeles
     show_view_names: false
@@ -259,8 +259,8 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: "#808080"
-    y_axes: [{label: Rule Detection  Count, orientation: bottom, series: [{axisId: rule_detections.count,
-            id: rule_detections.count, name: Rule Matches Data}], showLabels: true,
+    y_axes: [{label: Rule Detection  Count, orientation: bottom, series: [{axisId: rule_detections.count_for_drill,
+            id: rule_detections.count_for_drill, name: Rule Matches Data}], showLabels: true,
         showValues: true, unpinAxis: false, tickDensity: default, tickDensityCustom: 5,
         type: linear}]
     x_axis_label: ''
@@ -281,10 +281,10 @@
     name: Rule Detections by Name Over Time
     explore: rule_detections
     type: looker_column
-    fields: [rule_detections.count, rule_detections.rule_name, rule_detections.event_timestamp_date]
+    fields: [rule_detections.count_for_drill, rule_detections.rule_name, rule_detections.event_timestamp_date]
     pivots: [rule_detections.rule_name]
     fill_fields: [rule_detections.event_timestamp_date]
-    sorts: [rule_detections.count desc 0, rule_detections.rule_name desc, rule_detections.event_timestamp_date
+    sorts: [rule_detections.count_for_drill desc 0, rule_detections.rule_name desc, rule_detections.event_timestamp_date
         desc]
     limit: 500
     query_timezone: America/Los_Angeles
@@ -321,41 +321,41 @@
       options:
         steps: 5
     y_axes: [{label: Rule Detections, orientation: left, series: [{axisId: WojasonDailyDetectionQuotaDevTest
-              - ru_95fe0f44-122c-459f-a51a-0c95cffd3f3b - rule_detections.count, id: WojasonDailyDetectionQuotaDevTest
-              - ru_95fe0f44-122c-459f-a51a-0c95cffd3f3b - rule_detections.count, name: WojasonDailyDetectionQuotaDevTest},
+              - ru_95fe0f44-122c-459f-a51a-0c95cffd3f3b - rule_detections.count_for_drill, id: WojasonDailyDetectionQuotaDevTest
+              - ru_95fe0f44-122c-459f-a51a-0c95cffd3f3b - rule_detections.count_for_drill, name: WojasonDailyDetectionQuotaDevTest},
           {axisId: testConsistentTimeRangeLiveWorksEnabled_SingleEvent - ru_caedfdcb-3312-4b7b-8567-848e1f1f9fba
-              - rule_detections.count, id: testConsistentTimeRangeLiveWorksEnabled_SingleEvent
-              - ru_caedfdcb-3312-4b7b-8567-848e1f1f9fba - rule_detections.count, name: testConsistentTimeRangeLiveWorksEnabled_SingleEvent},
+              - rule_detections.count_for_drill, id: testConsistentTimeRangeLiveWorksEnabled_SingleEvent
+              - ru_caedfdcb-3312-4b7b-8567-848e1f1f9fba - rule_detections.count_for_drill, name: testConsistentTimeRangeLiveWorksEnabled_SingleEvent},
           {axisId: testConsistentTimeRangeLiveWorksEnabled_MultiEvent - ru_ad2a5f8d-743e-4aef-a9a7-4cbd3f670f10
-              - rule_detections.count, id: testConsistentTimeRangeLiveWorksEnabled_MultiEvent
-              - ru_ad2a5f8d-743e-4aef-a9a7-4cbd3f670f10 - rule_detections.count, name: testConsistentTimeRangeLiveWorksEnabled_MultiEvent},
+              - rule_detections.count_for_drill, id: testConsistentTimeRangeLiveWorksEnabled_MultiEvent
+              - ru_ad2a5f8d-743e-4aef-a9a7-4cbd3f670f10 - rule_detections.count_for_drill, name: testConsistentTimeRangeLiveWorksEnabled_MultiEvent},
           {axisId: RegexTargetHostname - ru_7d9ce84b-4319-45a9-bf40-08b6c32e0d4c -
-              rule_detections.count, id: RegexTargetHostname - ru_7d9ce84b-4319-45a9-bf40-08b6c32e0d4c
-              - rule_detections.count, name: RegexTargetHostname}, {axisId: RegexTargetHostname
-              - ru_7e0099b9-96b1-486d-8876-f78748fd6a1a - rule_detections.count, id: RegexTargetHostname
-              - ru_7e0099b9-96b1-486d-8876-f78748fd6a1a - rule_detections.count, name: RegexTargetHostname},
+              rule_detections.count_for_drill, id: RegexTargetHostname - ru_7d9ce84b-4319-45a9-bf40-08b6c32e0d4c
+              - rule_detections.count_for_drill, name: RegexTargetHostname}, {axisId: RegexTargetHostname
+              - ru_7e0099b9-96b1-486d-8876-f78748fd6a1a - rule_detections.count_for_drill, id: RegexTargetHostname
+              - ru_7e0099b9-96b1-486d-8876-f78748fd6a1a - rule_detections.count_for_drill, name: RegexTargetHostname},
           {axisId: RegexTargetHostname - ru_7f622f4c-b87d-4724-a7a0-0a265d0e71f9 -
-              rule_detections.count, id: RegexTargetHostname - ru_7f622f4c-b87d-4724-a7a0-0a265d0e71f9
-              - rule_detections.count, name: RegexTargetHostname}, {axisId: RegexTargetHostname
-              - ru_93cdd742-aefc-4567-84b3-c0d18368d5ec - rule_detections.count, id: RegexTargetHostname
-              - ru_93cdd742-aefc-4567-84b3-c0d18368d5ec - rule_detections.count, name: RegexTargetHostname},
+              rule_detections.count_for_drill, id: RegexTargetHostname - ru_7f622f4c-b87d-4724-a7a0-0a265d0e71f9
+              - rule_detections.count_for_drill, name: RegexTargetHostname}, {axisId: RegexTargetHostname
+              - ru_93cdd742-aefc-4567-84b3-c0d18368d5ec - rule_detections.count_for_drill, id: RegexTargetHostname
+              - ru_93cdd742-aefc-4567-84b3-c0d18368d5ec - rule_detections.count_for_drill, name: RegexTargetHostname},
           {axisId: RegexTargetHostname - ru_9edaec90-6c20-49b7-9659-c2eb5acb3ac1 -
-              rule_detections.count, id: RegexTargetHostname - ru_9edaec90-6c20-49b7-9659-c2eb5acb3ac1
-              - rule_detections.count, name: RegexTargetHostname}, {axisId: RegexTargetHostname
-              - ru_ab812ad0-922a-44c8-b8c6-505ed51628ce - rule_detections.count, id: RegexTargetHostname
-              - ru_ab812ad0-922a-44c8-b8c6-505ed51628ce - rule_detections.count, name: RegexTargetHostname},
-          {axisId: LotsOfDNS - ru_ab337c04-7ebc-4bdc-b6df-3186e63b897d - rule_detections.count,
-            id: LotsOfDNS - ru_ab337c04-7ebc-4bdc-b6df-3186e63b897d - rule_detections.count,
+              rule_detections.count_for_drill, id: RegexTargetHostname - ru_9edaec90-6c20-49b7-9659-c2eb5acb3ac1
+              - rule_detections.count_for_drill, name: RegexTargetHostname}, {axisId: RegexTargetHostname
+              - ru_ab812ad0-922a-44c8-b8c6-505ed51628ce - rule_detections.count_for_drill, id: RegexTargetHostname
+              - ru_ab812ad0-922a-44c8-b8c6-505ed51628ce - rule_detections.count_for_drill, name: RegexTargetHostname},
+          {axisId: LotsOfDNS - ru_ab337c04-7ebc-4bdc-b6df-3186e63b897d - rule_detections.count_for_drill,
+            id: LotsOfDNS - ru_ab337c04-7ebc-4bdc-b6df-3186e63b897d - rule_detections.count_for_drill,
             name: LotsOfDNS}, {axisId: google_not_google_com - ru_8e9e2d75-0a15-4d09-8d26-704039940d75
-              - rule_detections.count, id: google_not_google_com - ru_8e9e2d75-0a15-4d09-8d26-704039940d75
-              - rule_detections.count, name: google_not_google_com}, {axisId: abu_nx_domain
-              - ru_972100f0-36f8-4d57-b88b-b980e2f48b41 - rule_detections.count, id: abu_nx_domain
-              - ru_972100f0-36f8-4d57-b88b-b980e2f48b41 - rule_detections.count, name: abu_nx_domain},
+              - rule_detections.count_for_drill, id: google_not_google_com - ru_8e9e2d75-0a15-4d09-8d26-704039940d75
+              - rule_detections.count_for_drill, name: google_not_google_com}, {axisId: abu_nx_domain
+              - ru_972100f0-36f8-4d57-b88b-b980e2f48b41 - rule_detections.count_for_drill, id: abu_nx_domain
+              - ru_972100f0-36f8-4d57-b88b-b980e2f48b41 - rule_detections.count_for_drill, name: abu_nx_domain},
           {axisId: abu_dns_not_google_not_ms - ru_2fc72958-b76e-4b84-9693-b51440a206ac
-              - rule_detections.count, id: abu_dns_not_google_not_ms - ru_2fc72958-b76e-4b84-9693-b51440a206ac
-              - rule_detections.count, name: abu_dns_not_google_not_ms}, {axisId: abu_asset_aliasing
-              - ru_e28942e2-2191-449e-831e-881975fa0e00 - rule_detections.count, id: abu_asset_aliasing
-              - ru_e28942e2-2191-449e-831e-881975fa0e00 - rule_detections.count, name: abu_asset_aliasing}],
+              - rule_detections.count_for_drill, id: abu_dns_not_google_not_ms - ru_2fc72958-b76e-4b84-9693-b51440a206ac
+              - rule_detections.count_for_drill, name: abu_dns_not_google_not_ms}, {axisId: abu_asset_aliasing
+              - ru_e28942e2-2191-449e-831e-881975fa0e00 - rule_detections.count_for_drill, id: abu_asset_aliasing
+              - ru_e28942e2-2191-449e-831e-881975fa0e00 - rule_detections.count_for_drill, name: abu_asset_aliasing}],
         showLabels: true, showValues: true, unpinAxis: false, tickDensity: default,
         tickDensityCustom: 5, type: linear}]
     x_axis_label: Date
@@ -538,7 +538,7 @@
     name: Top 10 Users by Rule Detections
     explore: rule_detections
     type: looker_grid
-    fields: [rule_detections__detection__users.user_name, rule_detections.count]
+    fields: [rule_detections__detection__users.user_name_with_link, rule_detections.count]
     sorts: [rule_detections.count desc]
     limit: 30
     query_timezone: America/Los_Angeles
