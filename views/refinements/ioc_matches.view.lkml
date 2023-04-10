@@ -8,11 +8,6 @@ view: +ioc_matches {
 
   dimension: asset_hostname {
     sql: COALESCE(${asset}.hostname, ${asset}.asset_ip_address) ;;
-    # link: {
-    #   label: "Asset Lookup on {{value}}"
-    #   url: "@{ASSET_LOOKUP}"
-    #   icon_url: "@{DASHBOARD_ICON_URL}"
-    # }
     link: {
       label: "Investigate asset"
       url: "
@@ -34,8 +29,27 @@ view: +ioc_matches {
       date,
       week,
       month,
-      year
+      year,
+      hour,
+      minute
     ]
+    datatype: epoch
+    sql: cast(${TABLE}.day_bucket_seconds as INT64);;
+  }
+
+  dimension_group: ioc_ingest_time {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+      hour,
+      minute
+    ]
+    convert_tz: no
     datatype: epoch
     sql: ${TABLE}.ioc_ingest_time.seconds ;;
   }
@@ -46,11 +60,6 @@ view: +ioc_matches {
     CASE
       WHEN ${TABLE}.ioc_type= 'IOC_TYPE_DOMAIN' THEN ${TABLE}.ioc_value
     END;;
-    # link: {
-    #   label: "Domain Lookup on {{value}}"
-    #   url: "@{DOMAIN_LOOKUP}"
-    #   icon_url: "@{DASHBOARD_ICON_URL}"
-    # }
       link: {
         label: "Investigate domain"
         url: "@{CHRONICLE_URL}/domainResults?domain={{value}}"
@@ -58,16 +67,22 @@ view: +ioc_matches {
       }
     }
 
-    dimension : ioc_value_ip {
-      type: string
-      sql:
-          CASE
-            WHEN ${TABLE}.ioc_type= 'IOC_TYPE_IP' THEN ${TABLE}.ioc_value
-          END;;
+  dimension : ioc_value_ip {
+    type: string
+    sql:
+    CASE
+      WHEN ${TABLE}.ioc_type= 'IOC_TYPE_IP' THEN ${TABLE}.ioc_value
+    END;;
       link: {
         label: "Investigate IP"
         url: "@{CHRONICLE_URL}/destinationIpResults?ip={{value}}"
         icon_url: "@{DOMAIN_IP_PAGE_ICON_URL}"
       }
     }
+
+  dimension: ioc_location {
+    type: location
+    sql_latitude: ROUND(${location__region_latitude}, 4) ;;
+    sql_longitude: ROUND(${location__region_longitude}, 4) ;;
   }
+}

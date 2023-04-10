@@ -9,6 +9,21 @@ view: rule_detections {
     group_item_label: "Assets"
   }
 
+  dimension_group: detection__commit_timestamp {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: epoch
+    sql: ${TABLE}.detection.commit_timestamp.seconds ;;
+  }
+
   dimension: detection__commit_timestamp__nanos {
     type: number
     sql: ${TABLE}.detection.commit_timestamp.nanos ;;
@@ -21,6 +36,21 @@ view: rule_detections {
     sql: ${TABLE}.detection.commit_timestamp.seconds ;;
     group_label: "Detection Commit Timestamp"
     group_item_label: "Seconds"
+  }
+
+  dimension_group: detection__detection_timestamp {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: epoch
+    sql: ${TABLE}.detection.detection_timestamp.seconds ;;
   }
 
   dimension: detection__detection_timestamp__nanos {
@@ -199,7 +229,7 @@ view: rule_detections {
       END
     ;;
   }
-  
+
   dimension: version_timestamp__nanos {
     type: number
     sql: ${TABLE}.version_timestamp.nanos ;;
