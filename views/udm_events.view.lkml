@@ -1,14 +1,6 @@
 view: udm_events {
   sql_table_name: `@{DATASET_NAME}.@{UDM_EVENTS}`;;
 
-  drill_fields: [id]
-
-  dimension: id {
-    primary_key: yes
-    type: string
-    sql: ${TABLE}.id ;;
-  }
-
   dimension_group: _partitiondate {
     type: time
     timeframes: [
@@ -20727,7 +20719,6 @@ view: udm_events {
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-      id,
       vendor_name,
       product_name,
       src__hostname,
