@@ -117,6 +117,10 @@ constant: RULE_DETECTIONS_PAGE_ICON_URL {
   value: "https://backstory.chronicle.security/static/pageicons/rule-detections-white.svg"
 }
 
+constant: ALERTS_VIEW_PAGE_ICON_URL {
+  value: "https://backstory.chronicle.security/static/pageicons/rule-detections-white.svg"
+}
+
 constant: STRUCTURED_SEARCH_PAGE_ICON_URL {
   value: "https://backstory.chronicle.security/static/pageicons/structured-search-white.svg"
 }

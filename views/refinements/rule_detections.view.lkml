@@ -17,6 +17,17 @@ view: +rule_detections {
     }
   }
 
+  dimension: alert_name {
+    type: string
+    sql: ${TABLE}.rule_name ;;
+    link: {
+      label: "Investigate alerts"
+      url: "@{CHRONICLE_URL}/alerts?snapshotQuery=feedback_summary.status!=\"CLOSED\" AND detection.rule_name=\"{{rule_detections.rule_name._value}}\""
+      icon_url: "@{RULE_DETECTIONS_PAGE_ICON_URL}"
+    }
+  }
+
+
   measure: count_for_drill {
     type: count
     link: {
