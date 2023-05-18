@@ -10,7 +10,6 @@
     fields: [ingestion_metric_with_ingestion_stats.log_type, ingestion_metric_with_ingestion_stats.total_entry_number]
     filters:
       ingestion_metric_with_ingestion_stats.period: This Period
-      ingestion_metric_with_ingestion_stats.log_type: "-NULL"
     sorts: [ingestion_metric_with_ingestion_stats.total_entry_number desc]
     limit: 500
     value_labels: legend
@@ -57,7 +56,6 @@
     fields: [ingestion_metric_with_ingestion_stats.log_type, ingestion_metric_with_ingestion_stats.total_size_bytes]
     filters:
       ingestion_metric_with_ingestion_stats.period: This Period
-      ingestion_metric_with_ingestion_stats.log_type: "-NULL"
     sorts: [ingestion_metric_with_ingestion_stats.total_size_bytes desc]
     limit: 500
     value_labels: legend
@@ -1119,3 +1117,16 @@
     explore: ingestion_metric_with_ingestion_stats
     listens_to_filters: []
     field: ingestion_metric_with_ingestion_stats.period_filter
+  - name: Log Type
+    title: Log Type
+    type: field_filter
+    default_value: "-NULL"
+    allow_multiple_values: true
+    required: false
+    ui_config:
+      type: advanced
+      display: popover
+      options: []
+    explore: ingestion_metric_with_ingestion_stats
+    listens_to_filters: []
+    field: ingestion_metric_with_ingestion_stats.log_type
