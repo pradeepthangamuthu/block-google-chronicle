@@ -37,6 +37,11 @@ constant: RULE_DETECTIONS{
   value: "rule_detections"
 }
 
+constant: RULESETS{
+  value: "rulesets"
+}
+
+# DEPRECATED use EVENTS
 constant: UDM_EVENTS{
   value: "udm_events"
 }

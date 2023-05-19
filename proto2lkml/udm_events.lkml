@@ -17689,10 +17689,6 @@ explore: udm_events {
 
   hidden: yes
 
-  required_access_grants: [
-    has_chronicle_explores_enabled
-  ]
-
   conditionally_filter: {
     filters: {
       field: udm_events.time_filter
