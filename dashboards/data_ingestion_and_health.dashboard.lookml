@@ -1,5 +1,5 @@
 - dashboard: data_ingestion_and_health
-  title: Data Ingestion and Health (DEPRECATED)
+  title: Data Ingestion and Health
   layout: newspaper
   preferred_viewer: dashboards-next
   elements:
@@ -11,7 +11,7 @@
     filters:
       ingestion_stats.period: This Period
     sorts: [ingestion_stats.total_entry_number desc]
-    limit: 500
+    limit: 50
     value_labels: legend
     label_type: labPer
     x_axis_gridlines: false
@@ -45,6 +45,7 @@
     series_types: {}
     listen:
       Time: ingestion_stats.period_filter
+      Log Type: ingestion_stats.log_type
     row: 3
     col: 0
     width: 12
@@ -57,7 +58,7 @@
     filters:
       ingestion_stats.period: This Period
     sorts: [ingestion_stats.total_size_bytes desc]
-    limit: 500
+    limit: 50
     value_labels: legend
     label_type: labPer
     x_axis_gridlines: false
@@ -91,6 +92,7 @@
     series_types: {}
     listen:
       Time: ingestion_stats.period_filter
+      Log Type: ingestion_stats.log_type
     row: 3
     col: 12
     width: 12
@@ -128,7 +130,8 @@
       num_rows: '10'
     series_types: {}
     defaults_version: 1
-    listen: {}
+    listen:
+      Log Type: ingestion_stats.log_type
     row: 24
     col: 12
     width: 12
@@ -182,7 +185,8 @@
       ingestion_stats.total_size_bytes_GiB: Ingestion Throughput
       ingestion_stats.total_entry_number: Ingested Event Count
     defaults_version: 1
-    listen: {}
+    listen:
+      Log Type: ingestion_stats.log_type
     row: 30
     col: 0
     width: 8
@@ -194,7 +198,7 @@
     fields: [ingestion_stats.timestamp_hour, ingestion_stats.total_entry_number, ingestion_stats.total_size_bytes_GiB]
     fill_fields: [ingestion_stats.timestamp_hour]
     filters:
-      ingestion_stats.timestamp_time: 1 weeks
+      ingestion_stats.timestamp_time: 7 days
     sorts: [ingestion_stats.timestamp_hour desc]
     limit: 500
     query_timezone: America/Los_Angeles
@@ -236,7 +240,8 @@
       ingestion_stats.total_entry_number: Ingested Event Count
       ingestion_stats.total_size_bytes_GiB: Ingestion Throughput
     defaults_version: 1
-    listen: {}
+    listen:
+      Log Type: ingestion_stats.log_type
     row: 30
     col: 8
     width: 8
@@ -294,7 +299,8 @@
       ingestion_stats.total_size_bytes_GiB: Ingestion Throughput
       ingestion_stats.total_entry_number: Ingested Event Count
     defaults_version: 1
-    listen: {}
+    listen:
+      Log Type: ingestion_stats.log_type
     row: 30
     col: 16
     width: 8
@@ -307,9 +313,9 @@
     sorts: [ingestion_stats.period desc]
     limit: 500
     column_limit: 50
-    dynamic_fields: [{table_calculation: delta, label: Delta, expression: '${ingestion_stats.total_entry_number}
-            - offset(${ingestion_stats.total_entry_number}, 1)', value_format: "#,##0,\" K\";-#,##0,\" K\"",
-            value_format_name: !!null '', _kind_hint: measure, _type_hint: number}]
+    dynamic_fields: [{table_calculation: delta, label: Delta, expression: "${ingestion_stats.total_entry_number}\
+          \ - offset(${ingestion_stats.total_entry_number}, 1)", value_format: '#,##0,"
+          K";-#,##0," K"', value_format_name: !!null '', _kind_hint: measure, _type_hint: number}]
     query_timezone: America/Los_Angeles
     custom_color_enabled: true
     show_single_value_title: false
@@ -320,7 +326,7 @@
     enable_conditional_formatting: false
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
-    value_format: "[>=1000000000]#,##0,,,\" B\";[>=1000000]0,,\" M\";0,\" K\""
+    value_format: '[>=1000000000]#,##0,,," B";[>=1000000]0,," M";0," K"'
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -352,6 +358,7 @@
     note_text: Delta compared to previous time period
     listen:
       Time: ingestion_stats.period_filter
+      Log Type: ingestion_stats.log_type
     row: 0
     col: 5
     width: 5
@@ -363,9 +370,9 @@
     fields: [ingestion_stats.total_error_events, ingestion_stats.period]
     sorts: [ingestion_stats.period desc]
     limit: 500
-    dynamic_fields: [{table_calculation: delta, label: Delta, expression: '${ingestion_stats.total_error_events}
-          - offset(${ingestion_stats.total_error_events}, 1)', value_format: "#,##0.0,\" K\";-#,##0.0,\" K\"",
-          value_format_name: !!null '', _kind_hint: measure, _type_hint: number}]
+    dynamic_fields: [{table_calculation: delta, label: Delta, expression: "${ingestion_stats.total_error_events}\
+          \ - offset(${ingestion_stats.total_error_events}, 1)", value_format: '#,##0.0,"
+          K";-#,##0.0," K"', value_format_name: !!null '', _kind_hint: measure, _type_hint: number}]
     query_timezone: America/Los_Angeles
     custom_color_enabled: true
     show_single_value_title: false
@@ -376,7 +383,7 @@
     enable_conditional_formatting: false
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
-    value_format: "[>=1000000000]#,##0,,,\" B\";[>=1000000]0,,\" M\";0,\" K\""
+    value_format: '[>=1000000000]#,##0,,," B";[>=1000000]0,," M";0," K"'
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -408,6 +415,7 @@
     note_text: Delta compared to previous time period
     listen:
       Time: ingestion_stats.period_filter
+      Log Type: ingestion_stats.log_type
     row: 0
     col: 15
     width: 5
@@ -415,7 +423,6 @@
   - name: Ingested Events Count
     type: text
     title_text: Ingested Events Count
-    subtitle_text: ''
     body_text: ''
     row: 0
     col: 0
@@ -424,7 +431,6 @@
   - name: Ingestion Error Count
     type: text
     title_text: Ingestion Error Count
-    subtitle_text: ''
     body_text: ''
     row: 0
     col: 10
@@ -491,7 +497,8 @@
     totals_color: "#808080"
     defaults_version: 1
     series_types: {}
-    listen: {}
+    listen:
+      Log Type: ingestion_stats.log_type
     row: 24
     col: 0
     width: 12
@@ -536,6 +543,7 @@
     defaults_version: 1
     listen:
       Time: ingestion_stats.period_filter
+      Log Type: ingestion_stats.log_type
     row: 9
     col: 0
     width: 24
@@ -611,6 +619,7 @@
     series_types: {}
     listen:
       Time: ingestion_stats.period_filter
+      Log Type: ingestion_stats.log_type
     row: 16
     col: 0
     width: 24
@@ -730,7 +739,8 @@
     defaults_version: 1
     hide_totals: false
     hide_row_totals: false
-    listen: {}
+    listen:
+      Log Type: ingestion_stats.log_type
     row: 36
     col: 0
     width: 24
@@ -850,7 +860,8 @@
     defaults_version: 1
     hide_totals: false
     hide_row_totals: false
-    listen: {}
+    listen:
+      Log Type: ingestion_stats.log_type
     row: 43
     col: 0
     width: 24
@@ -970,7 +981,8 @@
     defaults_version: 1
     hide_totals: false
     hide_row_totals: false
-    listen: {}
+    listen:
+      Log Type: ingestion_stats.log_type
     row: 50
     col: 0
     width: 24
@@ -1088,7 +1100,8 @@
     defaults_version: 1
     hide_totals: false
     hide_row_totals: false
-    listen: {}
+    listen:
+      Log Type: ingestion_stats.log_type
     row: 57
     col: 0
     width: 24
@@ -1096,7 +1109,6 @@
   - name: ''
     type: text
     title_text: ''
-    subtitle_text: ''
     body_text: '**Please note that the dashboards below have timelines that are pre-selected
       and the "Time" filter doesn''t apply to them**'
     row: 22
@@ -1117,3 +1129,16 @@
     explore: ingestion_stats
     listens_to_filters: []
     field: ingestion_stats.period_filter
+  - name: Log Type
+    title: Log Type
+    type: field_filter
+    default_value: ''
+    allow_multiple_values: true
+    required: false
+    ui_config:
+      type: advanced
+      display: popover
+      options: []
+    explore: ingestion_stats
+    listens_to_filters: []
+    field: ingestion_stats.log_type

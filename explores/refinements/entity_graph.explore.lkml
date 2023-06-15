@@ -1,8 +1,11 @@
+include: "/chronicle_features.lkml"
 include: "/views/refinements/entity_graph.view.lkml"
 include: "/views/refinements/entity_enum_value_to_name_mapping.view.lkml"
 include: "/explores/entity_graph.explore.lkml"
 
 explore: +entity_graph {
+
+  required_access_grants: [has_chronicle_explores_enabled]
 
   #Naming Enums
   join: entity_graph__entity__asset__type {

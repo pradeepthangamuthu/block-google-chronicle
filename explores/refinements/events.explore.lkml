@@ -5,6 +5,7 @@ include: "/explores/events.explore.lkml"
 
 explore: +events {
   label: "UDM Events"
+  required_access_grants: [has_chronicle_feature_bq_export_external_source_enabled, has_chronicle_explores_enabled]
 
   # Naming enums
   join: metadata__event_type__enum {

@@ -1,6 +1,13 @@
 include: "/views/refinements/rule_detections.view.lkml"
 
 explore: rule_detections {
+
+  join: rule_detections__rulesets {
+    view_label: "Rule Detections: Rulesets"
+    sql: LEFT JOIN UNNEST(${rule_detections.rulesets}) as rule_detections__rulesets ;;
+    relationship: one_to_many
+  }
+
   join: rule_detections__detection__assets {
     view_label: "Rule Detections: Detection Assets"
     sql: LEFT JOIN UNNEST(${rule_detections.detection__assets}) as rule_detections__detection__assets ;;

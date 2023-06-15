@@ -1,3 +1,10 @@
+project_name: "looker-dashboards"
+
+constant: CONFIG_PROJECT_NAME {
+  value: "block-google-chronicle-config"
+  export: override_required
+}
+
 constant: CONNECTION_NAME{
   value: "c4"
   export: override_required
@@ -48,10 +55,6 @@ constant: UDM_EVENTS{
 
 constant: UDM_EVENTS_AGGREGRATES{
   value: "udm_events_aggregates"
-}
-
-constant: UDM_EVENTS_GCS{
-  value: "udm_events_gcs"
 }
 
 constant: EVENTS {
