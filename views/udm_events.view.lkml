@@ -1,5 +1,5 @@
 view: udm_events {
-  sql_table_name: `@{DATASET_NAME}.@{UDM_EVENTS}`;;
+  sql_table_name: `@{DATASET_NAME}.@{EVENTS}`;;
 
   dimension_group: _partitiondate {
     type: time
@@ -13,7 +13,7 @@ view: udm_events {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}._PARTITIONDATE ;;
+    sql: ${TABLE}.hour_time_bucket ;;
   }
 
   dimension_group: _partitiontime {
@@ -28,7 +28,7 @@ view: udm_events {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}._PARTITIONTIME ;;
+    sql: ${TABLE}.hour_time_bucket ;;
   }
 
   dimension: about {

@@ -17,13 +17,24 @@ view: +rule_detections {
     }
   }
 
+  dimension: alert_name {
+    type: string
+    sql: ${TABLE}.rule_name ;;
+    link: {
+      label: "Investigate alerts"
+      url: "@{CHRONICLE_URL}/alerts?snapshotQuery=feedback_summary.status!=\"CLOSED\" AND detection.rule_name=\"{{rule_detections.rule_name._value}}\""
+      icon_url: "@{RULE_DETECTIONS_PAGE_ICON_URL}"
+    }
+  }
+
+
   measure: count_for_drill {
     type: count
-    link: {
-      label: "Rule Detections Dashboard"
-      url: "@{RULE_DETECTIONS_DASHBOARD}"
-      icon_url: "@{DASHBOARD_ICON_URL}"
-    }
+  }
+
+  measure: count {
+    type: count
+    drill_fields: [rule_name, count]
   }
 
   filter: period_filter {
@@ -74,5 +85,45 @@ view: +rule_detections {
     ]
     datatype: epoch
     sql: ${detection__detection_timestamp__seconds} ;;
+  }
+
+  dimension: risk_score {
+    type: string
+    sql: SELECT value FROM UNNEST(${TABLE}.detection.outcomes) WHERE name='risk_score'  ;;
+  }
+
+  dimension: rulesets {
+    hidden: yes
+    sql: ${TABLE}.rulesets ;;
+    group_label: "Rulesets"
+  }
+}
+
+view: rule_detections__rulesets {
+  dimension: ruleset_id {
+    type: string
+    sql: ${TABLE}.ruleset_id ;;
+  }
+
+  dimension: ruleset_name {
+    type: string
+    sql: ${TABLE}.ruleset_name ;;
+  }
+
+  dimension: ruleset_family_name {
+    type: string
+    sql: ${TABLE}.ruleset_family_name ;;
+  }
+}
+
+view: +rule_detections__detection__users {
+  dimension: user_name_with_link {
+    type: string
+    sql: ${TABLE}.user_name ;;
+    link: {
+      label: "Investigate in Chronicle"
+      url: "@{CHRONICLE_URL}/userResults?userName={{value}}"
+      icon_url: "@{USER_PAGE_ICON_URL}"
+    }
   }
 }

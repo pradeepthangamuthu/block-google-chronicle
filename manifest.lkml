@@ -37,6 +37,11 @@ constant: RULE_DETECTIONS{
   value: "rule_detections"
 }
 
+constant: RULESETS{
+  value: "rulesets"
+}
+
+# DEPRECATED use EVENTS
 constant: UDM_EVENTS{
   value: "udm_events"
 }
@@ -114,6 +119,10 @@ constant: FILE_HASH_PAGE_ICON_URL {
 }
 
 constant: RULE_DETECTIONS_PAGE_ICON_URL {
+  value: "https://backstory.chronicle.security/static/pageicons/rule-detections-white.svg"
+}
+
+constant: ALERTS_VIEW_PAGE_ICON_URL {
   value: "https://backstory.chronicle.security/static/pageicons/rule-detections-white.svg"
 }
 

@@ -4,9 +4,7 @@ include: "/views/refinements/udm_enum_value_to_name_mapping.view.lkml"
 include: "/explores/events.explore.lkml"
 
 explore: +events {
-  label: "UDM Events (Preview)"
-  # This is an embedded looker only accress_grant
-  # required_access_grants: [has_chronicle_feature_bq_export_external_source_enabled]
+  label: "UDM Events"
 
   # Naming enums
   join: metadata__event_type__enum {

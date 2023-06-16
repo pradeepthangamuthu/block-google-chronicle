@@ -2,15 +2,10 @@ include: "/views/refinements/udm_events.view.lkml"
 include: "/views/refinements/udm_enum_value_to_name_mapping.view.lkml"
 include: "/explores/udm_events.explore.lkml"
 
-access_grant: can_explore_udm_events {
-  user_attribute: chronicle_feature_bq_export_udm_events_enabled
-  allowed_values: ["yes"]
-}
-
 explore: +udm_events {
-  label: "UDM Events"
+  label: "UDM Events (Deprecated)"
 
-  # required_access_grants: [can_explore_udm_events]
+  hidden: yes
 
   # Naming enums
   join: metadata__event_type__enum {
@@ -99,6 +94,6 @@ explore: +udm_events {
   }
 
   fields: [ALL_FIELDS*,]
-  sql_always_where: {% condition udm_events.time_filter %} udm_events._PARTITIONTIME {% endcondition %}
-    AND {% condition udm_events.time_filter %} TIMESTAMP_SECONDS(${event_timestamp_raw}) {% endcondition %};;
+  sql_always_where: {% condition udm_events.time_filter %} hour_time_bucket {% endcondition %}
+   AND {% condition udm_events.time_filter %} TIMESTAMP_SECONDS(${event_timestamp_raw}) {% endcondition %};;
 }
