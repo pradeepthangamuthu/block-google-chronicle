@@ -1,5 +1,5 @@
 view: ingestion_stats {
-  sql_table_name: `@{DATASET_NAME}.@{INGESTION_STATS}`
+  sql_table_name: `@{INGESTION_STATS}`
     ;;
 
   dimension_group: _partitiondate {

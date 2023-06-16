@@ -4,7 +4,7 @@ view: user_rule_detections_with_udm_events {
         udm_events.principal.user.userid AS user_name,
         TIMESTAMP_SECONDS(udm_events.metadata.event_timestamp.seconds) AS time,
         COUNT(*) AS udm_events_count
-      FROM `@{DATASET_NAME}.@{EVENTS}` AS udm_events
+      FROM `@{EVENTS}` AS udm_events
       WHERE udm_events.principal.user.userid IS NOT NULL
       AND {% condition period_filter %} TIMESTAMP_SECONDS(udm_events.metadata.event_timestamp.seconds) {% endcondition %}
       GROUP BY 1, 2),
@@ -12,7 +12,7 @@ view: user_rule_detections_with_udm_events {
         rule_detections__detection__users.user_name AS user_name,
         TIMESTAMP_SECONDS(rule_detections__detection__detection_timestamp.seconds) AS time,
         COUNT(*) AS rule_detections_count
-      FROM `@{DATASET_NAME}.@{RULE_DETECTIONS}` AS rule_detections
+      FROM `@{RULE_DETECTIONS}` AS rule_detections
       LEFT JOIN UNNEST([rule_detections.detection]) as rule_detections__detection
       LEFT JOIN UNNEST([rule_detections__detection.detection_timestamp]) as rule_detections__detection__detection_timestamp
       LEFT JOIN UNNEST(rule_detections__detection.users) as rule_detections__detection__users

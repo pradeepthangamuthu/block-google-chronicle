@@ -421,6 +421,12 @@ explore: udm_events {
     relationship: one_to_many
   }
 
+  join: udm_events__intermediary__labels {
+    view_label: "Udm Events: Intermediary Labels"
+    sql: LEFT JOIN UNNEST(${udm_events__intermediary.labels}) as udm_events__intermediary__labels ;;
+    relationship: one_to_many
+  }
+
   join: udm_events__network__dns__answers {
     view_label: "Udm Events: Network Dns Answers"
     sql: LEFT JOIN UNNEST(${udm_events.network__dns__answers}) as udm_events__network__dns__answers ;;
@@ -499,9 +505,27 @@ explore: udm_events {
     relationship: one_to_many
   }
 
+  join: udm_events__intermediary__asset__nat_ip {
+    view_label: "Udm Events: Intermediary Asset Nat Ip"
+    sql: LEFT JOIN UNNEST(${udm_events__intermediary.asset__nat_ip}) as udm_events__intermediary__asset__nat_ip ;;
+    relationship: one_to_many
+  }
+
   join: udm_events__network__dns__authority {
     view_label: "Udm Events: Network Dns Authority"
     sql: LEFT JOIN UNNEST(${udm_events.network__dns__authority}) as udm_events__network__dns__authority ;;
+    relationship: one_to_many
+  }
+
+  join: udm_events__network__dhcp__options {
+    view_label: "Udm Events: Network Dhcp Options"
+    sql: LEFT JOIN UNNEST(${udm_events.network__dhcp__options}) as udm_events__network__dhcp__options ;;
+    relationship: one_to_many
+  }
+
+  join: udm_events__principal__user__department {
+    view_label: "Udm Events: Principal User Department"
+    sql: LEFT JOIN UNNEST(${udm_events.principal__user__department}) as udm_events__principal__user__department ;;
     relationship: one_to_many
   }
 
@@ -571,9 +595,15 @@ explore: udm_events {
     relationship: one_to_many
   }
 
-  join: udm_events__about__process_ancestors {
-    view_label: "Udm Events: About Process Ancestors"
-    sql: LEFT JOIN UNNEST(${udm_events__about.process_ancestors}) as udm_events__about__process_ancestors ;;
+  join: udm_events__network__dns__additional {
+    view_label: "Udm Events: Network Dns Additional"
+    sql: LEFT JOIN UNNEST(${udm_events.network__dns__additional}) as udm_events__network__dns__additional ;;
+    relationship: one_to_many
+  }
+
+  join: udm_events__network__dns__questions {
+    view_label: "Udm Events: Network Dns Questions"
+    sql: LEFT JOIN UNNEST(${udm_events.network__dns__questions}) as udm_events__network__dns__questions ;;
     relationship: one_to_many
   }
 
@@ -631,6 +661,12 @@ explore: udm_events {
     relationship: one_to_many
   }
 
+  join: udm_events__about__process_ancestors {
+    view_label: "Udm Events: About Process Ancestors"
+    sql: LEFT JOIN UNNEST(${udm_events__about.process_ancestors}) as udm_events__about__process_ancestors ;;
+    relationship: one_to_many
+  }
+
   join: udm_events__observer__process__file__names {
     view_label: "Udm Events: Observer Process File Names"
     sql: LEFT JOIN UNNEST(${udm_events.observer__process__file__names}) as udm_events__observer__process__file__names ;;
@@ -640,6 +676,18 @@ explore: udm_events {
   join: udm_events__observer__domain__name_server {
     view_label: "Udm Events: Observer Domain Name Server"
     sql: LEFT JOIN UNNEST(${udm_events.observer__domain__name_server}) as udm_events__observer__domain__name_server ;;
+    relationship: one_to_many
+  }
+
+  join: udm_events__observer__asset__hardware {
+    view_label: "Udm Events: Observer Asset Hardware"
+    sql: LEFT JOIN UNNEST(${udm_events.observer__asset__hardware}) as udm_events__observer__asset__hardware ;;
+    relationship: one_to_many
+  }
+
+  join: udm_events__observer__user__phone_numbers {
+    view_label: "Udm Events: Observer User Phone Numbers"
+    sql: LEFT JOIN UNNEST(${udm_events.observer__user__phone_numbers}) as udm_events__observer__user__phone_numbers ;;
     relationship: one_to_many
   }
 

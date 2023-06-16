@@ -1,5 +1,5 @@
 view: rule_detections {
-  sql_table_name: `@{DATASET_NAME}.@{RULE_DETECTIONS}`
+  sql_table_name: `@{RULE_DETECTIONS}`
     ;;
 
   dimension: detection__assets {
@@ -58,6 +58,12 @@ view: rule_detections {
     sql: ${TABLE}.detection.detection_timestamp.nanos ;;
     group_label: "Detection Detection Timestamp"
     group_item_label: "Nanos"
+  }
+
+  dimension: detection_alert_type {
+    type: number
+    sql: ${TABLE}.detection.alert_type ;;
+    group_label: "Detection"
   }
 
   dimension: detection__detection_timestamp__seconds {

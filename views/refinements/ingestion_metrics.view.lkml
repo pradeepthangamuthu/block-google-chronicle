@@ -1,5 +1,4 @@
 include: "/views/ingestion_metrics.view"
-
 view: +ingestion_metrics {
   dimension_group: timestamp{
     type: time
@@ -161,5 +160,42 @@ view: +ingestion_metrics {
   dimension: valid_log_type {
     type: string
     sql:COALESCE(${log_type},null);;
+  }
+
+  measure: last_heartbeat_max {
+    hidden: yes
+    type: date
+    sql: MAX(${last_heartbeat_raw}) ;;
+  }
+  measure: minutes_since_last_heartbeat {
+    type: number
+    sql:  (datetime_diff(Current_timestamp(), TIMESTAMP(${last_heartbeat_max}), minute)) * 1 ;;
+  }
+
+  measure: min_start_time {
+    type: date_time
+    sql: min(${TABLE}.start_time);;
+  }
+
+  measure: max_end_time {
+    type: date_time
+    sql: max(${TABLE}.end_time);;
+  }
+
+  measure: offered_gcp_log_type {
+    hidden :  yes
+    type: number
+    sql: 43;;
+  }
+
+  measure: ingested_gcp_log_type {
+    type: number
+    sql: count(DISTINCT${gcp_log_type}) ;;
+  }
+
+  measure: gcp_log_types_used {
+    type: number
+    value_format_name: percent_0
+    sql: ${ingested_gcp_log_type}/${offered_gcp_log_type};;
   }
 }

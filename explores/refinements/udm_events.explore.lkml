@@ -1,3 +1,4 @@
+include: "/chronicle_features.lkml"
 include: "/views/refinements/udm_events.view.lkml"
 include: "/views/refinements/udm_enum_value_to_name_mapping.view.lkml"
 include: "/explores/udm_events.explore.lkml"
@@ -6,6 +7,8 @@ explore: +udm_events {
   label: "UDM Events (Deprecated)"
 
   hidden: yes
+
+  required_access_grants: [has_chronicle_feature_bq_export_external_source_enabled,has_chronicle_explores_enabled]
 
   # Naming enums
   join: metadata__event_type__enum {
