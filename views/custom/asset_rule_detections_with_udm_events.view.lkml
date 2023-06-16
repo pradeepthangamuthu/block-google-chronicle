@@ -4,7 +4,7 @@ view: asset_rule_detections_with_udm_events {
         COALESCE(udm_events.principal.hostname, udm_events.principal.ip[SAFE_OFFSET(0)]) AS asset,
         TIMESTAMP_SECONDS(udm_events.metadata.event_timestamp.seconds) AS time,
         COUNT(*) AS udm_events_count
-      FROM `@{DATASET_NAME}.@{UDM_EVENTS}` AS udm_events
+      FROM `@{DATASET_NAME}.@{EVENTS}` AS udm_events
       WHERE
         (((COALESCE(udm_events.principal.hostname, udm_events.principal.ip[SAFE_OFFSET(0)])) IS NOT NULL))
         AND {% condition period_filter %} TIMESTAMP_SECONDS(udm_events.metadata.event_timestamp.seconds) {% endcondition %}
@@ -21,7 +21,7 @@ view: asset_rule_detections_with_udm_events {
         (((COALESCE(rule_detections__detection__assets.hostname, rule_detections__detection__assets.asset_ip_address)) IS NOT NULL))
         AND {% condition period_filter %} TIMESTAMP_SECONDS(rule_detections__detection__detection_timestamp.seconds) {% endcondition %}
       GROUP BY 1,2)
-      SELECT * FROM @{RULE_DETECTIONS} FULL JOIN @{UDM_EVENTS} USING (asset, time) ORDER BY time DESC
+      SELECT * FROM @{RULE_DETECTIONS} FULL JOIN @{EVENTS} USING (asset, time) ORDER BY time DESC
        ;;
   }
 

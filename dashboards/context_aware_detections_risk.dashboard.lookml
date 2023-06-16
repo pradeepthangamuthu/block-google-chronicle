@@ -78,7 +78,8 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     defaults_version: 1
-    hidden_fields: []
+    filters:
+      rule_detections__detection__outcomes.name: '"risk_score"'
     listen:
       Time: rule_detections.event_timestamp_time
     row: 2
@@ -367,6 +368,8 @@
     series_types: {}
     listen:
       Time: rule_detections.event_timestamp_time
+    filters:
+      rule_detections__detection__outcomes.name: '"risk_score"'
     row: 8
     col: 0
     width: 24

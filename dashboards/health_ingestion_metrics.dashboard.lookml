@@ -10,9 +10,8 @@
     fields: [ingestion_metric_with_ingestion_stats.log_type, ingestion_metric_with_ingestion_stats.total_entry_number]
     filters:
       ingestion_metric_with_ingestion_stats.period: This Period
-      ingestion_metric_with_ingestion_stats.log_type: "-NULL"
     sorts: [ingestion_metric_with_ingestion_stats.total_entry_number desc]
-    limit: 500
+    limit: 50
     value_labels: legend
     label_type: labPer
     x_axis_gridlines: false
@@ -46,6 +45,7 @@
     series_types: {}
     listen:
       Time: ingestion_metric_with_ingestion_stats.period_filter
+      Log Type: ingestion_metric_with_ingestion_stats.log_type
     row: 3
     col: 0
     width: 12
@@ -57,9 +57,8 @@
     fields: [ingestion_metric_with_ingestion_stats.log_type, ingestion_metric_with_ingestion_stats.total_size_bytes]
     filters:
       ingestion_metric_with_ingestion_stats.period: This Period
-      ingestion_metric_with_ingestion_stats.log_type: "-NULL"
     sorts: [ingestion_metric_with_ingestion_stats.total_size_bytes desc]
-    limit: 500
+    limit: 50
     value_labels: legend
     label_type: labPer
     x_axis_gridlines: false
@@ -93,6 +92,7 @@
     series_types: {}
     listen:
       Time: ingestion_metric_with_ingestion_stats.period_filter
+      Log Type: ingestion_metric_with_ingestion_stats.log_type
     row: 3
     col: 12
     width: 12
@@ -130,7 +130,8 @@
       num_rows: '10'
     series_types: {}
     defaults_version: 1
-    listen: {}
+    listen:
+      Log Type: ingestion_metric_with_ingestion_stats.log_type
     row: 24
     col: 12
     width: 12
@@ -184,7 +185,8 @@
       ingestion_metric_with_ingestion_stats.total_size_bytes_GiB: Ingestion Throughput
       ingestion_metric_with_ingestion_stats.total_entry_number: Ingested Event Count
     defaults_version: 1
-    listen: {}
+    listen:
+      Log Type: ingestion_metric_with_ingestion_stats.log_type
     row: 30
     col: 0
     width: 8
@@ -196,7 +198,7 @@
     fields: [ingestion_metric_with_ingestion_stats.timestamp_hour, ingestion_metric_with_ingestion_stats.total_entry_number, ingestion_metric_with_ingestion_stats.total_size_bytes_GiB]
     fill_fields: [ingestion_metric_with_ingestion_stats.timestamp_hour]
     filters:
-      ingestion_metric_with_ingestion_stats.timestamp_time: 1 weeks
+      ingestion_metric_with_ingestion_stats.timestamp_time: 7 days
     sorts: [ingestion_metric_with_ingestion_stats.timestamp_hour desc]
     limit: 500
     query_timezone: America/Los_Angeles
@@ -238,7 +240,8 @@
       ingestion_metric_with_ingestion_stats.total_entry_number: Ingested Event Count
       ingestion_metric_with_ingestion_stats.total_size_bytes_GiB: Ingestion Throughput
     defaults_version: 1
-    listen: {}
+    listen:
+      Log Type: ingestion_metric_with_ingestion_stats.log_type
     row: 30
     col: 8
     width: 8
@@ -296,7 +299,8 @@
       ingestion_metric_with_ingestion_stats.total_size_bytes_GiB: Ingestion Throughput
       ingestion_metric_with_ingestion_stats.total_entry_number: Ingested Event Count
     defaults_version: 1
-    listen: {}
+    listen:
+      Log Type: ingestion_metric_with_ingestion_stats.log_type
     row: 30
     col: 16
     width: 8
@@ -354,8 +358,9 @@
     note_text: Delta compared to previous time period
     listen:
       Time: ingestion_metric_with_ingestion_stats.period_filter
+      Log Type: ingestion_metric_with_ingestion_stats.log_type
     row: 0
-    col: 5
+    col: 7
     width: 5
     height: 3
   - title: Total Error Count
@@ -410,8 +415,9 @@
     note_text: Delta compared to previous time period
     listen:
       Time: ingestion_metric_with_ingestion_stats.period_filter
+      Log Type: ingestion_metric_with_ingestion_stats.log_type
     row: 0
-    col: 15
+    col: 19
     width: 5
     height: 3
   - name: Ingested Events Count
@@ -420,7 +426,7 @@
     subtitle_text: ''
     body_text: ''
     row: 0
-    col: 0
+    col: 2
     width: 5
     height: 3
   - name: Ingestion Error Count
@@ -429,7 +435,7 @@
     subtitle_text: ''
     body_text: ''
     row: 0
-    col: 10
+    col: 14
     width: 5
     height: 3
   - title: Recently Ingested Events
@@ -493,7 +499,8 @@
     totals_color: "#808080"
     defaults_version: 1
     series_types: {}
-    listen: {}
+    listen:
+      Log Type: ingestion_metric_with_ingestion_stats.log_type
     row: 24
     col: 0
     width: 12
@@ -538,6 +545,7 @@
     defaults_version: 1
     listen:
       Time: ingestion_metric_with_ingestion_stats.period_filter
+      Log Type: ingestion_metric_with_ingestion_stats.log_type
     row: 9
     col: 0
     width: 24
@@ -613,6 +621,7 @@
     series_types: {}
     listen:
       Time: ingestion_metric_with_ingestion_stats.period_filter
+      Log Type: ingestion_metric_with_ingestion_stats.log_type
     row: 16
     col: 0
     width: 24
@@ -732,7 +741,8 @@
     defaults_version: 1
     hide_totals: false
     hide_row_totals: false
-    listen: {}
+    listen:
+      Log Type: ingestion_metric_with_ingestion_stats.log_type
     row: 36
     col: 0
     width: 24
@@ -852,7 +862,8 @@
     defaults_version: 1
     hide_totals: false
     hide_row_totals: false
-    listen: {}
+    listen:
+      Log Type: ingestion_metric_with_ingestion_stats.log_type
     row: 43
     col: 0
     width: 24
@@ -972,7 +983,8 @@
     defaults_version: 1
     hide_totals: false
     hide_row_totals: false
-    listen: {}
+    listen:
+      Log Type: ingestion_metric_with_ingestion_stats.log_type
     row: 50
     col: 0
     width: 24
@@ -1090,7 +1102,8 @@
     defaults_version: 1
     hide_totals: false
     hide_row_totals: false
-    listen: {}
+    listen:
+      Log Type: ingestion_metric_with_ingestion_stats.log_type
     row: 57
     col: 0
     width: 24
@@ -1119,3 +1132,16 @@
     explore: ingestion_metric_with_ingestion_stats
     listens_to_filters: []
     field: ingestion_metric_with_ingestion_stats.period_filter
+  - name: Log Type
+    title: Log Type
+    type: field_filter
+    default_value: "-NULL"
+    allow_multiple_values: true
+    required: false
+    ui_config:
+      type: advanced
+      display: popover
+      options: []
+    explore: ingestion_metric_with_ingestion_stats
+    listens_to_filters: []
+    field: ingestion_metric_with_ingestion_stats.log_type

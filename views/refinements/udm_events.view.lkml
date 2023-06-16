@@ -2,6 +2,17 @@ include: "/views/udm_events.view.lkml"
 
 view: +udm_events {
 
+  set: detail {
+    fields: [
+      metadata__id,
+      metadata__product_log_id,
+      metadata__vendor_name,
+      metadata__product_name,
+      metadata__event_type,
+      metadata__event_timestamp__seconds
+    ]
+  }
+
   dimension: primary_key {
     primary_key: yes
     hidden: yes
