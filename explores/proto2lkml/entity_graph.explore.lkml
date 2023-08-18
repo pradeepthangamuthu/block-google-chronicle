@@ -6,7 +6,6 @@ include: "/chronicle_features.lkml"
 
 ### END googlex/security/malachite/dashboards/lookml/entity_graph/entity_graph_preamble.lkml 
 view: entity_graph {
-  ### BEGIN googlex/security/malachite/dashboards/lookml/entity_graph/entity_graph_view_preamble.lkml
   sql_table_name: `@{ENTITY_GRAPH}`;;
 
   dimension: primary_key {
@@ -41,8 +40,37 @@ view: entity_graph {
     view_label: "Entity"
     description: "Filter on collected_timestamp"
   }
+  
+  dimension_group: _partitiondate {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}._PARTITIONDATE ;;
+  }
 
-  ### END googlex/security/malachite/dashboards/lookml/entity_graph/entity_graph_view_preamble.lkml
+  dimension_group: _partitiontime {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}._PARTITIONTIME ;;
+  }
+
   dimension: additional {
     hidden: yes
   }  # dimension additional
@@ -5215,25 +5243,9 @@ view: entity_graph__relations {
 }  # view entity_graph__relations
 
 explore: entity_graph {
-  ### BEGIN googlex/security/malachite/dashboards/lookml/entity_graph/entity_graph_explore_preamble.lkml 
   label: "Entity Graph"
 
-  required_access_grants: [
-    has_chronicle_explores_enabled
-  ]
 
-  conditionally_filter: {
-    filters: {
-      field: entity_graph.time_filter
-      value: "last 24 hours"
-    }
-  }
-
-  fields: [ALL_FIELDS*,]
-  sql_always_where: {% condition entity_graph.time_filter %}  _PARTITIONTIME {% endcondition %}
-    AND {% condition entity_graph.time_filter %} ${metadata__collected_timestamp_raw} {% endcondition %};;
-
-  ### END googlex/security/malachite/dashboards/lookml/entity_graph/entity_graph_explore_preamble.lkml
   join: entity_graph__additional__fields {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${entity_graph.additional}.fields) as entity_graph__additional__fields ;;

@@ -21,6 +21,17 @@ view: udm_events {
                 IFNULL(${TABLE}.metadata.product_name,""));;
   }
 
+  set: detail {
+    fields: [
+      metadata__id,
+      metadata__product_log_id,
+      metadata__vendor_name,
+      metadata__product_name,
+      metadata__event_type,
+      metadata__event_timestamp__seconds
+    ]
+  }
+
   measure: count {
     description: "Count of UDM events; COUNT(DISTINCT ...) is used."
     type: count
@@ -19030,27 +19041,10 @@ view: udm_events__target__user__time_off {
 }  # view udm_events__target__user__time_off
 
 explore: udm_events {
-  ### BEGIN googlex/security/malachite/dashboards/lookml/udm/udm_events_explore_preamble.lkml 
   label: "UDM Events (Deprecated)"
 
   hidden: yes
 
-  required_access_grants: [
-    has_chronicle_explores_enabled
-  ]
-
-  conditionally_filter: {
-    filters: {
-      field: udm_events.time_filter
-      value: "last 24 hours"
-    }
-  }
-
-  fields: [ALL_FIELDS*,]
-  sql_always_where: {% condition udm_events.time_filter %} hour_time_bucket {% endcondition %}
-    AND {% condition udm_events.time_filter %} ${metadata__event_timestamp_raw} {% endcondition %};;
-
-  ### END googlex/security/malachite/dashboards/lookml/udm/udm_events_explore_preamble.lkml
   join: udm_events__about {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${udm_events.about}) as udm_events__about ;;

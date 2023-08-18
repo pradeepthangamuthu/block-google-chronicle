@@ -6,7 +6,7 @@ include: "/chronicle_features.lkml"
 
 ### END googlex/security/malachite/dashboards/lookml/udm/events_preamble.lkml 
 view: events {
-  ### BEGIN googlex/security/malachite/dashboards/lookml/udm/udm_view_preamble.lkml
+
   sql_table_name: `@{EVENTS}`;;
 
   dimension: primary_key {
@@ -40,6 +40,17 @@ view: events {
     type: date_time
     view_label: "UDM"
     description: "Filter on the metadata.event_timestamp"
+  }
+  
+  set: detail {
+    fields: [
+      metadata__id,
+      metadata__product_log_id,
+      metadata__vendor_name,
+      metadata__product_name,
+      metadata__event_type,
+      metadata__event_timestamp__seconds
+    ]
   }
 
   #-------------------------------------------------------------------------------
@@ -19030,26 +19041,9 @@ view: events__target__user__time_off {
 }  # view events__target__user__time_off
 
 explore: events {
-  ### BEGIN googlex/security/malachite/dashboards/lookml/udm/events_explore_preamble.lkml 
+
   label: "UDM Events"
 
-  required_access_grants: [
-    has_chronicle_feature_bq_export_external_source_enabled, 
-    has_chronicle_explores_enabled
-  ]
-
-  conditionally_filter: {
-    filters: {
-      field: events.time_filter
-      value: "last 24 hours"
-    }
-  }
-
-  fields: [ALL_FIELDS*,]
-  sql_always_where: {% condition events.time_filter %}  hour_time_bucket {% endcondition %}
-    AND {% condition events.time_filter %} ${metadata__event_timestamp_raw} {% endcondition %};;
-
-  ### END googlex/security/malachite/dashboards/lookml/udm/events_explore_preamble.lkml
   join: events__about {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${events.about}) as events__about ;;
