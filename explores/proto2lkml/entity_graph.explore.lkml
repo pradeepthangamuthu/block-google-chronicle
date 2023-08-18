@@ -40,7 +40,7 @@ view: entity_graph {
     view_label: "Entity"
     description: "Filter on collected_timestamp"
   }
-  
+
   dimension_group: _partitiondate {
     type: time
     timeframes: [
@@ -54,6 +54,7 @@ view: entity_graph {
     convert_tz: no
     datatype: date
     sql: ${TABLE}._PARTITIONDATE ;;
+    view_label: "Entity"
   }
 
   dimension_group: _partitiontime {
@@ -69,6 +70,7 @@ view: entity_graph {
     convert_tz: no
     datatype: date
     sql: ${TABLE}._PARTITIONTIME ;;
+    view_label: "Entity"
   }
 
   dimension: additional {
