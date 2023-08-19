@@ -27,4 +27,4 @@ For more information on the Block structure and customization, refer to [Looker 
 
 ## What if I find an error? Suggestions for improvements?
 
-Great! Blocks were designed for continuous improvement through the help of the entire Chronicle community and we'd love your input. To report an error or improvement recommendation regarding this block, please reach out to Chronicle support via email to chronicle-security@google.com to submit a request. Please be as detailed as possible in your explanation and we'll address it as quick as we can.
+Great! Blocks were designed for continuous improvement through the help of the entire Chronicle community and we'd love your input. To report an error or improvement recommendation regarding this block, please reach out to Chronicle support https://cloud.google.com/chronicle/docs/getting-support.
