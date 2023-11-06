@@ -5246,7 +5246,17 @@ view: entity_graph__relations {
 
 explore: entity_graph {
   label: "Entity Graph"
+  
+   conditionally_filter: {
+    filters: {
+      field: entity_graph.time_filter
+      value: "last 24 hours"
+    }
+  }
 
+  fields: [ALL_FIELDS*,]
+  sql_always_where: {% condition entity_graph.time_filter %}  _PARTITIONTIME {% endcondition %}
+    AND {% condition entity_graph.time_filter %} ${metadata__collected_timestamp_raw} {% endcondition %};;
 
   join: entity_graph__additional__fields {
     relationship: one_to_many
