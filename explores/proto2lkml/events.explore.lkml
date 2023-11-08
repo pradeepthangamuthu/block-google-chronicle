@@ -19043,6 +19043,17 @@ view: events__target__user__time_off {
 explore: events {
 
   label: "UDM Events"
+  
+  conditionally_filter: {
+    filters: {
+      field: events.time_filter
+      value: "last 24 hours"
+    }
+  }
+
+  fields: [ALL_FIELDS*,]
+  sql_always_where: {% condition events.time_filter %}  hour_time_bucket {% endcondition %}
+    AND {% condition events.time_filter %} ${metadata__event_timestamp_raw} {% endcondition %};;
 
   join: events__about {
     relationship: one_to_many

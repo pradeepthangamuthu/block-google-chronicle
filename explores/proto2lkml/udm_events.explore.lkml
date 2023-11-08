@@ -19033,6 +19033,17 @@ explore: udm_events {
   label: "UDM Events (Deprecated)"
 
   hidden: yes
+  
+  conditionally_filter: {
+    filters: {
+      field: udm_events.time_filter
+      value: "last 24 hours"
+    }
+  }
+
+  fields: [ALL_FIELDS*,]
+  sql_always_where: {% condition udm_events.time_filter %} hour_time_bucket {% endcondition %}
+    AND {% condition udm_events.time_filter %} ${metadata__event_timestamp_raw} {% endcondition %};;
 
   join: udm_events__about {
     relationship: one_to_many
