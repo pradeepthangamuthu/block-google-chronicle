@@ -144,7 +144,7 @@
     filters:
       rule_detections.severity: "-NULL,-EMPTY"
     sorts: [rule_detections.severity 0]
-    limit: 500
+    limit: 50
     query_timezone: America/Los_Angeles
     value_labels: legend
     label_type: labPer

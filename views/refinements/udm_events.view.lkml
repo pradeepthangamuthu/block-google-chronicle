@@ -176,6 +176,22 @@ view: +udm_events {
   }
 
 
+  dimension: principal__location__location {
+    type: location
+    sql_latitude: ${principal__location__region_latitude} ;;
+    sql_longitude: ${principal__location__region_longitude} ;;
+    group_label: "Principal Location"
+    group_item_label: "Location"
+  }
+
+  dimension: target__location__location {
+    type: location
+    sql_latitude: ${target__location__region_latitude} ;;
+    sql_longitude: ${target__location__region_longitude} ;;
+    group_label: "Target Location"
+    group_item_label: "Location"
+  }
+
   dimension: full_domain {
     type: string
     sql: COALESCE(${TABLE}.network.dns.questions[SAFE_OFFSET(0)].name, ${TABLE}.target.hostname);;
@@ -200,6 +216,26 @@ view: +udm_events {
   dimension: network__ip_protocol_enum_name {
     type: string
     sql: ${network__ip_protocol__enum.enum_name} ;;
+  }
+
+  dimension: principal__ip_location {
+    hidden: yes
+    sql: ${TABLE}.principal.ip_location ;;
+  }
+
+  dimension: target__ip_location {
+    hidden: yes
+    sql: ${TABLE}.target.ip_location ;;
+  }
+
+  dimension: src__ip_location {
+    hidden: yes
+    sql: ${TABLE}.src.ip_location ;;
+  }
+
+  dimension: observer__ip_location {
+    hidden: yes
+    sql: ${TABLE}.observer.ip_location ;;
   }
 
   measure: count_all {
@@ -270,5 +306,37 @@ view: +udm_events__extensions__vulns__vulnerabilities {
   dimension: severity_enum_name {
     type:  string
     sql:  ${udm_events__extensions__vulns__vulnerabilities__severity__enum.enum_name} ;;
+  }
+}
+
+view: +udm_events__principal__ip_location {
+  dimension: location {
+    type: location
+    sql_latitude: ${TABLE}.region_latitude ;;
+    sql_longitude: ${TABLE}.region_longitude ;;
+  }
+}
+
+view: +udm_events__target__ip_location {
+  dimension: location {
+    type: location
+    sql_latitude: ${TABLE}.region_latitude ;;
+    sql_longitude: ${TABLE}.region_longitude ;;
+  }
+}
+
+view: +udm_events__src__ip_location {
+  dimension: location {
+    type: location
+    sql_latitude: ${TABLE}.region_latitude ;;
+    sql_longitude: ${TABLE}.region_longitude ;;
+  }
+}
+
+view: +udm_events__observer__ip_location {
+  dimension: location {
+    type: location
+    sql_latitude: ${TABLE}.region_latitude ;;
+    sql_longitude: ${TABLE}.region_longitude ;;
   }
 }

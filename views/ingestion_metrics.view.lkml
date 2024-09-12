@@ -135,6 +135,11 @@ view: ingestion_metrics {
     sql: ${TABLE}.log_type ;;
   }
 
+  dimension: gcp_log_type {
+    type: string
+    sql: CASE WHEN ${log_type} is not null and ${log_type} like 'GCP_%' THEN ${log_type} END;;
+  }
+
   dimension: log_volume {
     type: number
     sql: ${TABLE}.log_volume ;;

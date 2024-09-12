@@ -175,6 +175,21 @@ view: +events {
     sql: COALESCE(${TABLE}.principal.hostname, ${TABLE}.principal.ip[SAFE_OFFSET(0)]) ;;
   }
 
+  dimension: principal__location__location {
+    type: location
+    sql_latitude: ${principal__location__region_latitude} ;;
+    sql_longitude: ${principal__location__region_longitude} ;;
+    group_label: "Principal Location"
+    group_item_label: "Location"
+  }
+
+  dimension: target__location__location {
+    type: location
+    sql_latitude: ${target__location__region_latitude} ;;
+    sql_longitude: ${target__location__region_longitude} ;;
+    group_label: "Target Location"
+    group_item_label: "Location"
+  }
 
   dimension: full_domain {
     type: string

@@ -162,9 +162,9 @@ view: ingestion_metric_with_ingestion_stats {
           ELSE
             CASE
               WHEN ${TABLE}.component = 'Normalizer' AND ${TABLE}.state = 'failed_validation'
-                THEN round(${TABLE}.event_count/1000000, 0)
+                THEN ${TABLE}.event_count
               WHEN ${TABLE}.component = 'Normalizer' AND ${TABLE}.state = 'failed_parsing'
-                THEN round(${TABLE}.log_count/1000000, 0)
+                THEN ${TABLE}.log_count
             END
         END;;
   }
@@ -244,11 +244,16 @@ view: ingestion_metric_with_ingestion_stats {
         END;;
   }
 
-
   dimension: log_type {
     type: string
     sql: ${TABLE}.log_type ;;
   }
+
+  dimension: gcp_log_type {
+    type: string
+    sql: CASE WHEN ${log_type} is not null and ${log_type} like 'GCP_%' THEN  ${log_type} END;;
+  }
+
   measure: count {
     type: count
     drill_fields: []
